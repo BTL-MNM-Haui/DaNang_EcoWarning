@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mã xác thực OTP - DaNang EcoWarning</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      padding: 20px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .greeting {
+      font-size: 18px;
+      color: #333333;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      color: #555555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .otp-container {
+      background-color: #f0fdf4;
+      border: 2px dashed #10b981;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .otp {
+      font-size: 36px;
+      font-weight: bold;
+      color: #059669;
+      letter-spacing: 8px;
+    }
+
+    .otp-label {
+      font-size: 14px;
+      color: #666666;
+      margin-top: 10px;
+    }
+
+    .warning {
+      background-color: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px;
+      text-align: left;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .warning p {
+      margin: 0;
+      color: #92400e;
+      font-size: 14px;
+    }
+
+    .footer {
+      text-align: center;
+      color: #666666;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f8f8f8;
+      border-top: 1px solid #e0e0e0;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .footer p {
+      margin: 5px 0;
+      font-size: 13px;
+    }
+
+    a {
+      color: #10b981;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌿 DaNang EcoWarning System</h1>
+    </div>
+    <div class="content">
+      <p class="greeting" th:text="|Xin chào, ${name}!|"></p>
+      <p class="message">
+        Cảm ơn bạn đã sử dụng hệ thống DaNang EcoWarning.
+        Dưới đây là mã OTP của bạn để xác thực tài khoản:
+      </p>
+      <div class="otp-container">
+        <div class="otp" th:text="${code}"></div>
+        <p class="otp-label">Mã có hiệu lực trong 2 phút</p>
+      </div>
+      <p class="message">
+        Vui lòng nhập mã OTP này trong ứng dụng để hoàn tất quy trình xác thực.
+      </p>
+      <div class="warning">
+        <p>⚠️ <strong>Lưu ý bảo mật:</strong> Không chia sẻ mã OTP này với bất kỳ ai.
+          Nếu bạn không yêu cầu mã này, vui lòng bỏ qua email này.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p style="font-weight: bold; color: #059669;">DaNang EcoWarning - Bảo vệ môi trường Đà Nẵng</p>
+      <p>Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi:</p>
+      <p>📧 Email: <a href="mailto:support@danang-ecowarning.vn">support@danang-ecowarning.vn</a></p>
+    </div>
+  </div>
+</body>
+
+</html>

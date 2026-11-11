@@ -1,0 +1,77 @@
+x-env: &env
+  SPRING_PROFILES_ACTIVE: docker
+  SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+  POSTGRES_USER: ${POSTGRES_USER:-postgres}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+  REDIS_HOST: redis
+  REDIS_PORT: 6379
+  REDIS_PASSWORD: ${REDIS_PASSWORD}
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery-server:8761/eureka/
+
+services:
+  config-server:
+    environment:
+      SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS: file:/local-config/
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info
+    volumes:
+      - ./config-server/src/main/resources/config:/local-config:ro
+  discovery-server:
+    environment:
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info
+  api-gateway:
+    environment:
+      <<: *env
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info
+  collector-data-service:
+    environment:
+      <<: *env
+      SERVER_PORT: 8081
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/collector_data_service
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  search-service:
+    environment:
+      <<: *env
+      SERVER_PORT: 8082
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/collector_data_service
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+  citizen-report-service:
+    environment:
+      <<: *env
+      SERVER_PORT: 8083
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/citizen_report_service
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
+  auth-service:
+    environment:
+      <<: *env
+      SERVER_PORT: 8084
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/auth_service
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      MAIL_HOST: ${MAIL_HOST:-smtp.gmail.com}
+      MAIL_PORT: ${MAIL_PORT:-587}
+      MAIL_USERNAME: ${MAIL_USERNAME:-}
+      MAIL_PASSWORD: ${MAIL_PASSWORD:-}
+  frontend:
+    build:
+      context: ../frontend/Danang_EcoWarning_FE
+      args:
+        VITE_GOONG_MAP_TILES_KEY: ${VITE_GOONG_MAP_TILES_KEY:-}
+        VITE_OPENWEATHER_API_KEY: ${VITE_OPENWEATHER_API_KEY:-}
+    ports:
+      - "127.0.0.1:4173:80"
+    networks: [app-net]
+    depends_on: [search-service, citizen-report-service, auth-service, collector-data-service]
+
+volumes:
+  redis_data:
+    name: ${REDIS_VOLUME:-ecowarning_redis7_data}

@@ -1,0 +1,346 @@
+[
+  {
+    "quan": "Hải Châu",
+    "ten_ho_ao_am_pha": "Hồ đình làng Hải CHâu",
+    "vi_tri_ia_iem": "K48 Phan Châu Trinh, Phường Hải Châu 1",
+    "dien_tich": "705",
+    "chuc_nang": "Tôn tạo cảnh quan khu vực di tích đình làng Hải Châu, điều hoà khí hậu",
+    "on_vi_quan_ly": "UBND phường Hải Châu 1"
+  },
+  {
+    "quan": "Hải Châu",
+    "ten_ho_ao_am_pha": "Hồ Đảo Xanh",
+    "vi_tri_ia_iem": "Phường Hòa Cường Bắc",
+    "dien_tich": "169.730",
+    "chuc_nang": "Tôn tạo cảnh quan, điều tiết nước, điều hoà khí hậu",
+    "on_vi_quan_ly": "UBND quận Hải Châu và Công ty CP Tập đoàn Sungroup tại Đà Nẵng"
+  },
+  {
+    "quan": "Hải Châu",
+    "ten_ho_ao_am_pha": "Hồ Đò Xu",
+    "vi_tri_ia_iem": "Phường Hòa Cường Nam",
+    "dien_tich": "67.108",
+    "chuc_nang": "Hồ điều hòa, tiêu, thoát nước nhằm bảo đảm vệ sinh môi trường",
+    "on_vi_quan_ly": "UBND quận Hải Châu"
+  },
+  {
+    "quan": "Hải Châu",
+    "ten_ho_ao_am_pha": "Các ao, hồ, đầm, phá có nguồn gốc tự nhiên khác được giao cho các tổ chức, cá nhân khai thác, sử dụng",
+    "vi_tri_ia_iem": null,
+    "dien_tich": null,
+    "chuc_nang": null,
+    "on_vi_quan_ly": null
+  },
+  {
+    "quan": "Thanh Khê",
+    "ten_ho_ao_am_pha": "Hồ Công viên 29/3",
+    "vi_tri_ia_iem": "Phường Thạc Gián",
+    "dien_tich": "107.656",
+    "chuc_nang": "Tôn tạo cảnh quan, điều tiết nước và điều hòa khí hậu",
+    "on_vi_quan_ly": "UBND quận Thanh Khê"
+  },
+  {
+    "quan": "Thanh Khê",
+    "ten_ho_ao_am_pha": "Hồ Thạc Gián",
+    "vi_tri_ia_iem": "Phường Thạc Gián",
+    "dien_tich": "72.450",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Thanh Khê"
+  },
+  {
+    "quan": "Thanh Khê",
+    "ten_ho_ao_am_pha": "Hồ Vĩnh Trung",
+    "vi_tri_ia_iem": "Phường Vĩnh Trung",
+    "dien_tich": "17.000",
+    "chuc_nang": "Hồ điều hòa, tôn tạo cảnh quan",
+    "on_vi_quan_ly": "UBND quận Thanh Khê"
+  },
+  {
+    "quan": "Thanh Khê",
+    "ten_ho_ao_am_pha": "Hồ 30",
+    "vi_tri_ia_iem": "Phường Thanh Khê Đông",
+    "dien_tich": "20.000",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Thanh Khê"
+  },
+  {
+    "quan": "Thanh Khê",
+    "ten_ho_ao_am_pha": "Hồ Bàu Trảng",
+    "vi_tri_ia_iem": "Phường Thanh Khê Tây",
+    "dien_tich": "45.000",
+    "chuc_nang": "Hồ điều hòa, tôn tạo cảnh quan",
+    "on_vi_quan_ly": "UBND quận Thanh Khê"
+  },
+  {
+    "quan": "Sơn Trà",
+    "ten_ho_ao_am_pha": "Hồ Nghĩa Trũng",
+    "vi_tri_ia_iem": "Phường An Hải Tây",
+    "dien_tich": "13.414",
+    "chuc_nang": "Cảnh quan, điều hòa không khí",
+    "on_vi_quan_ly": "UBND quận Sơn Trà"
+  },
+  {
+    "quan": "Sơn Trà",
+    "ten_ho_ao_am_pha": "Hồ Xanh (Bãi Bụt)",
+    "vi_tri_ia_iem": "Phường Thọ Quang",
+    "dien_tich": "5.000",
+    "chuc_nang": "Cảnh quan, du lịch, điều hòa không khí",
+    "on_vi_quan_ly": "BQL Bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng"
+  },
+  {
+    "quan": "Sơn Trà",
+    "ten_ho_ao_am_pha": "Hồ cá (gần khu vực Đài phát sóng DRT)",
+    "vi_tri_ia_iem": "Phường Thọ Quang",
+    "dien_tich": "1.000",
+    "chuc_nang": "Nuôi cá",
+    "on_vi_quan_ly": "Hộ gia đình"
+  },
+  {
+    "quan": "Sơn Trà",
+    "ten_ho_ao_am_pha": "Khu vực nuôi trồng thủy sản (K78, K88 Lê Văn Duyệt)",
+    "vi_tri_ia_iem": "Phường Nại Hiên Đông",
+    "dien_tich": "14.000",
+    "chuc_nang": "Nuôi cá",
+    "on_vi_quan_ly": "Hộ gia đình"
+  },
+  {
+    "quan": "Sơn Trà",
+    "ten_ho_ao_am_pha": "Khu vực nuôi trồng thủy sản (đường Trần Thánh Tông)",
+    "vi_tri_ia_iem": "Phường Nại Hiên Đông",
+    "dien_tich": "7.000",
+    "chuc_nang": "Nuôi cá",
+    "on_vi_quan_ly": "Hộ gia đình"
+  },
+  {
+    "quan": "Sơn Trà",
+    "ten_ho_ao_am_pha": "Khu vực nuôi trồng thủy sản (đường Nguyễn Sáng)",
+    "vi_tri_ia_iem": "Phường Mân Thái",
+    "dien_tich": "7.000",
+    "chuc_nang": "Nuôi cá",
+    "on_vi_quan_ly": "Hộ gia đình"
+  },
+  {
+    "quan": "Sơn Trà",
+    "ten_ho_ao_am_pha": "Các ao, hồ, đầm, phá có nguồn gốc tự nhiên khác được giao cho các tổ chức, cá nhân khai thác, sử dụng",
+    "vi_tri_ia_iem": null,
+    "dien_tich": null,
+    "chuc_nang": null,
+    "on_vi_quan_ly": null
+  },
+  {
+    "quan": "Ngũ Hành Sơn",
+    "ten_ho_ao_am_pha": "Hồ Tứ Câu",
+    "vi_tri_ia_iem": "Phường Hoà Hải",
+    "dien_tich": "100.000",
+    "chuc_nang": "Cảnh quan",
+    "on_vi_quan_ly": "UBND quận Ngũ Hành Sơn"
+  },
+  {
+    "quan": "Ngũ Hành Sơn",
+    "ten_ho_ao_am_pha": "Hồ cá Đồng Nò",
+    "vi_tri_ia_iem": "Phường Hoà Hải",
+    "dien_tich": "520.000",
+    "chuc_nang": "Nuôi cá, cảnh quan",
+    "on_vi_quan_ly": "UBND quận Ngũ Hành Sơn"
+  },
+  {
+    "quan": "Ngũ Hành Sơn",
+    "ten_ho_ao_am_pha": "Hồ ven sông Cổ Cò",
+    "vi_tri_ia_iem": "Phường Hoà Hải",
+    "dien_tich": "140.000",
+    "chuc_nang": "Cảnh quan",
+    "on_vi_quan_ly": "UBND quận Ngũ Hành Sơn"
+  },
+  {
+    "quan": "Ngũ Hành Sơn",
+    "ten_ho_ao_am_pha": "Hồ Bàu Áng",
+    "vi_tri_ia_iem": "Phường Hoà Hải",
+    "dien_tich": "5.000",
+    "chuc_nang": "Cảnh quan",
+    "on_vi_quan_ly": "UBND quận Ngũ Hành Sơn"
+  },
+  {
+    "quan": "Ngũ Hành Sơn",
+    "ten_ho_ao_am_pha": "Ao cá Bàu Lác",
+    "vi_tri_ia_iem": "Phường Hoà Hải",
+    "dien_tich": "25.000",
+    "chuc_nang": "Cảnh quan",
+    "on_vi_quan_ly": "UBND quận Ngũ Hành Sơn"
+  },
+  {
+    "quan": "Ngũ Hành Sơn",
+    "ten_ho_ao_am_pha": "Các ao, hồ, đầm, phá có nguồn gốc tự nhiên khác được giao cho các tổ chức, cá nhân khai thác, sử dụng",
+    "vi_tri_ia_iem": null,
+    "dien_tich": null,
+    "chuc_nang": null,
+    "on_vi_quan_ly": null
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Hồ Bàu Tràm",
+    "vi_tri_ia_iem": "Phường Hoà Hiệp Nam",
+    "dien_tich": "600.000",
+    "chuc_nang": "Điều hòa, cảnh quan",
+    "on_vi_quan_ly": "UBND quận Liên Chiểu"
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Hồ sinh thái",
+    "vi_tri_ia_iem": "Phường Hoà Minh",
+    "dien_tich": "11.530",
+    "chuc_nang": "Điều hòa, cảnh quan",
+    "on_vi_quan_ly": "UBND quận Liên Chiểu"
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Hồ gần nhà máy nước",
+    "vi_tri_ia_iem": "Phường Hoà Khánh Nam",
+    "dien_tich": "2.800",
+    "chuc_nang": "Điều hòa, cảnh quan",
+    "on_vi_quan_ly": "UBND quận Liên Chiểu"
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Hồ Tùng Sơn",
+    "vi_tri_ia_iem": "Phường Hoà Khánh Nam",
+    "dien_tich": "2.100",
+    "chuc_nang": "Điều hòa, cảnh quan",
+    "on_vi_quan_ly": "UBND quận Liên Chiểu"
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Hồ khu TĐC Hoà Hiệp 4",
+    "vi_tri_ia_iem": "Phường Hoà Hiệp Nam",
+    "dien_tich": "8.000",
+    "chuc_nang": "Điều hòa, cảnh quan",
+    "on_vi_quan_ly": "UBND quận Liên Chiểu"
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Ao trong khu dân cư (05 ao)",
+    "vi_tri_ia_iem": "Phường Hoà Khánh Bắc",
+    "dien_tich": "8.000",
+    "chuc_nang": "Điều hòa, cảnh quan",
+    "on_vi_quan_ly": "UBND quận Liên Chiểu"
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Hồ trong khu công nghiệp (04 hồ)",
+    "vi_tri_ia_iem": "Phường Hoà Khánh Bắc",
+    "dien_tich": "350.000",
+    "chuc_nang": "Điều hòa, cảnh quan",
+    "on_vi_quan_ly": "BQL Khu công nghệ cao và các KCN Đà Nẵng"
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Hồ khu vực đường sắt",
+    "vi_tri_ia_iem": "Phường Hoà Khánh Bắc",
+    "dien_tich": "10.000",
+    "chuc_nang": "Điều hòa, cảnh quan",
+    "on_vi_quan_ly": "UBND quận Liên Chiểu"
+  },
+  {
+    "quan": "Liên Chiểu",
+    "ten_ho_ao_am_pha": "Các ao, hồ, đầm, phá có nguồn gốc tự nhiên khác được giao cho các tổ chức, cá nhân khai thác, sử dụng",
+    "vi_tri_ia_iem": null,
+    "dien_tich": null,
+    "chuc_nang": null,
+    "on_vi_quan_ly": null
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Hồ Bàu Tràm",
+    "vi_tri_ia_iem": "Phường Hoà Thọ Đông",
+    "dien_tich": "45.000",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Cẩm Lệ"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Hồ điều tiết Khuê Trung",
+    "vi_tri_ia_iem": "Phường Hoà Xuân",
+    "dien_tich": "25.000",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Cẩm Lệ"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Hồ điều hòa Trung tâm KDC Phong Bắc",
+    "vi_tri_ia_iem": "Phường Hoà Thọ Đông",
+    "dien_tich": "23.636",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Cẩm Lệ"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Hồ điều hòa số 4 (KDC số 3)",
+    "vi_tri_ia_iem": "Phường Hoà Xuân",
+    "dien_tich": "12.000",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Cẩm Lệ"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Hồ điều hòa số 2 (KDC số 1)",
+    "vi_tri_ia_iem": "Phường Hoà Xuân",
+    "dien_tich": "13.000",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Cẩm Lệ"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Hồ Bàu Cả",
+    "vi_tri_ia_iem": "Phường Hoà Thọ Đông",
+    "dien_tich": "25.000",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Cẩm Lệ"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Ao, hồ nuôi trồng thủy sản",
+    "vi_tri_ia_iem": "Phường Hoà Xuân, Hoà Thọ Đông",
+    "dien_tich": "150.000",
+    "chuc_nang": "Nuôi cá",
+    "on_vi_quan_ly": "Hộ gia đình"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Hồ điều hòa 02 nút giao thông Hoà Cầm",
+    "vi_tri_ia_iem": "Phường Hoà Thọ Tây",
+    "dien_tich": "16.100",
+    "chuc_nang": "Hồ điều hòa",
+    "on_vi_quan_ly": "UBND quận Cẩm Lệ"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Ao, hồ chứa nước thải",
+    "vi_tri_ia_iem": "Phường Hoà Phát",
+    "dien_tich": "20.000",
+    "chuc_nang": "Chứa nước thải",
+    "on_vi_quan_ly": "UBND quận Cẩm Lệ"
+  },
+  {
+    "quan": "Cẩm Lệ",
+    "ten_ho_ao_am_pha": "Các ao, hồ, đầm, phá có nguồn gốc tự nhiên khác được giao cho các tổ chức, cá nhân khai thác, sử dụng",
+    "vi_tri_ia_iem": null,
+    "dien_tich": null,
+    "chuc_nang": null,
+    "on_vi_quan_ly": null
+  },
+  {
+    "quan": "Hòa Vang",
+    "ten_ho_ao_am_pha": "Bàu Sấu",
+    "vi_tri_ia_iem": "Thôn Hoà Khương, xã Hoà Khương",
+    "dien_tich": "5.000",
+    "chuc_nang": "Điều hòa",
+    "on_vi_quan_ly": "UBND xã Hòa Khương"
+  },
+  {
+    "quan": "Hòa Vang",
+    "ten_ho_ao_am_pha": "Các ao, hồ, đầm, phá có nguồn gốc tự nhiên khác được giao cho các tổ chức, cá nhân khai thác, sử dụng",
+    "vi_tri_ia_iem": null,
+    "dien_tich": null,
+    "chuc_nang": null,
+    "on_vi_quan_ly": null
+  }
+]

@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS report_types (id BIGSERIAL PRIMARY KEY, type_code VARCHAR(50) UNIQUE NOT NULL, name VARCHAR(255) NOT NULL, description TEXT);
+CREATE TABLE IF NOT EXISTS reports (id BIGSERIAL PRIMARY KEY, report_type_id BIGINT NOT NULL REFERENCES report_types(id), latitude NUMERIC(10,8) NOT NULL, longitude NUMERIC(11,8) NOT NULL, event_start_time TIMESTAMPTZ NOT NULL, event_end_time TIMESTAMPTZ, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), image_url VARCHAR(255), image_public_id VARCHAR(255), address_text TEXT, report_description TEXT, status VARCHAR(20) NOT NULL DEFAULT 'PENDING', details JSONB);
+ALTER TABLE reports ADD COLUMN IF NOT EXISTS owner_email VARCHAR(320);
+ALTER TABLE reports ADD COLUMN IF NOT EXISTS incident_state VARCHAR(20) NOT NULL DEFAULT 'UNKNOWN';
+ALTER TABLE reports ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ NOT NULL DEFAULT now();
+ALTER TABLE reports ADD COLUMN IF NOT EXISTS request_key VARCHAR(100);
+ALTER TABLE reports ADD COLUMN IF NOT EXISTS merged_into BIGINT REFERENCES reports(id);
+ALTER TABLE reports ADD COLUMN IF NOT EXISTS version BIGINT NOT NULL DEFAULT 0;
+CREATE UNIQUE INDEX IF NOT EXISTS report_request_key ON reports(owner_email, request_key);
+CREATE INDEX IF NOT EXISTS reports_map_lookup ON reports(status, incident_state, updated_at DESC);
+CREATE INDEX IF NOT EXISTS reports_owner_lookup ON reports(owner_email, created_at DESC);
+CREATE TABLE IF NOT EXISTS incident_events (id BIGSERIAL PRIMARY KEY, report_id BIGINT NOT NULL REFERENCES reports(id), actor_email VARCHAR(320) NOT NULL, event_type VARCHAR(40) NOT NULL, note VARCHAR(1000) NOT NULL, image_url TEXT, created_at TIMESTAMPTZ NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS incident_events_report ON incident_events(report_id, created_at);
+CREATE TABLE IF NOT EXISTS watch_areas (id BIGSERIAL PRIMARY KEY, owner_email VARCHAR(320) NOT NULL, name VARCHAR(100) NOT NULL, latitude DOUBLE PRECISION NOT NULL, longitude DOUBLE PRECISION NOT NULL, radius_km DOUBLE PRECISION NOT NULL CHECK (radius_km BETWEEN 0.1 AND 20), created_at TIMESTAMPTZ NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS incident_notifications (id BIGSERIAL PRIMARY KEY, owner_email VARCHAR(320) NOT NULL, report_id BIGINT NOT NULL REFERENCES reports(id), event_id BIGINT NOT NULL REFERENCES incident_events(id), message VARCHAR(1000) NOT NULL, read_at TIMESTAMPTZ, created_at TIMESTAMPTZ NOT NULL DEFAULT now(), UNIQUE(owner_email,event_id));
+INSERT INTO report_types(type_code,name) VALUES ('FLOOD','Ngập lụt'),('FALLEN_TREE','Cây ngã / đổ'),('FOREST_FIRE','Cháy rừng'),('SEVERE_TRAFFIC_JAM','Kẹt xe nghiêm trọng'),('STORM','Bão / áp thấp'),('HIGH_WIND','Gió giật'),('LIGHTNING','Sét'),('FLASH_FLOOD','Lũ quét'),('LANDSLIDE','Sạt lở'),('URBAN_FIRE','Cháy nổ'),('POWER_LINE_DOWN','Đứt dây điện') ON CONFLICT(type_code) DO NOTHING;

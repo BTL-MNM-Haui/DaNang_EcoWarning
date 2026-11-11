@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T18:13:46.8008475Z",
+  "title": "Design System: DaNang EcoWarning",
+  "extensions": {
+    "motion": [
+      {
+        "name": "feedback",
+        "value": "150ms ease",
+        "purpose": "Phản hồi hover/focus, tắt trong reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1150px"
+      },
+      {
+        "name": "mobile-navigation",
+        "value": "850px"
+      },
+      {
+        "name": "phone",
+        "value": "520px"
+      }
+    ],
+    "shadows": [
+      {
+        "name": "map-marker",
+        "value": "0 2px 5px #0003",
+        "purpose": "Đọc marker trên bản đồ, không dùng cho panel."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hành động chính của tác vụ.",
+      "html": "<button class=\"ds-primary\">Gửi báo cáo</button>",
+      "css": ".ds-primary{font:500 14px Geist,system-ui,sans-serif;background:var(--ink,#172329);color:white;padding:10px 16px;min-height:42px;border:1px solid var(--ink,#172329);border-radius:6px;cursor:pointer}.ds-primary:hover{background:#344650}.ds-primary:focus-visible{outline:3px solid #1d5fbf;outline-offset:3px}.ds-primary:disabled{opacity:.55;cursor:not-allowed}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Bản đồ và sổ diễn biến sự cố",
+    "overview": "Bề mặt phẳng, điều hướng trung tính, dữ liệu thật và các trạng thái có giải thích.",
+    "keyCharacteristics": [
+      "Map-first",
+      "Hai trạng thái độc lập",
+      "Dữ liệu có nguồn và tuổi"
+    ],
+    "dos": [
+      "Giữ nhãn cạnh màu trạng thái",
+      "Dùng dữ liệu API và số 0 thật"
+    ],
+    "donts": [
+      "Không bịa số đếm hay xu hướng",
+      "Không biến dữ liệu lịch sử thành thông tin hiện tại"
+    ]
+  }
+}

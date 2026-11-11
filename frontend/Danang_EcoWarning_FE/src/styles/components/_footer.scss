@@ -1,0 +1,17 @@
+@import "../../styles/abstracts/variables";
+
+.footer {
+  height: $footer-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-secondary;
+  border-top: 1px solid $border-color;
+  width: 100%;
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: $text-secondary;
+  }
+}

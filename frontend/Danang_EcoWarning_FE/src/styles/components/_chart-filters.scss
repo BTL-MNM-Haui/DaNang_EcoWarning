@@ -1,0 +1,33 @@
+.chart-filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 180px;
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $text-secondary;
+      margin-bottom: 5px;
+    }
+
+    select {
+      padding: 8px 12px;
+      font-size: 0.95rem;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      background-color: $bg-secondary;
+
+      &:focus {
+        outline: 2px solid $primary-color;
+        border-color: $primary-color;
+      }
+    }
+  }
+}

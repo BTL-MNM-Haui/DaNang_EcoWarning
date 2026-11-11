@@ -1,0 +1,44 @@
+@import "../../styles/abstracts/variables";
+
+.search-bar-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 350px;
+  z-index: 10;
+
+  .search-input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-results {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    background: $bg-secondary;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+
+    li {
+      padding: 10px 15px;
+      cursor: pointer;
+      border-bottom: 1px solid $border-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: $bg-primary;
+      }
+    }
+  }
+}

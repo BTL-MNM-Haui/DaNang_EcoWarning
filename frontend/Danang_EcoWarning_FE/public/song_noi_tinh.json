@@ -1,0 +1,102 @@
+[
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5",
+    "ten_song_suoi": "Sông Vu Gia - Thu Bồn",
+    "ia_danh": null,
+    "chay_ra": "Biển",
+    "chieu_dai": null,
+    "dien_tich_luu_vuc": null,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1",
+    "ten_song_suoi": "Sông Vu Gia",
+    "ia_danh": null,
+    "chay_ra": "Biển",
+    "chieu_dai": null,
+    "dien_tich_luu_vuc": null,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1.14",
+    "ten_song_suoi": "Sông Tuý Loan",
+    "ia_danh": "Huyện Hoà Vang",
+    "chay_ra": "Sông Vu Gia",
+    "chieu_dai": 29.0,
+    "dien_tich_luu_vuc": 287.0,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1.14.1",
+    "ten_song_suoi": "Phụ lưu số 1 (Khe suối On Châu)",
+    "ia_danh": "Xã Hoà Nhơn, Huyện Hoà Vang",
+    "chay_ra": "Sông Túy Loan",
+    "chieu_dai": 12.0,
+    "dien_tich_luu_vuc": 39.0,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1.14.2",
+    "ten_song_suoi": "Sông Hội Phước",
+    "ia_danh": "Xã Hoà Phú, Huyện Hoà Vang",
+    "chay_ra": "Sông Túy Loan",
+    "chieu_dai": 18.0,
+    "dien_tich_luu_vuc": 99.0,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1.15",
+    "ten_song_suoi": "Sông Cu Đê",
+    "ia_danh": "Quận Liên Chiểu, Huyện Hoà Vang",
+    "chay_ra": "Biển",
+    "chieu_dai": 38.0,
+    "dien_tich_luu_vuc": 410.0,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1.15.1",
+    "ten_song_suoi": "Sông Bắc",
+    "ia_danh": "Xã Hoà Bắc, Huyện Hoà Vang",
+    "chay_ra": "Sông Cu Đê",
+    "chieu_dai": 25.0,
+    "dien_tich_luu_vuc": 221.0,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1.16",
+    "ten_song_suoi": "Sông Hàn",
+    "ia_danh": "Quận Hải Châu, Sơn Trà",
+    "chay_ra": "Biển",
+    "chieu_dai": 7.7,
+    "dien_tich_luu_vuc": 76.0,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1.17",
+    "ten_song_suoi": "Sông Cẩm Lệ",
+    "ia_danh": "Quận Cẩm Lệ",
+    "chay_ra": "Sông Hàn",
+    "chieu_dai": 7.5,
+    "dien_tich_luu_vuc": 34.0,
+    "ghi_chu": null
+  },
+  {
+    "phan_loai": "Các sông trên địa bàn thành phố Đà Nẵng (sông nội tỉnh) thuộc lưu vực sông lớn",
+    "ma_song": "5.1.18",
+    "ten_song_suoi": "Sông Cổ Cò (Phú Lộc)",
+    "ia_danh": "Quận Ngũ Hành Sơn",
+    "chay_ra": "Biển",
+    "chieu_dai": 18.0,
+    "dien_tich_luu_vuc": 50.0,
+    "ghi_chu": null
+  }
+]

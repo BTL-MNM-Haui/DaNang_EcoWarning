@@ -1,0 +1,67 @@
+@import "../abstracts/variables";
+
+.map-page-layout {
+  display: flex;
+  transition: margin-right 0.3s ease-in-out;
+
+  .map-container {
+    flex-grow: 1;
+    height: calc(100vh - #{$footer-height});
+    position: relative;
+
+    .map-view {
+      width: 100%;
+      height: 100%;
+    }
+
+    .asset-selector-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      background: transparent;
+      padding: 10px 15px;
+      border-radius: 8px;
+
+      label {
+        margin-right: 10px;
+        font-size: 0.9rem;
+        color: $text-secondary;
+      }
+      select {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid $border-color;
+      }
+    }
+  }
+
+  &.profile-open .map-container {
+    margin-right: 400px;
+  }
+  .custom-marker {
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .react-icon-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    transition: transform 0.1s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

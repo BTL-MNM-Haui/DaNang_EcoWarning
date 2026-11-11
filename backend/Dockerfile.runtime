@@ -1,0 +1,6 @@
+# Local verification after Maven has produced each module's target/*.jar.
+FROM eclipse-temurin:21-jre-jammy
+WORKDIR /app
+ARG MODULE
+COPY ${MODULE}/target/*.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]

@@ -1,0 +1,60 @@
+@import "../abstracts/variables";
+
+.asset-selector-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+
+  .asset-button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $text-primary;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .button-title {
+      color: $text-secondary;
+    }
+
+    .button-percentage {
+      font-weight: 700;
+      color: $text-primary;
+    }
+
+    &:hover {
+      background-color: #f4f4f4;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba($primary-color, 0.5);
+
+      .button-title,
+      .button-percentage {
+        color: #ffffff;
+      }
+    }
+  }
+}

@@ -1,0 +1,233 @@
+[
+  {
+    "ten_ho_chua": "Hồ Đồng Nghệ",
+    "nguon_nuoc_khai_thac": "Hồ Đồng Nghệ",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 2331.0,
+    "dung_tich_toan_bo": 17.17,
+    "dung_tich_huu_ich": 15.87,
+    "vi_tri_hanh_chinh": "Thôn Phước Sơn, xã Hòa Khương, huyện Hòa Vang, TP Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Hòa Trung",
+    "nguon_nuoc_khai_thac": "Hồ Hòa Trung",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 1439.6,
+    "dung_tich_toan_bo": 1.01,
+    "dung_tich_huu_ich": 10.67,
+    "vi_tri_hanh_chinh": "Thôn Tân Ninh, xã Hòa Liên, huyện Hòa Vang, TP Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp, cấp nước thô sinh hoạt",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Hố Cau",
+    "nguon_nuoc_khai_thac": "Hồ Hố Cau",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 96.736,
+    "dung_tich_toan_bo": 0.303,
+    "dung_tich_huu_ich": 0.3,
+    "vi_tri_hanh_chinh": "Thôn Hội Phước, xã Hòa Phú, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Đồng Tréo",
+    "nguon_nuoc_khai_thac": "Hồ Đồng Tréo",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 115.511,
+    "dung_tich_toan_bo": 0.431,
+    "dung_tich_huu_ich": 0.347,
+    "vi_tri_hanh_chinh": "Thôn An Châu, xã Hòa Phú, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Hố Trảy",
+    "nguon_nuoc_khai_thac": "Hồ Hố Trảy",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.076,
+    "dung_tich_huu_ich": 0.068,
+    "vi_tri_hanh_chinh": "Thôn Hòa Phước, xã Hòa Phú, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Trước Đông",
+    "nguon_nuoc_khai_thac": "Hồ Trước Đông",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 215.17,
+    "dung_tich_toan_bo": 1.48,
+    "dung_tich_huu_ich": 1.37,
+    "vi_tri_hanh_chinh": "Thôn Trước Đông, xã Hòa Nhơn, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Sỏi",
+    "nguon_nuoc_khai_thac": "Hồ Sỏi",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 89.26,
+    "dung_tich_toan_bo": 0.54,
+    "dung_tich_huu_ich": 0.48,
+    "vi_tri_hanh_chinh": "Thôn Sỏi, xã Hòa Sơn, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Hóc Khế",
+    "nguon_nuoc_khai_thac": "Hồ Hóc Khế",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 204.65,
+    "dung_tich_toan_bo": 0.94,
+    "dung_tich_huu_ich": 0.88,
+    "vi_tri_hanh_chinh": "Thôn Phò Nam, xã Hòa Bắc, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Bàu Nghè",
+    "nguon_nuoc_khai_thac": "Hồ Bàu Nghè",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 11.23,
+    "dung_tich_toan_bo": 0.09,
+    "dung_tich_huu_ich": 0.08,
+    "vi_tri_hanh_chinh": "Thôn An Ngãi Đông, xã Hòa Sơn, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Hương",
+    "nguon_nuoc_khai_thac": "Hồ Hương",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": 50.0,
+    "dung_tich_toan_bo": 0.28,
+    "dung_tich_huu_ich": 0.25,
+    "vi_tri_hanh_chinh": "Thôn Quan Nam 3, xã Hòa Liên, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Đá Hàm",
+    "nguon_nuoc_khai_thac": "Hồ Đá Hàm",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.16,
+    "dung_tich_huu_ich": 0.15,
+    "vi_tri_hanh_chinh": "Thôn Tà Lang, xã Hòa Bắc, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Khe Răm",
+    "nguon_nuoc_khai_thac": "Hồ Khe Răm",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.21,
+    "dung_tich_huu_ich": 0.19,
+    "vi_tri_hanh_chinh": "Thôn Nam Yên, xã Hòa Bắc, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Hố Dư",
+    "nguon_nuoc_khai_thac": "Hồ Hố Dư",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.05,
+    "dung_tich_huu_ich": 0.04,
+    "vi_tri_hanh_chinh": "Thôn An Ngãi Tây, xã Hòa Sơn, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Hố Hoàng",
+    "nguon_nuoc_khai_thac": "Hồ Hố Hoàng",
+    "thuoc_he_thong_song": "Không có",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.24,
+    "dung_tich_huu_ich": 0.22,
+    "vi_tri_hanh_chinh": "Thôn Đông Lâm, xã Hòa Phú, huyện Hòa Vang, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Cấp nước tưới nông nghiệp",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ sen (sân bay)",
+    "nguon_nuoc_khai_thac": "Hồ sen (sân bay)",
+    "thuoc_he_thong_song": null,
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.1,
+    "dung_tich_huu_ich": null,
+    "vi_tri_hanh_chinh": null,
+    "muc_ich_su_dung": null,
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ khu quân đội (sân bay)",
+    "nguon_nuoc_khai_thac": "Hồ khu quân đội (sân bay)",
+    "thuoc_he_thong_song": "Sông Cầu Đỏ",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.05,
+    "dung_tich_huu_ich": null,
+    "vi_tri_hanh_chinh": "Sân bay Đà Nẵng",
+    "muc_ich_su_dung": "Hồ điều hòa, cảnh quan",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ gần nhà máy nước",
+    "nguon_nuoc_khai_thac": "Hồ gần nhà máy nước",
+    "thuoc_he_thong_song": "Sông Cầu Đỏ",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.1,
+    "dung_tich_huu_ich": 0.05,
+    "vi_tri_hanh_chinh": "KCN Hòa Khánh, quận Liên Chiểu, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Điều hòa",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Tùng Sơn",
+    "nguon_nuoc_khai_thac": "Hồ Tùng Sơn",
+    "thuoc_he_thong_song": "Sông Cầu Đỏ",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.01,
+    "dung_tich_huu_ich": 0.005,
+    "vi_tri_hanh_chinh": "KDC Tùng Sơn, quận Liên Chiểu, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Điều hòa, cảnh quan",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ sinh thái",
+    "nguon_nuoc_khai_thac": "Hồ sinh thái",
+    "thuoc_he_thong_song": "Sông Cầu Đỏ",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.1,
+    "dung_tich_huu_ich": 0.05,
+    "vi_tri_hanh_chinh": "KDC Hòa Minh, quận Liên Chiểu, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Điều hòa, cảnh quan",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ Bàu Tràm",
+    "nguon_nuoc_khai_thac": "Hồ Bàu Tràm",
+    "thuoc_he_thong_song": "Sông Cầu Đỏ",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.3,
+    "dung_tich_huu_ich": 0.1,
+    "vi_tri_hanh_chinh": "KĐT Bàu Tràm, quận Liên Chiểu, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Điều hòa, cảnh quan",
+    "ghi_chu": null
+  },
+  {
+    "ten_ho_chua": "Hồ điều hòa (KCN Hòa Khánh)",
+    "nguon_nuoc_khai_thac": "Hồ điều hòa (KCN Hòa Khánh)",
+    "thuoc_he_thong_song": "Sông Cầu Đỏ",
+    "dien_tich_mat_nuoc_103": null,
+    "dung_tich_toan_bo": 0.1,
+    "dung_tich_huu_ich": 0.05,
+    "vi_tri_hanh_chinh": "KCN Hòa Khánh, quận Liên Chiểu, TP. Đà Nẵng",
+    "muc_ich_su_dung": "Điều hòa, cảnh quan",
+    "ghi_chu": null
+  }
+]

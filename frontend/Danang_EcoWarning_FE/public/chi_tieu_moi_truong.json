@@ -1,0 +1,30 @@
+[
+  {
+    "phan_loai": "Tỷ lệ chất thải nguy hại được thu gom, xử lý",
+    "nam_2019": 100,
+    "nam_2020": 100,
+    "nam_2021": 100,
+    "2022": 100
+  },
+  {
+    "phan_loai": "Tỷ lệ chất thải rắn sinh hoạt được thu gom, xử lý",
+    "nam_2019": 95,
+    "nam_2020": 100,
+    "nam_2021": 100,
+    "2022": 100
+  },
+  {
+    "phan_loai": "Tỷ lệ khu công nghiệp, khu chế xuất, khu công nghệ cao đang hoạt động có hệ thống xử lý nước thải tập trung đạt tiêu chuẩn môi trường",
+    "nam_2019": 100,
+    "nam_2020": 100,
+    "nam_2021": 100,
+    "2022": 100
+  },
+  {
+    "phan_loai": "Tỷ lệ cụm công nghiệp đang hoạt động có hệ thống xử lý nước thải tập trung đạt tiêu chuẩn môi trường",
+    "nam_2019": 100,
+    "nam_2020": 100,
+    "nam_2021": 100,
+    "2022": 100
+  }
+]

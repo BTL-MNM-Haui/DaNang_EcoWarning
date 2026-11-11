@@ -1,0 +1,29 @@
+[
+  {
+    "phan_loai": "Mực nước sông Cẩm Lệ",
+    "on_vi_tinh": "Cm",
+    "nam_2019": 7,
+    "nam_2020": 20,
+    "nam_2021": 9,
+    "nam_2022": 14,
+    "2023": 12
+  },
+  {
+    "phan_loai": "Trạm quan trắc Cao nhất",
+    "on_vi_tinh": "Cm",
+    "nam_2019": 101,
+    "nam_2020": 215,
+    "nam_2021": 133,
+    "nam_2022": 214,
+    "2023": 150
+  },
+  {
+    "phan_loai": "Trạm quan trắc Thấp nhất",
+    "on_vi_tinh": "Cm",
+    "nam_2019": -76,
+    "nam_2020": -63,
+    "nam_2021": -77,
+    "nam_2022": -84,
+    "2023": -89
+  }
+]

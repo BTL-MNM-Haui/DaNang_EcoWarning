@@ -1,0 +1,52 @@
+# Kết quả triển khai ngày 12/11/2026
+
+Phạm vi: thiết kế lại FE bằng taste-skill + impeccable; thực hiện luồng báo cáo và các cải tiến ngoài AI. Source AI được đối chiếu với nhánh ban đầu và không có thay đổi.
+
+## Đã triển khai
+
+- [x] Vòng đời báo cáo; tách xác minh/diễn biến; quyền quản lý; lịch sử; chống gửi trùng theo owner và idempotency key.
+- [x] Danh sách công khai/cá nhân/quản lý có phân trang và bộ lọc; bản đồ; chi tiết; cập nhật cộng đồng; gộp báo cáo với liên kết gốc và khóa cập nhật đồng thời.
+- [x] Khu vực quan tâm, thông báo trong ứng dụng và thống kê nhóm điểm có nhiều báo cáo ngập đã xác minh.
+- [x] Nhập quan sát CSV có ánh xạ cột, xem trước, kiểm tra đơn vị/bản ghi trùng, tải lỗi và lịch sử nhập.
+- [x] Danh mục đối tượng/chỉ số/năm động; giữ giá trị nguồn; chuỗi trùng thời điểm hiển thị bảng để đối chiếu.
+- [x] Giao diện map-first công khai; biểu mẫu dùng multipart; ảnh nén; định vị; bản nháp; gợi ý báo cáo gần đây; trạng thái lỗi và thử lại.
+- [x] Thiết kế lại tài khoản, hồ sơ và thời tiết; từng nguồn thời tiết tải độc lập.
+- [x] Logo, favicon và banner SVG mới; README dùng banner trong repo.
+- [x] Cấu hình dev/production proxy thống nhất, script cấu hình và khởi động, sao lưu database, Flyway migration báo cáo, Docker Java 21 runtime được thay mới.
+- [x] Thay các secret ghi cứng trong cấu hình đang phát hành bằng biến môi trường.
+
+## Kiểm chứng đã thực hiện
+
+- Build frontend production thành công; ESLint phần mới `src/workspace` và `src/App.jsx` qua.
+- Bốn module Java liên quan đóng gói thành công. Hai bài kiểm tra bảo mật/validation `IncidentSecurityTests`: 0 lỗi, 0 bỏ qua.
+- 28 lượt kiểm tra HTTP tích hợp qua: quyền, mục đích token, owner, retry, xác minh, xung đột phiên bản, kết thúc, gộp, thông báo, catalog, CSV lỗi và CSV hợp lệ/commit lại.
+- 19 kiểm tra trình duyệt qua ở 1440/768/390px và các luồng công khai, menu điện thoại, lưu nháp, gửi thật sang chi tiết, danh sách của tôi, chặn UI quản lý và dữ liệu thật. Fixture tạm được xóa sau khi kiểm tra.
+- Bản Docker frontend chạy cổng 4173; trang chính và proxy API báo cáo/catalog trả HTTP 200.
+- Đã sao lưu ba database trước migration. Flyway V1/V2 chạy thành công trên database hiện có.
+
+Đây là kiểm tra chức năng local, không phải kiểm thử tải hoặc chứng minh độ chính xác dự báo. Không coi package có `-DskipTests` là toàn bộ bộ test Java đã qua. Các ApplicationTests phụ thuộc hạ tầng cũ chưa được chứng minh chạy độc lập.
+
+## Giới hạn có chủ đích và phần cần tiếp tục
+
+- Không triển khai AI, dự báo ngập hay chỉ đường an toàn. Dữ liệu chưa đủ để cam kết an toàn tuyến đường hoặc quan hệ nhân quả mưa/ngập.
+- Thông báo trong ứng dụng; chưa có email/push tự động cho sự cố.
+- Upload ảnh đồng bộ có timeout và nằm ngoài transaction; chưa dùng hàng đợi nền. Chưa kiểm chứng lần gửi OTP/Cloudinary thực tế trong phiên kiểm thử này.
+- Gợi ý trùng dựa trên tối đa 200 báo cáo cùng loại gần đây; chưa phải truy vấn địa lý toàn bộ dữ liệu.
+- Thống kê nhóm theo ô 0,01 độ; không đồng nhất với phường hoặc cùng địa chỉ.
+- CSV nhập quan sát mới cho đối tượng/chỉ số có sẵn; không tự tạo đối tượng, không tự sửa đơn vị hay ghi đè số liệu cũ.
+- Dữ liệu cũ chưa có owner không được gán lại tùy ý. Giữ nguyên các báo cáo cũ với diễn biến chưa rõ.
+- Chưa đo baseline tải/p50/p95 trước và sau; không công bố số liệu hiệu năng cải thiện tùy ý.
+
+## Thiết kế và đánh giá
+
+Taste direction: achromatic-ledger, seed 790971946. Giao diện dùng Geist, nền xám xanh nhẹ, panel trắng phẳng, màu cho dữ liệu/trạng thái; bản đồ và hai chiều trạng thái là yếu tố chính.
+
+Đã chạy detector của impeccable một lần; chỉ có hai cảnh báo về độ phổ biến của Geist. Giữ font này theo direction của taste-skill. Đã chụp và kiểm tra giao diện desktop/tablet/mobile, sửa lỗi canvas làm tăng chiều cao và tránh overlay che attribution bản đồ.
+
+Reviewer độc lập không khởi chạy được do model route của công cụ không khả dụng. Đã dùng quy trình reviewer/documenter dự phòng trong cùng luồng; đây không phải đánh giá độc lập. DESIGN.md và .impeccable/design.json được ghi từ source cuối cùng.
+
+## Phát hành
+
+Repo đích người dùng chỉ định: https://github.com/BTL-MNM-Haui/DaNang_EcoWarning.git.
+
+Bản phát hành tạo commit khởi đầu mới từ cây source đã làm sạch để không mang theo secret trong lịch sử repo gốc. Nhánh và remote gốc vẫn được giữ trên máy. File .env, dump database, ảnh kiểm tra và cache không đưa lên repo.
