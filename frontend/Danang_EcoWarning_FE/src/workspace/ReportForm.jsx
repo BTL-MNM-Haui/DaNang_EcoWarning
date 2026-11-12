@@ -198,6 +198,10 @@ export default function ReportForm() {
         </div>
         <Link to="/">Về bản đồ</Link>
       </div>
+      <p className="ec-task-guide">
+        Chọn vị trí <span aria-hidden="true">→</span> Mô tả điều bạn thấy{" "}
+        <span aria-hidden="true">→</span> Gửi để xác minh
+      </p>
       <form className="ec-report-grid" onSubmit={submit}>
         <section className="ec-panel">
           <h2>Thông tin ghi nhận</h2>

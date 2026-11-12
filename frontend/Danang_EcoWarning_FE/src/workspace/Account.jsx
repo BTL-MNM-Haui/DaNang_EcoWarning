@@ -106,147 +106,167 @@ export function AuthPage({ mode = "login" }) {
       <Link className="ec-auth-back" to="/">
         ← Xem bản đồ công khai
       </Link>
-      <section className="ec-auth-sheet">
-        <img
-          className="ec-auth-logo"
-          src="/brand/logo.svg"
-          alt="EcoWarning Đà Nẵng"
-        />
-        <h1>{titles[mode]}</h1>
-        <p>
-          {mode === "register"
-            ? "Góp thêm một ghi nhận để cộng đồng có thông tin mới hơn."
-            : "Theo dõi khu vực, chia sẻ ghi nhận và nhận cập nhật sự cố."}
-        </p>
-        {success ? (
-          <div role="status">
-            <p className="ec-success">{success}</p>
-            <Link className="ec-button" to="/login">
-              Đến trang đăng nhập
-            </Link>
-          </div>
-        ) : (
-          <form onSubmit={submit}>
-            {(mode === "register" || step === 0) &&
-              input("email", "Email", "email", {
-                autoComplete: "email",
-                maxLength: 254,
-              })}
-            {mode === "register" && (
-              <div className="ec-filter-grid">
-                {input("lastName", "Họ", "text", {
-                  autoComplete: "family-name",
-                  maxLength: 50,
-                })}
-                {input("firstName", "Tên", "text", {
-                  autoComplete: "given-name",
-                  maxLength: 50,
-                })}
-              </div>
-            )}
-            {mode === "register" && (
-              <label>
-                Số điện thoại (tùy chọn)
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => field("phone", e.target.value)}
-                  autoComplete="tel"
-                  maxLength={15}
-                />
-              </label>
-            )}
-            {((mode === "login" && step === 0) || mode === "register") &&
-              input("password", "Mật khẩu", "password", {
-                autoComplete:
-                  mode === "login" ? "current-password" : "new-password",
-                minLength: mode === "register" ? 8 : undefined,
-              })}
-            {mode === "register" && (
-              <>
-                <p className="ec-muted">
-                  Ít nhất 8 ký tự, gồm chữ hoa, chữ thường và số.
-                </p>
-                {input("confirmPassword", "Nhập lại mật khẩu", "password", {
-                  autoComplete: "new-password",
-                  minLength: 8,
-                })}
-              </>
-            )}
-            {step === 1 && mode !== "register" && (
-              <>
-                <p>
-                  Mã xác minh được gửi đến <strong>{form.email}</strong>.
-                </p>
-                {input("otp", "Mã OTP gồm 6 chữ số", "text", {
-                  inputMode: "numeric",
-                  autoComplete: "one-time-code",
-                  pattern: "[0-9]{6}",
-                  maxLength: 6,
-                })}
-              </>
-            )}
-            {mode === "forgot" && step === 2 && (
-              <>
-                {input("newPassword", "Mật khẩu mới", "password", {
-                  autoComplete: "new-password",
-                  minLength: 8,
-                })}
-                <p className="ec-muted">
-                  Ít nhất 8 ký tự, gồm chữ hoa, chữ thường và số.
-                </p>
-                {input("confirmPassword", "Nhập lại mật khẩu", "password", {
-                  autoComplete: "new-password",
-                  minLength: 8,
-                })}
-              </>
-            )}
-            {error && (
-              <p role="alert" className="ec-error">
-                {error}
-              </p>
-            )}
-            <button className="ec-button" disabled={busy}>
-              {busy
-                ? "Đang xử lý…"
-                : mode === "register"
-                  ? "Tạo tài khoản"
-                  : mode === "login"
-                    ? step
-                      ? "Xác nhận OTP"
-                      : "Tiếp tục đăng nhập"
-                    : step === 2
-                      ? "Lưu mật khẩu mới"
-                      : step === 1
-                        ? "Xác minh OTP"
-                        : "Gửi mã khôi phục"}
-            </button>
-            {step === 1 && (
-              <button
-                type="button"
-                className="ec-auth-reset"
-                onClick={() => {
-                  setStep(0);
-                  setError("");
-                }}
-                disabled={busy}
-              >
-                Đổi email hoặc gửi lại mã
-              </button>
-            )}
-          </form>
-        )}
-        <div className="ec-auth-links">
-          {mode === "login" ? (
-            <>
-              <Link to="/register">Tạo tài khoản</Link>
-              <Link to="/forgot-password">Quên mật khẩu?</Link>
-            </>
+      <div className="ec-auth-layout">
+        <aside className="ec-auth-intro">
+          <img src="/brand/mark.svg" alt="" />
+          <h2>
+            Cùng cập nhật
+            <br />
+            Đà Nẵng.
+          </h2>
+          <p>
+            Một ghi nhận đúng vị trí và thời điểm giúp cộng đồng có thêm thông
+            tin để đối chiếu.
+          </p>
+          <ul>
+            <li>Tra cứu bản đồ sự cố công khai</li>
+            <li>Theo dõi khu vực bạn quan tâm</li>
+            <li>Chia sẻ ảnh và diễn biến quan sát được</li>
+          </ul>
+          <Link to="/">Khám phá bản đồ →</Link>
+        </aside>
+        <section className="ec-auth-sheet">
+          <img
+            className="ec-auth-logo"
+            src="/brand/logo.svg"
+            alt="EcoWarning Đà Nẵng"
+          />
+          <h1>{titles[mode]}</h1>
+          <p>
+            {mode === "register"
+              ? "Góp thêm một ghi nhận để cộng đồng có thông tin mới hơn."
+              : "Theo dõi khu vực, chia sẻ ghi nhận và nhận cập nhật sự cố."}
+          </p>
+          {success ? (
+            <div role="status">
+              <p className="ec-success">{success}</p>
+              <Link className="ec-button" to="/login">
+                Đến trang đăng nhập
+              </Link>
+            </div>
           ) : (
-            <Link to="/login">Đã có tài khoản? Đăng nhập</Link>
+            <form onSubmit={submit}>
+              {(mode === "register" || step === 0) &&
+                input("email", "Email", "email", {
+                  autoComplete: "email",
+                  maxLength: 254,
+                })}
+              {mode === "register" && (
+                <div className="ec-filter-grid">
+                  {input("lastName", "Họ", "text", {
+                    autoComplete: "family-name",
+                    maxLength: 50,
+                  })}
+                  {input("firstName", "Tên", "text", {
+                    autoComplete: "given-name",
+                    maxLength: 50,
+                  })}
+                </div>
+              )}
+              {mode === "register" && (
+                <label>
+                  Số điện thoại (tùy chọn)
+                  <input
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => field("phone", e.target.value)}
+                    autoComplete="tel"
+                    maxLength={15}
+                  />
+                </label>
+              )}
+              {((mode === "login" && step === 0) || mode === "register") &&
+                input("password", "Mật khẩu", "password", {
+                  autoComplete:
+                    mode === "login" ? "current-password" : "new-password",
+                  minLength: mode === "register" ? 8 : undefined,
+                })}
+              {mode === "register" && (
+                <>
+                  <p className="ec-muted">
+                    Ít nhất 8 ký tự, gồm chữ hoa, chữ thường và số.
+                  </p>
+                  {input("confirmPassword", "Nhập lại mật khẩu", "password", {
+                    autoComplete: "new-password",
+                    minLength: 8,
+                  })}
+                </>
+              )}
+              {step === 1 && mode !== "register" && (
+                <>
+                  <p>
+                    Mã xác minh được gửi đến <strong>{form.email}</strong>.
+                  </p>
+                  {input("otp", "Mã OTP gồm 6 chữ số", "text", {
+                    inputMode: "numeric",
+                    autoComplete: "one-time-code",
+                    pattern: "[0-9]{6}",
+                    maxLength: 6,
+                  })}
+                </>
+              )}
+              {mode === "forgot" && step === 2 && (
+                <>
+                  {input("newPassword", "Mật khẩu mới", "password", {
+                    autoComplete: "new-password",
+                    minLength: 8,
+                  })}
+                  <p className="ec-muted">
+                    Ít nhất 8 ký tự, gồm chữ hoa, chữ thường và số.
+                  </p>
+                  {input("confirmPassword", "Nhập lại mật khẩu", "password", {
+                    autoComplete: "new-password",
+                    minLength: 8,
+                  })}
+                </>
+              )}
+              {error && (
+                <p role="alert" className="ec-error">
+                  {error}
+                </p>
+              )}
+              <button className="ec-button" disabled={busy}>
+                {busy
+                  ? "Đang xử lý…"
+                  : mode === "register"
+                    ? "Tạo tài khoản"
+                    : mode === "login"
+                      ? step
+                        ? "Xác nhận OTP"
+                        : "Tiếp tục đăng nhập"
+                      : step === 2
+                        ? "Lưu mật khẩu mới"
+                        : step === 1
+                          ? "Xác minh OTP"
+                          : "Gửi mã khôi phục"}
+              </button>
+              {step === 1 && (
+                <button
+                  type="button"
+                  className="ec-auth-reset"
+                  onClick={() => {
+                    setStep(0);
+                    setError("");
+                  }}
+                  disabled={busy}
+                >
+                  Đổi email hoặc gửi lại mã
+                </button>
+              )}
+            </form>
           )}
-        </div>
-      </section>
+          <div className="ec-auth-links">
+            {mode === "login" ? (
+              <>
+                <Link to="/register">Tạo tài khoản</Link>
+                <Link to="/forgot-password">Quên mật khẩu?</Link>
+              </>
+            ) : (
+              <Link to="/login">Đã có tài khoản? Đăng nhập</Link>
+            )}
+          </div>
+        </section>
+      </div>
       <p className="ec-auth-note">
         Xem bản đồ không cần tài khoản. Đăng nhập khi bạn muốn đóng góp.
       </p>

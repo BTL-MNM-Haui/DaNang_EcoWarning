@@ -52,7 +52,19 @@ export function WatchAreas() {
       <div className="ec-detail-grid">
         <section className="ec-panel">
           <h2>Khu vực của tôi</h2>
-          <Feedback resource={resource} empty={!resource.value?.length}>
+          <Feedback
+            resource={resource}
+            empty={!resource.value?.length}
+            emptyContent={
+              <div className="ec-empty">
+                <h3>Chưa có khu vực theo dõi</h3>
+                <p>
+                  Đặt tên, chọn vị trí và bán kính trong biểu mẫu để bắt đầu
+                  theo dõi cập nhật gần đó.
+                </p>
+              </div>
+            }
+          >
             {resource.value?.map((area) => (
               <article className="ec-watch-row" key={area.id}>
                 <div>
@@ -153,7 +165,22 @@ export function Notifications() {
         </p>
       )}
       <section className="ec-panel">
-        <Feedback resource={resource} empty={!resource.value?.length}>
+        <Feedback
+          resource={resource}
+          empty={!resource.value?.length}
+          emptyContent={
+            <div className="ec-empty">
+              <h2>Chưa có thông báo mới</h2>
+              <p>
+                Các cập nhật phù hợp sẽ xuất hiện khi sự cố gần khu vực bạn theo
+                dõi được xác minh hoặc thay đổi.
+              </p>
+              <Link className="ec-button ec-secondary" to="/watch-areas">
+                Chọn khu vực theo dõi
+              </Link>
+            </div>
+          }
+        >
           {resource.value?.map((item) => (
             <article
               className={`ec-notification ${item.read_at ? "" : "is-unread"}`}

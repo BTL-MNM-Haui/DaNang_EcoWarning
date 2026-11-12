@@ -19,7 +19,7 @@ export function IncidentList({ manage = false }) {
     [manage, status, page],
   );
   return (
-    <div className="ec-page">
+    <div className="ec-page ec-incidents-page">
       <div className="ec-page-heading">
         <div>
           <h1>{manage ? "Xác minh sự cố" : "Báo cáo của tôi"}</h1>
@@ -61,7 +61,29 @@ export function IncidentList({ manage = false }) {
         <button onClick={resource.reload}>Tải lại</button>
       </div>
       <section className="ec-panel ec-report-list">
-        <Feedback resource={resource} empty={!resource.value?.items.length}>
+        <Feedback
+          resource={resource}
+          empty={!resource.value?.items.length}
+          emptyContent={
+            <div className="ec-empty">
+              <h2>
+                {manage
+                  ? "Chưa có báo cáo cần xử lý"
+                  : "Bạn chưa có báo cáo phù hợp"}
+              </h2>
+              <p>
+                {manage
+                  ? "Thử đổi bộ lọc xác minh hoặc tải lại khi có ghi nhận mới."
+                  : "Khi quan sát thấy sự cố, hãy gửi vị trí, thời điểm và nội dung để cộng đồng cùng theo dõi."}
+              </p>
+              {!manage && (
+                <Link className="ec-button" to="/report">
+                  Gửi báo cáo đầu tiên
+                </Link>
+              )}
+            </div>
+          }
+        >
           {resource.value?.items.map((row) => (
             <IncidentRow key={row.id} report={row} />
           ))}

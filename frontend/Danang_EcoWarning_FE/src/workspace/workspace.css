@@ -2261,23 +2261,255 @@ th {
 }
 
 /* Shared reading scale for forms, lists and source metadata. */
-h1 { font-size: 30px; }
-h2 { font-size: 20px; }
-h3 { font-size: 18px; }
-.ec-page-heading h1 { font-size: 32px; }
-.ec-panel { border-color: #cbd7df; }
-.ec-page-heading p { max-width: 70ch; line-height: 1.7; }
-label { font-size: 15px; }
-input, select, textarea { font-size: 16px; min-height: 46px; border-color: #9eafba; }
-button, .ec-button { min-height: 44px; }
-.ec-source, .ec-muted { color: var(--muted); }
-.ec-incident h3 button { font-size: 18px; }
-.ec-incident p { font-size: 16px; }
-.ec-incident small { font-size: 14px; }
-.ec-status { font-size: 13px; padding: 4px 8px; }
-.ec-map-pin { min-height: 30px; }
-.ec-map-layer { font-size: 14px; }
-.ec-map-warning { font-size: 14px; }
-.ec-map-legend, .ec-map-disclaimer { font-size: 12px; }
-.ec-map-disclaimer { line-height: 1.6; }
-@media(max-width:850px){ .ec-page-heading h1 { font-size: 28px; } .ec-map-heading h1 { font-size: 26px; } }
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 18px;
+}
+.ec-page-heading h1 {
+  font-size: 32px;
+}
+.ec-panel {
+  border-color: #cbd7df;
+}
+.ec-page-heading p {
+  max-width: 70ch;
+  line-height: 1.7;
+}
+label {
+  font-size: 15px;
+}
+input,
+select,
+textarea {
+  font-size: 16px;
+  min-height: 46px;
+  border-color: #9eafba;
+}
+button,
+.ec-button {
+  min-height: 44px;
+}
+.ec-source,
+.ec-muted {
+  color: var(--muted);
+}
+.ec-incident h3 button {
+  font-size: 18px;
+}
+.ec-incident p {
+  font-size: 16px;
+}
+.ec-incident small {
+  font-size: 14px;
+}
+.ec-status {
+  font-size: 13px;
+  padding: 4px 8px;
+}
+.ec-map-pin {
+  min-height: 30px;
+}
+.ec-map-layer {
+  font-size: 14px;
+}
+.ec-map-warning {
+  font-size: 14px;
+}
+.ec-map-legend,
+.ec-map-disclaimer {
+  font-size: 12px;
+}
+.ec-map-disclaimer {
+  line-height: 1.6;
+}
+@media (max-width: 850px) {
+  .ec-page-heading h1 {
+    font-size: 28px;
+  }
+  .ec-map-heading h1 {
+    font-size: 26px;
+  }
+}
+/* Form and account layouts use the same readable system as public pages. */
+.ec-auth-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: min(100%, 1000px);
+  border: 1px solid #bdcfd9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+.ec-auth-intro {
+  background: #07536f;
+  color: #fff;
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.ec-auth-intro > img {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 38px;
+}
+.ec-auth-intro h2 {
+  font-size: 38px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.ec-auth-intro p {
+  color: #d5edf5;
+  font-size: 16px;
+}
+.ec-auth-intro ul {
+  color: #d5edf5;
+  padding-left: 20px;
+  margin: 16px 0 28px;
+}
+.ec-auth-intro li {
+  padding: 6px 0;
+  line-height: 1.6;
+}
+.ec-auth-intro a {
+  color: #fff;
+  font-size: 16px;
+  margin-top: auto;
+}
+.ec-auth-layout .ec-auth-sheet {
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  padding: 40px;
+}
+.ec-auth-page {
+  padding-block: 90px 40px;
+  background: #eef3f6;
+}
+.ec-auth-note {
+  font-size: 14px;
+}
+.ec-auth-sheet .ec-muted {
+  font-size: 14px;
+}
+.ec-task-guide {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #e1edf3;
+  color: #244d62;
+  font-size: 15px;
+  border-radius: 8px;
+  margin: 0 0 24px;
+}
+.ec-task-guide span {
+  color: #446a7f;
+}
+.ec-report-grid {
+  align-items: start;
+}
+.ec-report-grid > .ec-panel {
+  padding: 28px;
+}
+.ec-report-page .ec-report-grid > .ec-panel:last-child {
+  position: sticky;
+  top: 24px;
+}
+.ec-empty .ec-button {
+  margin-top: 20px;
+}
+.ec-report-list {
+  padding: 0;
+  overflow: hidden;
+}
+.ec-report-list .ec-incident {
+  padding: 24px;
+}
+.ec-report-list .ec-incident:first-child {
+  border-top: 0;
+}
+.ec-incidents-page > .ec-toolbar {
+  padding: 20px 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.ec-incidents-page > .ec-toolbar label {
+  max-width: 320px;
+}
+.ec-notification {
+  padding: 24px 16px;
+  gap: 20px;
+}
+.ec-notification.is-unread {
+  background: #e7f3f8;
+}
+.ec-notification p {
+  font-size: 17px;
+}
+.ec-import-page .ec-panel > p {
+  max-width: 85ch;
+}
+.ec-import-page .ec-panel form {
+  max-width: 100%;
+}
+.ec-import-mapping {
+  background: #f1f5f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.ec-facts > div {
+  font-size: 16px;
+  grid-template-columns: minmax(120px, 0.6fr) minmax(0, 1fr);
+}
+.ec-facts dd {
+  overflow-wrap: anywhere;
+}
+.ec-watch-row {
+  gap: 20px;
+}
+@media (max-width: 850px) {
+  .ec-auth-layout {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  .ec-auth-intro {
+    display: none;
+  }
+  .ec-auth-layout .ec-auth-sheet {
+    padding: 28px 24px;
+  }
+  .ec-report-page .ec-report-grid > .ec-panel:last-child {
+    position: static;
+  }
+  .ec-report-grid > .ec-panel {
+    padding: 22px;
+  }
+  .ec-task-guide {
+    font-size: 14px;
+    line-height: 1.8;
+    gap: 8px;
+  }
+  .ec-notification {
+    flex-direction: column;
+    align-items: start;
+  }
+  .ec-import-mapping {
+    padding: 16px;
+  }
+  .ec-incidents-page > .ec-toolbar {
+    padding: 18px;
+  }
+  .ec-watch-row {
+    flex-wrap: wrap;
+  }
+}
