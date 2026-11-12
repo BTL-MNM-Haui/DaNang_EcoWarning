@@ -2,12 +2,12 @@
 name: DaNang EcoWarning
 description: Giao diện tra cứu và cập nhật sự cố cộng đồng
 colors:
-  primary: "#172329"
-  ground: "#f2f4f5"
+  primary: "#086b91"
+  ground: "#f2f8fb"
   surface: "#ffffff"
-  muted: "#52616a"
-  border: "#dce2e5"
-  chart: "#1d5fbf"
+  muted: "#4f6670"
+  border: "#cbdfe5"
+  chart: "#086b91"
   danger: "#a32e32"
 typography:
   title:
@@ -49,15 +49,15 @@ components:
 
 ## Overview
 
-Giao diện làm việc theo hướng bản đồ và danh sách sự cố. Thiết kế lại từ hệ thống hiện có theo yêu cầu người dùng; các lựa chọn triển khai được giao cho người thực hiện. Hướng tham chiếu taste-skill: achromatic-ledger. Giao diện ưu tiên khả năng tra cứu, chất lượng dữ liệu và thao tác báo cáo.
+Giao diện làm việc theo hướng bản đồ và danh sách sự cố. Thiết kế lại từ hệ thống hiện có theo yêu cầu người dùng; các lựa chọn triển khai được giao cho người thực hiện. Giữ cấu trúc từ hướng taste-skill achromatic-ledger, bổ sung bảng màu xanh biển và xanh ngọc theo yêu cầu người dùng. Giao diện ưu tiên khả năng tra cứu, chất lượng dữ liệu và thao tác báo cáo.
 
 Màn hình sử dụng số liệu từ API. Không thêm số đếm trang trí, xu hướng hoặc lời khẳng định về tình trạng hiện tại khi không có dữ liệu.
 
 ## Colors
 
-Điều hướng và hành động chính dùng màu mực tối trên nền xám xanh nhạt. Các bảng/biểu mẫu dùng bề mặt trắng và đường phân cách nhẹ.
+Hành động chính dùng xanh biển #086b91, hover #07536f. Điều hướng dùng nền xanh ngọc nhạt #e6f3f6, mục đang chọn #c5e5ec với chữ #07506a. Nội dung dùng mực #123c4b trên nền #f2f8fb. Các bảng/biểu mẫu dùng bề mặt trắng và đường phân cách nhẹ. Hai nguồn thời tiết dùng nền xanh trời #edf7ff và xanh lá nhạt #edf8f3; màu chỉ nhận diện khu vực, không biểu thị mức độ an toàn của số liệu.
 
-Màu xanh của biểu đồ dùng cho dữ liệu lịch sử. Trạng thái đang diễn ra có dấu đỏ, chờ xác minh có dấu nâu vàng, đã kết thúc dùng xám; mỗi trạng thái luôn kèm chữ, không dùng màu làm tín hiệu duy nhất. Màu trong nền bản đồ thuộc lớp dữ liệu của nhà cung cấp, không phải màu trang trí ứng dụng.
+Màu xanh của biểu đồ dùng cho dữ liệu lịch sử. Trạng thái đang diễn ra có dấu đỏ, chờ xác minh có dấu nâu vàng, đã kết thúc dùng xanh lá; mỗi trạng thái luôn kèm chữ, không dùng màu làm tín hiệu duy nhất. Màu trong nền bản đồ thuộc lớp dữ liệu của nhà cung cấp, không phải màu trang trí ứng dụng.
 
 ## Typography
 
@@ -81,7 +81,7 @@ Panel bo góc 8px, control 6px. Marker sự cố tròn, có số định danh. L
 
 ## Components
 
-- Nút chính nền tối, nhãn trắng, chiều cao tối thiểu 42px; trạng thái disabled giảm độ đậm và không nhận thao tác.
+- Nút chính nền xanh biển, nhãn trắng, chiều cao tối thiểu 42px; trạng thái disabled giảm độ đậm và không nhận thao tác.
 - Input/select/textarea có nhãn nhìn thấy và focus outline xanh 3px; lỗi chỉ rõ cách thử lại hoặc sửa nội dung.
 - Một báo cáo có hai nhãn độc lập: xác minh và diễn biến.
 - Danh sách giữ trạng thái tải, lỗi, rỗng và phân trang. Số 0 được hiển thị là 0.

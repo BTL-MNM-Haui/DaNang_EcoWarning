@@ -39,12 +39,12 @@
       "refersTo": "button-primary",
       "description": "Hành động chính của tác vụ.",
       "html": "<button class=\"ds-primary\">Gửi báo cáo</button>",
-      "css": ".ds-primary{font:500 14px Geist,system-ui,sans-serif;background:var(--ink,#172329);color:white;padding:10px 16px;min-height:42px;border:1px solid var(--ink,#172329);border-radius:6px;cursor:pointer}.ds-primary:hover{background:#344650}.ds-primary:focus-visible{outline:3px solid #1d5fbf;outline-offset:3px}.ds-primary:disabled{opacity:.55;cursor:not-allowed}"
+      "css": ".ds-primary{font:500 14px Geist,system-ui,sans-serif;background:var(--action,#086b91);color:white;padding:10px 16px;min-height:42px;border:1px solid var(--action,#086b91);border-radius:6px;cursor:pointer}.ds-primary:hover{background:#07536f}.ds-primary:focus-visible{outline:3px solid #1d5fbf;outline-offset:3px}.ds-primary:disabled{opacity:.55;cursor:not-allowed}"
     }
   ],
   "narrative": {
     "northStar": "Bản đồ và sổ diễn biến sự cố",
-    "overview": "Bề mặt phẳng, điều hướng trung tính, dữ liệu thật và các trạng thái có giải thích.",
+    "overview": "Bề mặt phẳng, điều hướng xanh ngọc và hành động xanh biển, dữ liệu thật và các trạng thái có giải thích.",
     "keyCharacteristics": [
       "Map-first",
       "Hai trạng thái độc lập",
