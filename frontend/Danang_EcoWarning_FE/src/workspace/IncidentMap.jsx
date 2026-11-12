@@ -59,10 +59,17 @@ export function MapCanvas({
           longitude: Number(event.lngLat.lng.toFixed(6)),
         }),
       );
-      const observer = new ResizeObserver(() => instance.resize());
+      // Resize the WebGL buffer once the surrounding layout settles, rather
+      // than rebuilding it on every frame of the navigation transition.
+      let resizeTimer;
+      const observer = new ResizeObserver(() => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => instance.resize(), 100);
+      });
       observer.observe(container.current);
       return () => {
         observer.disconnect();
+        clearTimeout(resizeTimer);
         markers.current.forEach((m) => m.remove());
         instance.remove();
         map.current = null;

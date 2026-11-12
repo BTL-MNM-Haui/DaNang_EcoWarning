@@ -604,12 +604,15 @@ button.ec-secondary:hover {
 }
 .ec-map-warning {
   position: absolute;
-  top: 90px;
+  top: 112px;
   left: 24px;
-  right: 24px;
+  right: auto;
+  width: max-content;
+  max-width: min(360px, calc(100% - 48px));
   margin: 0;
   background: #fff;
-  padding: 14px;
+  padding: 9px 12px;
+  border-radius: 8px;
   border: 1px solid var(--line);
   font-size: 12px;
   z-index: 2;
@@ -1621,7 +1624,7 @@ th {
   .ec-workspace {
     grid-column: 2;
   }
-  .ec-sidebar:is(:hover, :focus-within) {
+  .ec-sidebar:is(:hover, :has(:focus-visible)) {
     width: 100%;
     box-shadow: none;
   }
@@ -1639,7 +1642,7 @@ th {
     opacity: 0;
     transition: opacity 0.12s ease;
   }
-  .ec-sidebar:is(:hover, :focus-within)
+  .ec-sidebar:is(:hover, :has(:focus-visible))
     :is(
       .ec-brand-wordmark,
       nav a > span,
@@ -1667,7 +1670,7 @@ th {
   .ec-sidebar nav a > span {
     flex: 0 0 162px;
   }
-  .ec-sidebar:is(:hover, :focus-within) nav a {
+  .ec-sidebar:is(:hover, :has(:focus-visible)) nav a {
     width: 226px;
   }
   .ec-nav-group {
@@ -1677,7 +1680,7 @@ th {
     white-space: nowrap;
     opacity: 0;
   }
-  .ec-sidebar:is(:hover, :focus-within) .ec-nav-group {
+  .ec-sidebar:is(:hover, :has(:focus-visible)) .ec-nav-group {
     opacity: 1;
   }
   .ec-sidebar .ec-report-action {
@@ -1692,7 +1695,7 @@ th {
     width: 18px;
     height: 18px;
   }
-  .ec-sidebar:is(:hover, :focus-within) .ec-report-action {
+  .ec-sidebar:is(:hover, :has(:focus-visible)) .ec-report-action {
     width: 226px;
   }
   .ec-sidebar footer {
@@ -1717,7 +1720,7 @@ th {
     width: 18px;
     height: 18px;
   }
-  .ec-sidebar:is(:hover, :focus-within)
+  .ec-sidebar:is(:hover, :has(:focus-visible))
     footer
     :is(.ec-button, .ec-account, .ec-quiet) {
     width: 226px;
@@ -2085,11 +2088,11 @@ th {
   display: none;
 }
 @media (min-width: 851px) {
-  .ec-app:has(> .ec-sidebar:is(:hover, :focus-within)) {
+  .ec-app:has(> .ec-sidebar:hover, > .ec-sidebar :focus-visible) {
     grid-template-columns: 256px minmax(0, 1fr);
   }
   .ec-sidebar,
-  .ec-sidebar:is(:hover, :focus-within) {
+  .ec-sidebar:is(:hover, :has(:focus-visible)) {
     width: 100%;
     background: #fff;
   }
@@ -2237,5 +2240,22 @@ th {
   }
   .ec-data-controls .ec-toolbar {
     grid-template-columns: 1fr;
+  }
+}
+
+/* The grid and sidebar share one timeline. Mouse focus never pins the rail. */
+@media (min-width: 851px) {
+  .ec-app {
+    transition: grid-template-columns 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+@media (min-width: 1280px) {
+  .ec-map-stage .ec-map-warning {
+    left: 370px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ec-app {
+    transition: none;
   }
 }
