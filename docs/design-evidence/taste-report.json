@@ -1,0 +1,1444 @@
+{
+ "url": "http://127.0.0.1:5173/data",
+ "at": "2026-11-12T04:14:27.537Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.74,
+    0.9
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1296,
+     "screens": 1.4,
+     "words": 1349,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 15,
+     "sections": 2,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 32,
+     "vw": 2.2,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.04,
+     "leading": 1.2,
+     "top": 36,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "lines": 1,
+     "size": 32,
+     "font": "Be Vietnam Pro"
+    },
+    "headings": [
+     {
+      "text": "Dữ liệu & thống kê",
+      "words": 5,
+      "chars": 18,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Be Vietnam Pro",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 36,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      20,
+      21,
+      24,
+      32
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 15,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.6
+     },
+     "measureChars": 108,
+     "max": {
+      "size": 32,
+      "vw": 2.2,
+      "font": "Be Vietnam Pro",
+      "text": "Dữ liệu & thống kê"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.08,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#eef3f6",
+     "bodyBgHsl": {
+      "h": 203,
+      "s": 0.31,
+      "l": 0.95
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#eef3f6",
+       "top": 0,
+       "hsl": {
+        "h": 203,
+        "s": 0.31,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 425,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#415766",
+       "share": 0.63
+      },
+      {
+       "color": "#123c4b",
+       "share": 0.12
+      },
+      {
+       "color": "#07536f",
+       "share": 0.08
+      },
+      {
+       "color": "#2c6349",
+       "share": 0.07
+      },
+      {
+       "color": "#123344",
+       "share": 0.05
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#123c4b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": 6,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Đến nội dung",
+      "Tải CSV",
+      "Biểu đồ"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "aside#main-navigation.ec-sidebar 76px",
+      "div.ec-data-sections 1292px",
+      "dl.ec-dataset-summary 1234px",
+      "details.ec-data-provenance 1234px"
+     ],
+     "outlinedBoxes": 2,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 2,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.1
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 0,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1296,
+    "margins": {
+     "left": 112,
+     "right": 53
+    },
+    "sections": [
+     {
+      "sel": "section.ec-dataset-picker",
+      "tag": "section",
+      "top": 224,
+      "height": 178,
+      "words": 17,
+      "media": 0,
+      "middle": 20,
+      "heading": null,
+      "left": 137,
+      "right": 61,
+      "textLeft": 137,
+      "textRight": 535,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.ec-dataset-result",
+      "tag": "section",
+      "top": 425,
+      "height": 835,
+      "words": 67,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Nhiệt độ không khí trung bình",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 141,
+      "right": 65,
+      "textLeft": 141,
+      "textRight": 65,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Dữ liệu & thống kê",
+      "size": 32,
+      "top": 36,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 141,
+      "n": 3
+     },
+     {
+      "x": 112,
+      "n": 2
+     },
+     {
+      "x": 169,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 6,
+    "bodySize": 15,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.09,
+    "voidBox": {
+     "x": 480,
+     "y": 120,
+     "w": 960,
+     "h": 120
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#eef3f6",
+    "sidebar": {
+     "w": 76,
+     "tag": "aside",
+     "links": 9,
+     "share": 0.05
+    },
+    "topbar": null,
+    "canvas": {
+     "left": 36,
+     "right": 53
+    },
+    "hero": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 32,
+     "vw": 2.2,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.04,
+     "leading": 1.2,
+     "top": 36,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 2,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 3,
+     "radii": [
+      [
+       12,
+       2
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "heavyBorders": 2,
+     "borderSamples": [
+      "#bdcfd9 on #ffffff (1.6:1)",
+      "#bdcfd9 on #ffffff (1.6:1)"
+     ],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 3,
+     "tabularShare": 1,
+     "kpiMax": 21
+    },
+    "rows": null,
+    "chartHues": 1,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      20,
+      21,
+      24,
+      32
+     ]
+    },
+    "title": {
+     "text": "Dữ liệu & thống kê",
+     "size": 32,
+     "top": 36
+    },
+    "colourShare": 0.006
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.72,
+    0.87
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1505,
+     "screens": 1.5,
+     "words": 1306,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 15,
+     "sections": 2,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 28,
+     "vw": 3.6,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 84,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "lines": 1,
+     "size": 28,
+     "font": "Be Vietnam Pro"
+    },
+    "headings": [
+     {
+      "text": "Dữ liệu & thống kê",
+      "words": 5,
+      "chars": 18,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Be Vietnam Pro",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.77,
+      "top": 84,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      15,
+      16,
+      21,
+      24,
+      28
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 15,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.6
+     },
+     "measureChars": 90,
+     "max": {
+      "size": 28,
+      "vw": 3.6,
+      "font": "Be Vietnam Pro",
+      "text": "Dữ liệu & thống kê"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.09,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#eef3f6",
+     "bodyBgHsl": {
+      "h": 203,
+      "s": 0.31,
+      "l": 0.95
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#eef3f6",
+       "top": 60,
+       "hsl": {
+        "h": 203,
+        "s": 0.31,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 566,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#415766",
+       "share": 0.62
+      },
+      {
+       "color": "#123c4b",
+       "share": 0.13
+      },
+      {
+       "color": "#2c6349",
+       "share": 0.08
+      },
+      {
+       "color": "#07536f",
+       "share": 0.07
+      },
+      {
+       "color": "#123344",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#123c4b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": 6,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Đến nội dung",
+      "Tải CSV",
+      "Biểu đồ"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.ec-mobile 768px",
+      "div.ec-data-sections 732px",
+      "dl.ec-dataset-summary 674px",
+      "details.ec-data-provenance 674px"
+     ],
+     "outlinedBoxes": 2,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 2,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1505,
+    "margins": {
+     "left": 16,
+     "right": 18
+    },
+    "sections": [
+     {
+      "sel": "section.ec-dataset-picker",
+      "tag": "section",
+      "top": 267,
+      "height": 275,
+      "words": 17,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 43,
+      "right": 43,
+      "textLeft": 43,
+      "textRight": 279,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.ec-dataset-result",
+      "tag": "section",
+      "top": 566,
+      "height": 915,
+      "words": 67,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Nhiệt độ không khí trung bình",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 47,
+      "textLeft": 47,
+      "textRight": 47,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Dữ liệu & thống kê",
+      "size": 28,
+      "top": 84,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 47,
+      "n": 3
+     },
+     {
+      "x": 18,
+      "n": 2
+     },
+     {
+      "x": 75,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 6,
+    "bodySize": 15,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#eef3f6",
+    "sidebar": null,
+    "topbar": {
+     "h": 60
+    },
+    "canvas": {
+     "left": 16,
+     "right": 18
+    },
+    "hero": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 28,
+     "vw": 3.6,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 84,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 2,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 3,
+     "radii": [
+      [
+       12,
+       2
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "heavyBorders": 2,
+     "borderSamples": [
+      "#bdcfd9 on #ffffff (1.6:1)",
+      "#bdcfd9 on #ffffff (1.6:1)"
+     ],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 3,
+     "tabularShare": 1,
+     "kpiMax": 21
+    },
+    "rows": null,
+    "chartHues": 1,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      20,
+      21,
+      24,
+      28
+     ]
+    },
+    "title": {
+     "text": "Dữ liệu & thống kê",
+     "size": 28,
+     "top": 84
+    },
+    "colourShare": 0.009
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.69,
+    0.89,
+    0.89
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 1755,
+     "screens": 2.1,
+     "words": 1303,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 15,
+     "sections": 2,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 28,
+     "vw": 7.2,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 84,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "lines": 1,
+     "size": 28,
+     "font": "Be Vietnam Pro"
+    },
+    "headings": [
+     {
+      "text": "Dữ liệu & thống kê",
+      "words": 5,
+      "chars": 18,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Be Vietnam Pro",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 84,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Nhiệt độ không khí trung bình",
+      "words": 6,
+      "chars": 29,
+      "lines": 2,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Be Vietnam Pro",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.4,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 758,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 6,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      23,
+      28
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 15,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.6
+     },
+     "measureChars": 43,
+     "max": {
+      "size": 28,
+      "vw": 7.2,
+      "font": "Be Vietnam Pro",
+      "text": "Dữ liệu & thống kê"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.09,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#eef3f6",
+     "bodyBgHsl": {
+      "h": 203,
+      "s": 0.31,
+      "l": 0.95
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#eef3f6",
+       "top": 60,
+       "hsl": {
+        "h": 203,
+        "s": 0.31,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 353,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#415766",
+       "share": 0.62
+      },
+      {
+       "color": "#123c4b",
+       "share": 0.13
+      },
+      {
+       "color": "#2c6349",
+       "share": 0.08
+      },
+      {
+       "color": "#07536f",
+       "share": 0.07
+      },
+      {
+       "color": "#123344",
+       "share": 0.06
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#123c4b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 2,
+     "radius": 6,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Đến nội dung",
+      "Tải CSV"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "header.ec-mobile 390px",
+      "div.ec-data-sections 354px",
+      "dl.ec-dataset-summary 320px",
+      "details.ec-data-provenance 320px"
+     ],
+     "outlinedBoxes": 2,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 2,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 1755,
+    "margins": {
+     "left": 16,
+     "right": 27
+    },
+    "sections": [
+     {
+      "sel": "div.ec-page-heading",
+      "tag": "div",
+      "top": 84,
+      "height": 160,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Dữ liệu & thống kê",
+       "size": 28,
+       "tag": "h1"
+      },
+      "left": 18,
+      "right": 37,
+      "textLeft": 18,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.ec-dataset-picker",
+      "tag": "section",
+      "top": 353,
+      "height": 361,
+      "words": 17,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 35,
+      "right": 35,
+      "textLeft": 35,
+      "textRight": 153,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.ec-dataset-result",
+      "tag": "section",
+      "top": 737,
+      "height": 994,
+      "words": 67,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Nhiệt độ không khí trung bình",
+       "size": 23,
+       "tag": "h2"
+      },
+      "left": 23,
+      "right": 27,
+      "textLeft": 35,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Dữ liệu & thống kê",
+      "size": 28,
+      "top": 84,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 35,
+      "n": 3
+     },
+     {
+      "x": 18,
+      "n": 2
+     },
+     {
+      "x": 63,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 6,
+    "bodySize": 15,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#eef3f6",
+    "sidebar": null,
+    "topbar": {
+     "h": 60
+    },
+    "canvas": {
+     "left": 16,
+     "right": 24
+    },
+    "hero": {
+     "text": "Dữ liệu & thống kê",
+     "words": 5,
+     "chars": 18,
+     "lines": 1,
+     "size": 28,
+     "vw": 7.2,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 84,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 2,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 3,
+     "radii": [
+      [
+       12,
+       2
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "heavyBorders": 2,
+     "borderSamples": [
+      "#bdcfd9 on #ffffff (1.6:1)",
+      "#bdcfd9 on #ffffff (1.6:1)"
+     ],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 3,
+     "tabularShare": 1,
+     "kpiMax": 18
+    },
+    "rows": null,
+    "chartHues": 1,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      20,
+      23,
+      28
+     ]
+    },
+    "title": {
+     "text": "Dữ liệu & thống kê",
+     "size": 28,
+     "top": 84
+    },
+    "colourShare": 0.007
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\final-data-inspect\\desktop-fold.jpg",
+   "pages": [
+    "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\final-data-inspect\\desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\final-data-inspect\\tablet-fold.jpg",
+   "pages": [
+    "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\final-data-inspect\\tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\final-data-inspect\\mobile-fold.jpg",
+   "pages": [
+    "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\final-data-inspect\\mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

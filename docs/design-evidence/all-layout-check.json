@@ -1,0 +1,277 @@
+{
+  "checks": [
+    "renders / 1440",
+    "session preserved / 1440",
+    "no horizontal overflow / 1440",
+    "renders /weather 1440",
+    "session preserved /weather 1440",
+    "no horizontal overflow /weather 1440",
+    "renders /data 1440",
+    "session preserved /data 1440",
+    "no horizontal overflow /data 1440",
+    "dataset loaded 1440",
+    "Vietnamese font loaded 1440",
+    "readable controls 1440",
+    "cashew source selected 1440",
+    "conflict visible 1440",
+    "both conflicting records retained 1440",
+    "source values unchanged 1440",
+    "renders /report 1440",
+    "session preserved /report 1440",
+    "no horizontal overflow /report 1440",
+    "renders /my-reports 1440",
+    "session preserved /my-reports 1440",
+    "no horizontal overflow /my-reports 1440",
+    "renders /watch-areas 1440",
+    "session preserved /watch-areas 1440",
+    "no horizontal overflow /watch-areas 1440",
+    "renders /notifications 1440",
+    "session preserved /notifications 1440",
+    "no horizontal overflow /notifications 1440",
+    "renders /manage 1440",
+    "session preserved /manage 1440",
+    "no horizontal overflow /manage 1440",
+    "renders /imports 1440",
+    "session preserved /imports 1440",
+    "no horizontal overflow /imports 1440",
+    "renders /profile 1440",
+    "session preserved /profile 1440",
+    "no horizontal overflow /profile 1440",
+    "renders /incidents/86069 1440",
+    "session preserved /incidents/86069 1440",
+    "no horizontal overflow /incidents/86069 1440",
+    "account renders /login 1440",
+    "account fits /login 1440",
+    "account renders /register 1440",
+    "account fits /register 1440",
+    "account renders /forgot-password 1440",
+    "account fits /forgot-password 1440",
+    "renders / 768",
+    "session preserved / 768",
+    "no horizontal overflow / 768",
+    "renders /weather 768",
+    "session preserved /weather 768",
+    "no horizontal overflow /weather 768",
+    "renders /data 768",
+    "session preserved /data 768",
+    "no horizontal overflow /data 768",
+    "dataset loaded 768",
+    "Vietnamese font loaded 768",
+    "readable controls 768",
+    "cashew source selected 768",
+    "conflict visible 768",
+    "both conflicting records retained 768",
+    "source values unchanged 768",
+    "renders /report 768",
+    "session preserved /report 768",
+    "no horizontal overflow /report 768",
+    "renders /my-reports 768",
+    "session preserved /my-reports 768",
+    "no horizontal overflow /my-reports 768",
+    "renders /watch-areas 768",
+    "session preserved /watch-areas 768",
+    "no horizontal overflow /watch-areas 768",
+    "renders /notifications 768",
+    "session preserved /notifications 768",
+    "no horizontal overflow /notifications 768",
+    "renders /manage 768",
+    "session preserved /manage 768",
+    "no horizontal overflow /manage 768",
+    "renders /imports 768",
+    "session preserved /imports 768",
+    "no horizontal overflow /imports 768",
+    "renders /profile 768",
+    "session preserved /profile 768",
+    "no horizontal overflow /profile 768",
+    "renders /incidents/86069 768",
+    "session preserved /incidents/86069 768",
+    "no horizontal overflow /incidents/86069 768",
+    "account renders /login 768",
+    "account fits /login 768",
+    "account renders /register 768",
+    "account fits /register 768",
+    "account renders /forgot-password 768",
+    "account fits /forgot-password 768",
+    "renders / 390",
+    "session preserved / 390",
+    "no horizontal overflow / 390",
+    "renders /weather 390",
+    "session preserved /weather 390",
+    "no horizontal overflow /weather 390",
+    "renders /data 390",
+    "session preserved /data 390",
+    "no horizontal overflow /data 390",
+    "dataset loaded 390",
+    "Vietnamese font loaded 390",
+    "readable controls 390",
+    "cashew source selected 390",
+    "conflict visible 390",
+    "both conflicting records retained 390",
+    "source values unchanged 390",
+    "renders /report 390",
+    "session preserved /report 390",
+    "no horizontal overflow /report 390",
+    "renders /my-reports 390",
+    "session preserved /my-reports 390",
+    "no horizontal overflow /my-reports 390",
+    "renders /watch-areas 390",
+    "session preserved /watch-areas 390",
+    "no horizontal overflow /watch-areas 390",
+    "renders /notifications 390",
+    "session preserved /notifications 390",
+    "no horizontal overflow /notifications 390",
+    "renders /manage 390",
+    "session preserved /manage 390",
+    "no horizontal overflow /manage 390",
+    "renders /imports 390",
+    "session preserved /imports 390",
+    "no horizontal overflow /imports 390",
+    "renders /profile 390",
+    "session preserved /profile 390",
+    "no horizontal overflow /profile 390",
+    "renders /incidents/86069 390",
+    "session preserved /incidents/86069 390",
+    "no horizontal overflow /incidents/86069 390",
+    "account renders /login 390",
+    "account fits /login 390",
+    "account renders /register 390",
+    "account fits /register 390",
+    "account renders /forgot-password 390",
+    "account fits /forgot-password 390"
+  ],
+  "routes": [
+    {
+      "route": "/",
+      "width": 1440
+    },
+    {
+      "route": "/weather",
+      "width": 1440
+    },
+    {
+      "route": "/data",
+      "width": 1440
+    },
+    {
+      "route": "/report",
+      "width": 1440
+    },
+    {
+      "route": "/my-reports",
+      "width": 1440
+    },
+    {
+      "route": "/watch-areas",
+      "width": 1440
+    },
+    {
+      "route": "/notifications",
+      "width": 1440
+    },
+    {
+      "route": "/manage",
+      "width": 1440
+    },
+    {
+      "route": "/imports",
+      "width": 1440
+    },
+    {
+      "route": "/profile",
+      "width": 1440
+    },
+    {
+      "route": "/incidents/86069",
+      "width": 1440
+    },
+    {
+      "route": "/",
+      "width": 768
+    },
+    {
+      "route": "/weather",
+      "width": 768
+    },
+    {
+      "route": "/data",
+      "width": 768
+    },
+    {
+      "route": "/report",
+      "width": 768
+    },
+    {
+      "route": "/my-reports",
+      "width": 768
+    },
+    {
+      "route": "/watch-areas",
+      "width": 768
+    },
+    {
+      "route": "/notifications",
+      "width": 768
+    },
+    {
+      "route": "/manage",
+      "width": 768
+    },
+    {
+      "route": "/imports",
+      "width": 768
+    },
+    {
+      "route": "/profile",
+      "width": 768
+    },
+    {
+      "route": "/incidents/86069",
+      "width": 768
+    },
+    {
+      "route": "/",
+      "width": 390
+    },
+    {
+      "route": "/weather",
+      "width": 390
+    },
+    {
+      "route": "/data",
+      "width": 390
+    },
+    {
+      "route": "/report",
+      "width": 390
+    },
+    {
+      "route": "/my-reports",
+      "width": 390
+    },
+    {
+      "route": "/watch-areas",
+      "width": 390
+    },
+    {
+      "route": "/notifications",
+      "width": 390
+    },
+    {
+      "route": "/manage",
+      "width": 390
+    },
+    {
+      "route": "/imports",
+      "width": 390
+    },
+    {
+      "route": "/profile",
+      "width": 390
+    },
+    {
+      "route": "/incidents/86069",
+      "width": 390
+    }
+  ],
+  "fixture": "Disposable local account, removed after verification; no real account credentials recorded."
+}

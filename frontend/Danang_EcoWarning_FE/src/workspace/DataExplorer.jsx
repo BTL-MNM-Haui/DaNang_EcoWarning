@@ -130,7 +130,7 @@ export default function DataExplorer() {
             onClick={exportCsv}
           >
             <FiDownload aria-hidden="true" />
-            Tải CSV gốc
+            Tải CSV
           </button>
         )}
       </div>

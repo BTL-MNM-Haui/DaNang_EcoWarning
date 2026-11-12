@@ -38,7 +38,12 @@ const Notifications = lazy(() =>
 function Protected({ children, manager = false }) {
   const { isAuthenticated, user, loading } = useAuth(),
     location = useLocation();
-  if (loading) return <p className="ec-loading" role="status">Đang khôi phục phiên đăng nhập…</p>;
+  if (loading)
+    return (
+      <p className="ec-loading" role="status">
+        Đang khôi phục phiên đăng nhập…
+      </p>
+    );
   if (!isAuthenticated)
     return (
       <Navigate

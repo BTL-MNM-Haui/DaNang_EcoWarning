@@ -2288,7 +2288,7 @@ select,
 textarea {
   font-size: 16px;
   min-height: 46px;
-  border-color: #9eafba;
+  border-color: #718694;
 }
 button,
 .ec-button {
@@ -2512,4 +2512,12 @@ button,
   .ec-watch-row {
     flex-wrap: wrap;
   }
+}
+
+.ec-secondary {
+  border-color: #718694;
+}
+.ec-map-tools input,
+.ec-map-tools select {
+  font-size: 16px;
 }
