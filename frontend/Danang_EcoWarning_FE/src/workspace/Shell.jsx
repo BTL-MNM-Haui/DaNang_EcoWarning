@@ -38,7 +38,14 @@ export default function Shell() {
   ];
   const links = (items) =>
     items.map(([path, title, Icon]) => (
-      <NavLink key={path} to={path} end onClick={() => setOpen(false)}>
+      <NavLink
+        key={path}
+        to={path}
+        end
+        title={title}
+        aria-label={title}
+        onClick={() => setOpen(false)}
+      >
         {createElement(Icon, { "aria-hidden": true })}
         <span>{title}</span>
       </NavLink>
@@ -63,6 +70,7 @@ export default function Shell() {
           <img src="/brand/logo.svg" alt="EcoWarning Đà Nẵng" />
         </Link>
         <button
+          aria-controls="main-navigation"
           aria-label={open ? "Đóng điều hướng" : "Mở điều hướng"}
           aria-expanded={open}
           onClick={() => setOpen(!open)}
@@ -71,11 +79,29 @@ export default function Shell() {
         </button>
       </header>
       <aside
+        id="main-navigation"
         className={`ec-sidebar ${open ? "is-open" : ""}`}
         aria-label="Điều hướng chính"
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            setOpen(false);
+            if (window.matchMedia("(max-width: 850px)").matches)
+              document.querySelector(".ec-mobile button")?.focus();
+            else document.getElementById("workspace")?.focus();
+          }
+        }}
       >
-        <Link to="/" className="ec-brand" onClick={() => setOpen(false)}>
-          <img src="/brand/logo.svg" alt="EcoWarning Đà Nẵng" />
+        <Link
+          to="/"
+          className="ec-brand"
+          aria-label="EcoWarning Đà Nẵng — Trang chủ"
+          onClick={() => setOpen(false)}
+        >
+          <img className="ec-brand-mark" src="/brand/mark.svg" alt="" />
+          <span className="ec-brand-wordmark">
+            <strong>EcoWarning</strong>
+            <small>Đà Nẵng · Cùng cập nhật</small>
+          </span>
         </Link>
         <div className="ec-scope">
           <span className="ec-scope-dot" />
@@ -95,15 +121,22 @@ export default function Shell() {
         <Link
           className="ec-button ec-report-action"
           to="/report"
+          title="Báo cáo sự cố"
+          aria-label="Báo cáo sự cố"
           onClick={() => setOpen(false)}
         >
           <FiPlus />
-          Báo cáo sự cố
+          <span>Báo cáo sự cố</span>
         </Link>
         <footer>
           {isAuthenticated ? (
             <>
-              <Link to="/profile" className="ec-account">
+              <Link
+                to="/profile"
+                className="ec-account"
+                title="Tài khoản của tôi"
+                aria-label="Tài khoản của tôi"
+              >
                 <FiUser />
                 <span>
                   {user?.email || "Tài khoản của tôi"}
@@ -112,9 +145,14 @@ export default function Shell() {
                   </small>
                 </span>
               </Link>
-              <button className="ec-quiet" onClick={signout}>
+              <button
+                className="ec-quiet"
+                onClick={signout}
+                title="Đăng xuất"
+                aria-label="Đăng xuất"
+              >
                 <FiLogOut />
-                Đăng xuất
+                <span>Đăng xuất</span>
               </button>
             </>
           ) : (
@@ -124,8 +162,14 @@ export default function Shell() {
                 <br />
                 Đăng nhập để đóng góp.
               </p>
-              <Link className="ec-button ec-secondary" to="/login">
-                Đăng nhập
+              <Link
+                className="ec-button ec-secondary"
+                to="/login"
+                title="Đăng nhập"
+                aria-label="Đăng nhập"
+              >
+                <FiUser aria-hidden="true" />
+                <span>Đăng nhập</span>
               </Link>
             </>
           )}
@@ -134,6 +178,7 @@ export default function Shell() {
       </aside>
       <main
         id="workspace"
+        tabIndex={-1}
         className={`ec-workspace ${location.pathname === "/" ? "ec-workspace--map" : ""}`}
       >
         <Outlet />

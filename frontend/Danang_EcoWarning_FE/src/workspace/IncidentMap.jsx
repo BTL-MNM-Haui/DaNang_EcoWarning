@@ -2,7 +2,14 @@ import { useResource } from "./useResource";
 import { useEffect, useRef, useState } from "react";
 import goong from "@goongmaps/goong-js";
 import { Link } from "react-router-dom";
-import { FiPlus, FiRefreshCw, FiMapPin } from "react-icons/fi";
+import {
+  FiPlus,
+  FiRefreshCw,
+  FiMapPin,
+  FiSliders,
+  FiChevronDown,
+  FiSearch,
+} from "react-icons/fi";
 import { reports, dataApi, unpack } from "./api";
 import { Feedback, IncidentRow } from "./shared";
 
@@ -183,6 +190,15 @@ export default function IncidentMap() {
     [state, status, q, hours, depth, page],
   );
   const rows = resource.value?.items || [];
+  function resetFilters() {
+    setState("");
+    setStatus("");
+    setQ("");
+    setHours("");
+    setDepth("");
+    setPage(0);
+    setSelected(null);
+  }
   return (
     <>
       <div className="ec-map-heading">
@@ -198,6 +214,7 @@ export default function IncidentMap() {
       <div className="ec-map-workspace">
         <section className="ec-map-list" aria-label="Danh sách sự cố">
           <div className="ec-map-tools">
+            <h2 className="ec-map-list-title">Báo cáo cộng đồng</h2>
             <label>
               Tìm địa chỉ hoặc mô tả
               <input
@@ -240,35 +257,47 @@ export default function IncidentMap() {
                   <option value="PENDING">Chờ xác minh</option>
                 </select>
               </label>
-              <label>
-                Cập nhật trong
-                <select
-                  value={hours}
-                  onChange={(e) => {
-                    setHours(e.target.value);
-                    setPage(0);
-                  }}
-                >
-                  <option value="">Mọi thời điểm</option>
-                  <option value="24">24 giờ</option>
-                  <option value="168">7 ngày</option>
-                </select>
-              </label>
-              <label>
-                Độ ngập ước tính
-                <select
-                  value={depth}
-                  onChange={(e) => {
-                    setDepth(e.target.value);
-                    setPage(0);
-                  }}
-                >
-                  <option value="">Mọi mức</option>
-                  <option value="20">Từ 20 cm</option>
-                  <option value="50">Từ 50 cm</option>
-                </select>
-              </label>
             </div>
+            <details className="ec-advanced-filters">
+              <summary>
+                <FiSliders aria-hidden="true" /> Bộ lọc thêm
+                {(hours || depth) && <span>Đang áp dụng</span>}
+                <FiChevronDown
+                  className="ec-disclosure-arrow"
+                  aria-hidden="true"
+                />
+              </summary>
+              <div className="ec-filter-grid">
+                <label>
+                  Cập nhật trong
+                  <select
+                    value={hours}
+                    onChange={(e) => {
+                      setHours(e.target.value);
+                      setPage(0);
+                    }}
+                  >
+                    <option value="">Mọi thời điểm</option>
+                    <option value="24">24 giờ</option>
+                    <option value="168">7 ngày</option>
+                  </select>
+                </label>
+                <label>
+                  Độ ngập ước tính
+                  <select
+                    value={depth}
+                    onChange={(e) => {
+                      setDepth(e.target.value);
+                      setPage(0);
+                    }}
+                  >
+                    <option value="">Mọi mức</option>
+                    <option value="20">Từ 20 cm</option>
+                    <option value="50">Từ 50 cm</option>
+                  </select>
+                </label>
+              </div>
+            </details>
             <div className="ec-list-caption">
               <span>{resource.value?.total ?? "—"} sự cố phù hợp</span>
               <button
@@ -280,7 +309,31 @@ export default function IncidentMap() {
               </button>
             </div>
           </div>
-          <Feedback resource={resource} empty={!rows.length}>
+          <Feedback
+            resource={resource}
+            empty={!rows.length}
+            emptyContent={
+              <div className="ec-map-empty">
+                <FiSearch aria-hidden="true" />
+                <h3>Chưa có báo cáo phù hợp</h3>
+                <p>
+                  Thử mở rộng điều kiện tìm kiếm. Không có báo cáo không có
+                  nghĩa là khu vực an toàn.
+                </p>
+                {(state || status || q || hours || depth) && (
+                  <button
+                    className="ec-button ec-secondary"
+                    onClick={resetFilters}
+                  >
+                    Xem tất cả báo cáo
+                  </button>
+                )}
+                <Link className="ec-empty-report" to="/report">
+                  Bạn thấy sự cố? Gửi báo cáo <FiPlus aria-hidden="true" />
+                </Link>
+              </div>
+            }
+          >
             {rows.map((row) => (
               <IncidentRow
                 key={row.id}
@@ -290,18 +343,20 @@ export default function IncidentMap() {
               />
             ))}
           </Feedback>
-          <div className="ec-pagination">
-            <button disabled={!page} onClick={() => setPage((p) => p - 1)}>
-              Trước
-            </button>
-            <span>Trang {page + 1}</span>
-            <button
-              disabled={(page + 1) * 100 >= (resource.value?.total || 0)}
-              onClick={() => setPage((p) => p + 1)}
-            >
-              Sau
-            </button>
-          </div>
+          {(resource.value?.total || 0) > 100 && (
+            <div className="ec-pagination">
+              <button disabled={!page} onClick={() => setPage((p) => p - 1)}>
+                Trước
+              </button>
+              <span>Trang {page + 1}</span>
+              <button
+                disabled={(page + 1) * 100 >= (resource.value?.total || 0)}
+                onClick={() => setPage((p) => p + 1)}
+              >
+                Sau
+              </button>
+            </div>
+          )}
         </section>
         <section className="ec-map-stage" aria-label="Bản đồ Đà Nẵng">
           <MapCanvas

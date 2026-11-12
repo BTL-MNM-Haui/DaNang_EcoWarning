@@ -50,3 +50,10 @@ Reviewer độc lập không khởi chạy được do model route của công c
 Repo đích người dùng chỉ định: https://github.com/BTL-MNM-Haui/DaNang_EcoWarning.git.
 
 Bản phát hành tạo commit khởi đầu mới từ cây source đã làm sạch để không mang theo secret trong lịch sử repo gốc. Nhánh và remote gốc vẫn được giữ trên máy. File .env, dump database, ảnh kiểm tra và cache không đưa lên repo.
+
+## Tinh chỉnh bố cục và điều hướng
+
+- Rail desktop mở khi hover/focus, không đẩy bản đồ; Escape về nội dung, menu cảm ứng đóng sau điều hướng.
+- Header và bộ lọc gọn hơn, bộ lọc nâng cao thu mở, trạng thái rỗng có hành động, ẩn phân trang khi không cần.
+- 35 kiểm tra trình duyệt về hover, focus, menu, overflow và các trang bản đồ/thời tiết/dữ liệu/đăng nhập ở 1440/1024/768/390px đã qua. Kiểm tra giao diện không thay cho nghiên cứu khả dụng với người dùng thật.
+- Đề xuất style, logo và bước UX tiếp theo trong docs/UI-DIRECTION.md.

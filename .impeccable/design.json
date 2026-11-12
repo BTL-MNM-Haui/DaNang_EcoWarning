@@ -30,7 +30,15 @@
         "value": "0 2px 5px #0003",
         "purpose": "Đọc marker trên bản đồ, không dùng cho panel."
       }
-    ]
+    ],
+    "navigation": {
+      "desktopRail": "76px",
+      "expandedOverlay": "256px",
+      "trigger": "hover or focus-within",
+      "mobile": "menu button below 851px",
+      "touchDesktop": "expanded labels",
+      "reducedMotion": "no transition"
+    }
   },
   "components": [
     {

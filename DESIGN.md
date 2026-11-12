@@ -28,7 +28,7 @@ typography:
     lineHeight: 1.5
 rounded:
   control: "6px"
-  panel: "8px"
+  panel: "10px"
 spacing:
   compact: "12px"
   normal: "16px"
@@ -67,7 +67,7 @@ Logo là SVG hình ghim địa điểm với đường sóng; chữ trong logo d
 
 ## Layout
 
-Desktop có sidebar 240px và phần nội dung co giãn. Trang bản đồ chia danh sách 360px và bản đồ dùng phần chiều rộng còn lại. Canvas WebGL nằm trong khung tuyệt đối để resize không làm tăng chiều cao hàng grid.
+Desktop dùng rail 76px, mở phủ thành sidebar 256px khi hover hoặc focus bàn phím, không đẩy nội dung. Thiết bị cảm ứng rộng giữ sidebar đầy đủ; dưới 850px dùng menu. Trang bản đồ chia danh sách 350px và bản đồ dùng phần chiều rộng còn lại. Canvas WebGL nằm trong khung tuyệt đối để resize không làm tăng chiều cao hàng grid.
 
 Các trang nội dung dùng padding 34px 32px và tối đa 1500px. Form báo cáo dùng hai cột trên desktop, một cột trên điện thoại. Dưới 850px, sidebar chuyển thành thanh đầu 60px và menu mở; bản đồ nằm trên danh sách. Dưới 520px, nội dung dùng lề 16px. Bảng dữ liệu có vùng cuộn riêng khi cần.
 
@@ -77,7 +77,7 @@ Bề mặt ứng dụng phẳng, phân tách bằng đường viền. Marker tr�
 
 ## Shapes
 
-Panel bo góc 8px, control 6px. Marker sự cố tròn, có số định danh. Logo và favicon dùng cùng ngôn ngữ ghim và sóng.
+Panel và lớp chọn bản đồ bo góc 10px, control 6px. Marker sự cố tròn, có số định danh. Logo và favicon dùng cùng ngôn ngữ ghim và sóng.
 
 ## Components
 
@@ -97,3 +97,7 @@ Panel bo góc 8px, control 6px. Marker sự cố tròn, có số định danh. L
 - Don't vẽ một xu hướng từ các quan sát trùng thời điểm chưa được đối chiếu.
 - Don't coi báo cáo chưa xác minh là cảnh báo chính thức.
 - Don't đưa thông tin kỹ thuật về mô hình hoặc dữ liệu mẫu vào luồng công cộng.
+
+## Navigation and map refinement
+
+Rail có nhãn truy cập và tooltip; focus bàn phím mở menu, Escape đưa focus về main. Hover dùng chuyển động 200ms, reduced-motion tắt transition. Bộ lọc chính luôn hiện; bộ lọc thời gian/độ ngập trong details. Chỉ hiện phân trang bản đồ khi có trên 100 kết quả. Xem docs/UI-DIRECTION.md để phân biệt phần đã làm và đề xuất tiếp theo.
