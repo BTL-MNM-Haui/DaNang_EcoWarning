@@ -92,3 +92,7 @@ Script tích hợp chuẩn bị dữ liệu tạm, kiểm tra API và dọn fixt
 Dự án phát triển từ [DaNang EcoWarning của KhuongSpring](https://github.com/KhuongSpring/DaNang_EcoWarning), trong bối cảnh cuộc thi Phần mềm nguồn mở Olympic Tin học Sinh viên Việt Nam 2025, đội HaUI.HIT_NovaForge. Giữ ghi nhận đóng góp của các tác giả ban đầu: Phạm Minh Khương, Nguyễn Lê Hoài Nam, Đào Duy Chiến.
 
 Phát hành theo GNU General Public License v3.0; xem [LICENSE](LICENSE). Logo và banner SVG mới lưu trong repo để hiển thị ổn định, không phụ thuộc ảnh bên ngoài.
+
+### Thiết kế và kiểm chứng
+
+Xem [báo cáo sử dụng taste-skill / impeccable](docs/SKILL-REVIEW.md), ảnh giao diện và kết quả kiểm tra. Font Be Vietnam Pro được tự host và có [giấy phép OFL](frontend/Danang_EcoWarning_FE/public/fonts/OFL-Be-Vietnam-Pro.txt).

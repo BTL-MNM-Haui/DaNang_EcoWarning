@@ -5,9 +5,9 @@
   "extensions": {
     "motion": [
       {
-        "name": "feedback",
-        "value": "150ms ease",
-        "purpose": "Phản hồi hover/focus, tắt trong reduced motion."
+        "name": "navigation-continuity",
+        "value": "180ms cubic-bezier(.22,1,.36,1)",
+        "purpose": "Chuyển cột grid; WebGL resize được gom sau chuyển động."
       }
     ],
     "breakpoints": [
@@ -33,12 +33,12 @@
     ],
     "navigation": {
       "desktopRail": "76px",
-      "expandedWidth": "256px",
-      "trigger": "hover or focus-within",
+      "expandedWidth": "288px",
+      "trigger": "hover or keyboard focus-visible; mouse focus does not pin",
       "layout": "grid reserves sidebar width; no overlay",
       "mobile": "menu button below 851px",
       "touchDesktop": "expanded labels",
-      "reducedMotion": "no transition"
+      "reducedMotion": "no spatial transition"
     }
   },
   "components": [
@@ -48,12 +48,12 @@
       "refersTo": "button-primary",
       "description": "Hành động chính của tác vụ.",
       "html": "<button class=\"ds-primary\">Gửi báo cáo</button>",
-      "css": ".ds-primary{font:500 14px Geist,system-ui,sans-serif;background:var(--action,#086b91);color:white;padding:10px 16px;min-height:42px;border:1px solid var(--action,#086b91);border-radius:6px;cursor:pointer}.ds-primary:hover{background:#07536f}.ds-primary:focus-visible{outline:3px solid #1d5fbf;outline-offset:3px}.ds-primary:disabled{opacity:.55;cursor:not-allowed}"
+      "css": ".ds-primary{font:500 16px \"Be Vietnam Pro\",system-ui,sans-serif;background:var(--action,#086b91);color:white;padding:10px 16px;min-height:42px;border:1px solid var(--action,#086b91);border-radius:6px;cursor:pointer}.ds-primary:hover{background:#07536f}.ds-primary:focus-visible{outline:3px solid #1d5fbf;outline-offset:3px}.ds-primary:disabled{opacity:.55;cursor:not-allowed}"
     }
   ],
   "narrative": {
     "northStar": "Bản đồ và sổ diễn biến sự cố",
-    "overview": "Bản đồ với danh sách nổi; thời tiết có khối quan sát xanh biển và dải dự báo; dữ liệu có cột bộ chọn riêng.",
+    "overview": "Tra cứu công cộng với Be Vietnam Pro tự host, chữ 16px, dữ liệu có chất lượng rõ ràng, biểu đồ và bảng đối chiếu.",
     "keyCharacteristics": [
       "Map-first",
       "Hai trạng thái độc lập",

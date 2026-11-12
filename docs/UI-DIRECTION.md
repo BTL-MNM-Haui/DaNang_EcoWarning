@@ -40,3 +40,6 @@ Các mục tiếp theo là đề xuất, không phải tính năng đã hoàn th
 - Thời tiết: quan sát hiện tại nổi bật, chỉ số không khí riêng và dải dự báo 3 giờ; chọn ngày và mở bảng chi tiết.
 - Dữ liệu: bộ chọn ở cột riêng, biểu đồ/bảng là nội dung chính.
 - Không push trực tiếp main; các lượt sửa tiếp theo dùng feature branch theo yêu cầu người dùng.
+## Bản cập nhật theo phản hồi về chữ và dữ liệu
+
+Thiết kế, chữ, kích thước menu và phần dữ liệu đã được thay thế bằng hệ thống mới trong DESIGN.md. Đọc docs/SKILL-REVIEW.md để xem ảnh và bằng chứng thực tế. Chữ Be Vietnam Pro tự host thay cho Geist; sidebar mở 288px và phân biệt focus chuột/bàn phím; phần dữ liệu dùng bộ chọn rộng, biểu đồ/bảng và nhãn chất lượng từ API. Các mô tả trước phần này ghi lại hướng đề xuất ở lượt trước.
