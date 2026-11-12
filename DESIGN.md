@@ -28,7 +28,7 @@ typography:
     lineHeight: 1.5
 rounded:
   control: "6px"
-  panel: "10px"
+  panel: "14px"
 spacing:
   compact: "12px"
   normal: "16px"
@@ -67,9 +67,9 @@ Logo là SVG hình ghim địa điểm với đường sóng; chữ trong logo d
 
 ## Layout
 
-Desktop dùng rail 76px, mở phủ thành sidebar 256px khi hover hoặc focus bàn phím, không đẩy nội dung. Thiết bị cảm ứng rộng giữ sidebar đầy đủ; dưới 850px dùng menu. Trang bản đồ chia danh sách 350px và bản đồ dùng phần chiều rộng còn lại. Canvas WebGL nằm trong khung tuyệt đối để resize không làm tăng chiều cao hàng grid.
+Desktop dùng rail 76px, mở thành sidebar 256px khi hover hoặc focus bàn phím, phần nội dung dành đúng chiều rộng tương ứng và không bị menu che. Thiết bị cảm ứng rộng giữ sidebar đầy đủ; dưới 850px dùng menu. Từ 1280px, bản đồ trải toàn vùng làm việc và danh sách nổi rộng 330px; ở desktop hẹp dùng hai cột. Trên điện thoại chuyển giữa Bản đồ và Danh sách. Canvas WebGL nằm trong khung tuyệt đối để resize không làm tăng chiều cao hàng grid.
 
-Các trang nội dung dùng padding 34px 32px và tối đa 1500px. Form báo cáo dùng hai cột trên desktop, một cột trên điện thoại. Dưới 850px, sidebar chuyển thành thanh đầu 60px và menu mở; bản đồ nằm trên danh sách. Dưới 520px, nội dung dùng lề 16px. Bảng dữ liệu có vùng cuộn riêng khi cần.
+Các trang nội dung dùng padding 34px 32px và tối đa 1500px. Form báo cáo dùng hai cột trên desktop, một cột trên điện thoại. Dưới 850px, sidebar chuyển thành thanh đầu 60px và menu mở; người dùng chọn Bản đồ hoặc Danh sách. Dưới 520px, nội dung dùng lề 16px. Bảng dữ liệu có vùng cuộn riêng khi cần.
 
 ## Elevation & Depth
 
@@ -77,7 +77,7 @@ Bề mặt ứng dụng phẳng, phân tách bằng đường viền. Marker tr�
 
 ## Shapes
 
-Panel và lớp chọn bản đồ bo góc 10px, control 6px. Marker sự cố tròn, có số định danh. Logo và favicon dùng cùng ngôn ngữ ghim và sóng.
+Panel bo góc 14px, khối thời tiết 16px, control 6px. Marker sự cố tròn, có số định danh. Logo và favicon dùng cùng ngôn ngữ ghim và sóng.
 
 ## Components
 
@@ -101,3 +101,9 @@ Panel và lớp chọn bản đồ bo góc 10px, control 6px. Marker sự cố t
 ## Navigation and map refinement
 
 Rail có nhãn truy cập và tooltip; focus bàn phím mở menu, Escape đưa focus về main. Hover dùng chuyển động 200ms, reduced-motion tắt transition. Bộ lọc chính luôn hiện; bộ lọc thời gian/độ ngập trong details. Chỉ hiện phân trang bản đồ khi có trên 100 kết quả. Xem docs/UI-DIRECTION.md để phân biệt phần đã làm và đề xuất tiếp theo.
+
+## Bố cục màn hình chính
+
+Thời tiết: khối quan sát #07536f, chữ trắng và chữ phụ #d5edf5; biểu tượng điều kiện lấy theo mã OpenWeather. Bên cạnh là khối không khí với màu chữ theo chỉ số thực tế. Dự báo thành dải mốc 3 giờ, cuộn ngang khi cần; bảng chi tiết vẫn có thể mở. Từ 1100px trở xuống phần tổng quan xếp một cột.
+
+Dữ liệu: bộ chọn rộng 260px ở cột trái, kết quả biểu đồ/bảng ở cột phải. Dưới 851px bộ chọn lên trên kết quả. Panel 14px, khối thời tiết 16px; tiêu đề trang 30px, mobile 26px. Không thêm dữ liệu minh họa.

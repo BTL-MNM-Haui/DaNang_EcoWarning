@@ -74,7 +74,7 @@ export default function DataExplorer() {
   const duplicateTimes =
     points.length - new Set(points.map((point) => point.timestamp)).size;
   return (
-    <div className="ec-page">
+    <div className="ec-page ec-data-page">
       <div className="ec-page-heading">
         <div>
           <h1>Dữ liệu & thống kê</h1>
@@ -85,129 +85,138 @@ export default function DataExplorer() {
         </div>
       </div>
       <Feedback resource={catalog}>
-        <section className="ec-panel">
-          <div className="ec-toolbar">
-            <label>
-              Khu vực / đối tượng
-              <select
-                value={selectedAsset}
-                onChange={(e) => {
-                  setAsset(e.target.value);
-                  setMetric("");
-                }}
-              >
-                {catalog.value?.assets.map((item) => (
-                  <option value={item.id} key={item.id}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Chỉ số
-              <select
-                value={selectedMetric}
-                onChange={(e) => setMetric(e.target.value)}
-                disabled={metrics.loading}
-              >
-                {metrics.value?.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.category} · {item.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Từ ngày
-              <input
-                type="date"
-                value={from}
-                max={to || undefined}
-                onChange={(e) => setFrom(e.target.value)}
-              />
-            </label>
-            <label>
-              Đến ngày
-              <input
-                type="date"
-                value={to}
-                min={from || undefined}
-                onChange={(e) => setTo(e.target.value)}
-              />
-            </label>
-          </div>
-          <Feedback resource={metrics}>
-            <Feedback resource={history} empty={!points.length}>
-              <div className="ec-section-heading">
-                <h2>{history.value?.metricName}</h2>
-                <span>
-                  {points.length} quan sát ·{" "}
-                  {history.value?.unit || "Chưa có đơn vị"}
-                </span>
-              </div>
-              <p className="ec-notice">
-                Giá trị và đơn vị được giữ nguyên từ nguồn. Cần đối chiếu đơn vị
-                trước khi diễn giải; không tự áp hệ số quy đổi.
-              </p>
-              {duplicateTimes > 0 ? (
+        <div className="ec-data-layout">
+          <aside className="ec-panel ec-data-controls">
+            <h2>Chọn dữ liệu</h2>
+            <div className="ec-toolbar">
+              <label>
+                Khu vực / đối tượng
+                <select
+                  value={selectedAsset}
+                  onChange={(e) => {
+                    setAsset(e.target.value);
+                    setMetric("");
+                  }}
+                >
+                  {catalog.value?.assets.map((item) => (
+                    <option value={item.id} key={item.id}>
+                      {item.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Chỉ số
+                <select
+                  value={selectedMetric}
+                  onChange={(e) => setMetric(e.target.value)}
+                  disabled={metrics.loading}
+                >
+                  {metrics.value?.map((item) => (
+                    <option key={item.id} value={item.id}>
+                      {item.category} · {item.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Từ ngày
+                <input
+                  type="date"
+                  value={from}
+                  max={to || undefined}
+                  onChange={(e) => setFrom(e.target.value)}
+                />
+              </label>
+              <label>
+                Đến ngày
+                <input
+                  type="date"
+                  value={to}
+                  min={from || undefined}
+                  onChange={(e) => setTo(e.target.value)}
+                />
+              </label>
+            </div>
+            <p className="ec-source">
+              Chọn khu vực và chỉ số để xem chuỗi quan trắc. Có thể giới hạn
+              khoảng ngày.
+            </p>
+          </aside>
+          <section className="ec-panel ec-data-result">
+            <Feedback resource={metrics}>
+              <Feedback resource={history} empty={!points.length}>
+                <div className="ec-section-heading">
+                  <h2>{history.value?.metricName}</h2>
+                  <span>
+                    {points.length} quan sát ·{" "}
+                    {history.value?.unit || "Chưa có đơn vị"}
+                  </span>
+                </div>
                 <p className="ec-notice">
-                  Có {duplicateTimes} quan sát trùng thời điểm. Hiển thị bảng dữ
-                  liệu gốc để đối chiếu, chưa nối thành một chuỗi xu hướng.
+                  Giá trị và đơn vị được giữ nguyên từ nguồn. Cần đối chiếu đơn
+                  vị trước khi diễn giải; không tự áp hệ số quy đổi.
                 </p>
-              ) : (
-                <div className="ec-data-chart">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart
-                      data={points}
-                      margin={{ top: 10, left: 10, right: 20, bottom: 10 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#e5e9eb" />
-                      <XAxis dataKey="label" minTickGap={65} />
-                      <YAxis width={70} />
-                      <Tooltip />
-                      <Line
-                        name={history.value?.metricName}
-                        dataKey="value"
-                        stroke="#1d5fbf"
-                        dot={points.length < 20}
-                        strokeWidth={2}
-                        isAnimationActive={false}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              )}
-              <details open={duplicateTimes > 0}>
-                <summary>Xem bảng số liệu ({points.length} dòng)</summary>
-                <div className="ec-table-scroll">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Thời điểm quan trắc</th>
-                        <th className="ec-numeric">Giá trị nguồn</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {points.map((point, index) => (
-                        <tr key={`${point.timestamp}-${index}`}>
-                          <td>{displayTime(point.timestamp)}</td>
-                          <td className="ec-numeric">
-                            {point.value.toLocaleString("vi-VN")}
-                          </td>
+                {duplicateTimes > 0 ? (
+                  <p className="ec-notice">
+                    Có {duplicateTimes} quan sát trùng thời điểm. Hiển thị bảng
+                    dữ liệu gốc để đối chiếu, chưa nối thành một chuỗi xu hướng.
+                  </p>
+                ) : (
+                  <div className="ec-data-chart">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart
+                        data={points}
+                        margin={{ top: 10, left: 10, right: 20, bottom: 10 }}
+                      >
+                        <CartesianGrid vertical={false} stroke="#e5e9eb" />
+                        <XAxis dataKey="label" minTickGap={65} />
+                        <YAxis width={70} />
+                        <Tooltip />
+                        <Line
+                          name={history.value?.metricName}
+                          dataKey="value"
+                          stroke="#1d5fbf"
+                          dot={points.length < 20}
+                          strokeWidth={2}
+                          isAnimationActive={false}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                )}
+                <details open={duplicateTimes > 0}>
+                  <summary>Xem bảng số liệu ({points.length} dòng)</summary>
+                  <div className="ec-table-scroll">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Thời điểm quan trắc</th>
+                          <th className="ec-numeric">Giá trị nguồn</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </details>
+                      </thead>
+                      <tbody>
+                        {points.map((point, index) => (
+                          <tr key={`${point.timestamp}-${index}`}>
+                            <td>{displayTime(point.timestamp)}</td>
+                            <td className="ec-numeric">
+                              {point.value.toLocaleString("vi-VN")}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </details>
+              </Feedback>
             </Feedback>
-          </Feedback>
-          <p className="ec-source">
-            {catalog.value?.source} · Phạm vi dữ liệu:{" "}
-            {catalog.value?.years?.at(-1)?.year ?? "—"} –{" "}
-            {catalog.value?.years?.[0]?.year ?? "—"}
-          </p>
-        </section>
+            <p className="ec-source">
+              {catalog.value?.source} · Phạm vi dữ liệu:{" "}
+              {catalog.value?.years?.at(-1)?.year ?? "—"} –{" "}
+              {catalog.value?.years?.[0]?.year ?? "—"}
+            </p>
+          </section>
+        </div>
       </Feedback>
       <section className="ec-panel">
         <h2>Khu vực có nhiều ghi nhận ngập</h2>

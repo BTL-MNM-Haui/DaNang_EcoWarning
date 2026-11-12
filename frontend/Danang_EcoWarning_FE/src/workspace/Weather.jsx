@@ -1,5 +1,16 @@
 import { useResource } from "./useResource";
-import { useState } from "react";
+import { useState, createElement } from "react";
+import { Link } from "react-router-dom";
+import {
+  FiSun,
+  FiMoon,
+  FiCloud,
+  FiCloudRain,
+  FiCloudSnow,
+  FiWind,
+  FiDroplet,
+  FiArrowUpRight,
+} from "react-icons/fi";
 import axios from "axios";
 import { Feedback } from "./shared";
 import { displayTime } from "./api";
@@ -21,6 +32,21 @@ const weather = async (path) => {
     })
     .then((r) => r.data);
 };
+function WeatherSymbol({ condition }) {
+  const id = condition?.id,
+    icon =
+      id >= 200 && id < 600
+        ? FiCloudRain
+        : id >= 600 && id < 700
+          ? FiCloudSnow
+          : id === 800
+            ? condition?.icon?.endsWith("n")
+              ? FiMoon
+              : FiSun
+            : FiCloud;
+  return createElement(icon, { "aria-hidden": true });
+}
+const airLabels = ["", "Tốt", "Khá", "Trung bình", "Kém", "Rất kém"];
 export default function Weather() {
   const current = useResource(() => weather("weather")),
     forecast = useResource(() => weather("forecast")),
@@ -33,130 +59,205 @@ export default function Weather() {
       ),
     ),
   ];
-  const selected = day || days[0];
-  const rows =
-    forecast.value?.list?.filter(
-      (item) =>
-        new Date(item.dt * 1000).toLocaleDateString("vi-VN") === selected,
-    ) || [];
+  const selected = days.includes(day) ? day : days[0];
+  const rows = (forecast.value?.list || []).filter(
+    (item) => new Date(item.dt * 1000).toLocaleDateString("vi-VN") === selected,
+  );
+  const observation = current.value,
+    airData = air.value?.list?.[0];
   return (
-    <div className="ec-page">
+    <div className="ec-page ec-weather-page">
       <div className="ec-page-heading">
         <div>
-          <h1>Thời tiết Đà Nẵng</h1>
-          <p>Dữ liệu tham khảo từ OpenWeather tại tọa độ 16.0544, 108.2022.</p>
+          <h1>Thời tiết & không khí</h1>
+          <p>Góc nhìn thời tiết tại Đà Nẵng, trước khi bạn ra ngoài.</p>
         </div>
+        <Link className="ec-button ec-secondary" to="/">
+          Xem bản đồ sự cố <FiArrowUpRight aria-hidden="true" />
+        </Link>
       </div>
-      <div className="ec-weather-grid">
-        <section className="ec-panel">
-          <h2>Ghi nhận hiện tại</h2>
+      <div className="ec-weather-overview">
+        <section className="ec-current-weather">
+          <h2>Thời tiết hiện tại</h2>
           <Feedback resource={current}>
-            {current.value && (
+            {observation && (
               <>
-                <div className="ec-temperature">
-                  {Math.round(current.value.main.temp)}
-                  <span>°C</span>
+                <div className="ec-weather-reading">
+                  <div>
+                    <div className="ec-temperature">
+                      {Math.round(observation.main.temp)}
+                      <span>°C</span>
+                    </div>
+                    <p>{observation.weather?.[0]?.description}</p>
+                  </div>
+                  <div className="ec-weather-symbol">
+                    <WeatherSymbol condition={observation.weather?.[0]} />
+                  </div>
                 </div>
-                <p>{current.value.weather?.[0]?.description}</p>
-                <dl className="ec-facts">
+                <dl className="ec-weather-measures">
                   <div>
-                    <dt>Cảm nhận</dt>
-                    <dd>{current.value.main.feels_like} °C</dd>
+                    <dt>
+                      <FiSun aria-hidden="true" />
+                      Cảm nhận
+                    </dt>
+                    <dd>
+                      {observation.main.feels_like} <span>°C</span>
+                    </dd>
                   </div>
                   <div>
-                    <dt>Độ ẩm</dt>
-                    <dd>{current.value.main.humidity}%</dd>
+                    <dt>
+                      <FiDroplet aria-hidden="true" />
+                      Độ ẩm
+                    </dt>
+                    <dd>
+                      {observation.main.humidity}
+                      <span>%</span>
+                    </dd>
                   </div>
                   <div>
-                    <dt>Gió</dt>
-                    <dd>{current.value.wind.speed} m/s</dd>
+                    <dt>
+                      <FiWind aria-hidden="true" />
+                      Gió
+                    </dt>
+                    <dd>
+                      {observation.wind.speed} <span>m/s</span>
+                    </dd>
                   </div>
                 </dl>
                 <p className="ec-source">
-                  Quan sát: {displayTime(current.value.dt * 1000)}
+                  Quan sát: {displayTime(observation.dt * 1000)}
                 </p>
               </>
             )}
           </Feedback>
         </section>
-        <section className="ec-panel">
+        <section className="ec-air-panel">
           <h2>Chất lượng không khí</h2>
           <Feedback resource={air}>
-            {air.value?.list?.[0] && (
+            {airData && (
               <>
-                <div className="ec-air-quality">
-                  {["", "Tốt", "Khá", "Trung bình", "Kém", "Rất kém"][
-                    air.value.list[0].main.aqi
-                  ] || "Chưa rõ"}
+                <div
+                  className={`ec-air-reading ec-air-level-${airData.main.aqi}`}
+                >
+                  <span className="ec-air-dot" />
+                  {airLabels[airData.main.aqi] || "Chưa rõ"}
                 </div>
-                <p>Chỉ số OpenWeather: {air.value.list[0].main.aqi}/5</p>
-                <dl className="ec-facts">
+                <p className="ec-muted">
+                  Thang OpenWeather · {airData.main.aqi}/5
+                </p>
+                <dl className="ec-air-measures">
                   <div>
                     <dt>PM2.5</dt>
-                    <dd>{air.value.list[0].components.pm2_5} µg/m³</dd>
+                    <dd>
+                      {airData.components.pm2_5}
+                      <small>µg/m³</small>
+                    </dd>
                   </div>
                   <div>
                     <dt>PM10</dt>
-                    <dd>{air.value.list[0].components.pm10} µg/m³</dd>
+                    <dd>
+                      {airData.components.pm10}
+                      <small>µg/m³</small>
+                    </dd>
                   </div>
                 </dl>
                 <p className="ec-source">
-                  Quan sát: {displayTime(air.value.list[0].dt * 1000)}
+                  Quan sát: {displayTime(airData.dt * 1000)}
                 </p>
               </>
             )}
           </Feedback>
         </section>
       </div>
-      <section className="ec-panel">
+      <section className="ec-panel ec-forecast-panel">
         <div className="ec-section-heading">
-          <h2>Dự báo theo giờ</h2>
+          <div>
+            <h2>Dự báo trong ngày</h2>
+            <p className="ec-muted">Các mốc dự báo cách nhau 3 giờ.</p>
+          </div>
           <label>
-            Ngày
+            Chọn ngày
             <select
               value={selected || ""}
+              disabled={!days.length}
               onChange={(e) => setDay(e.target.value)}
             >
-              {days.map((value) => (
-                <option key={value}>{value}</option>
-              ))}
+              {days.length ? (
+                days.map((value) => <option key={value}>{value}</option>)
+              ) : (
+                <option value="">Đang tải…</option>
+              )}
             </select>
           </label>
         </div>
         <Feedback resource={forecast} empty={!rows.length}>
-          <div className="ec-table-scroll">
-            <table>
-              <thead>
-                <tr>
-                  <th>Thời điểm</th>
-                  <th>Điều kiện</th>
-                  <th className="ec-numeric">Nhiệt độ</th>
-                  <th className="ec-numeric">Khả năng mưa</th>
-                  <th className="ec-numeric">Mưa / 3 giờ</th>
-                  <th className="ec-numeric">Gió</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((item) => (
-                  <tr key={item.dt}>
-                    <td>{displayTime(item.dt * 1000)}</td>
-                    <td>{item.weather?.[0]?.description}</td>
-                    <td className="ec-numeric">{item.main.temp} °C</td>
-                    <td className="ec-numeric">
-                      {Math.round(item.pop * 100)}%
-                    </td>
-                    <td className="ec-numeric">{item.rain?.["3h"] ?? 0} mm</td>
-                    <td className="ec-numeric">{item.wind.speed} m/s</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div
+            className="ec-hourly-strip"
+            role="region"
+            aria-label="Dự báo mỗi ba giờ"
+            tabIndex={0}
+          >
+            {rows.map((item) => (
+              <article key={item.dt} className="ec-forecast-hour">
+                <time dateTime={new Date(item.dt * 1000).toISOString()}>
+                  {new Date(item.dt * 1000).toLocaleTimeString("vi-VN", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </time>
+                <WeatherSymbol condition={item.weather?.[0]} />
+                <strong>
+                  {Math.round(item.main.temp)}
+                  <span>°C</span>
+                </strong>
+                <p>{item.weather?.[0]?.description}</p>
+                <span className="ec-rain-chance">
+                  <FiDroplet aria-hidden="true" />
+                  {Math.round(item.pop * 100)}% mưa
+                </span>
+                <small>{item.rain?.["3h"] ?? 0} mm / 3 giờ</small>
+              </article>
+            ))}
           </div>
+          <details className="ec-forecast-table">
+            <summary>Xem bảng dự báo chi tiết</summary>
+            <div className="ec-table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Thời điểm</th>
+                    <th>Điều kiện</th>
+                    <th className="ec-numeric">Nhiệt độ</th>
+                    <th className="ec-numeric">Khả năng mưa</th>
+                    <th className="ec-numeric">Mưa / 3 giờ</th>
+                    <th className="ec-numeric">Gió</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((item) => (
+                    <tr key={item.dt}>
+                      <td>{displayTime(item.dt * 1000)}</td>
+                      <td>{item.weather?.[0]?.description}</td>
+                      <td className="ec-numeric">{item.main.temp} °C</td>
+                      <td className="ec-numeric">
+                        {Math.round(item.pop * 100)}%
+                      </td>
+                      <td className="ec-numeric">
+                        {item.rain?.["3h"] ?? 0} mm
+                      </td>
+                      <td className="ec-numeric">{item.wind.speed} m/s</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </details>
         </Feedback>
-        <p className="ec-source">
-          Dự báo bên ngoài không xác nhận tình trạng ngập tại một tuyến đường.
-        </p>
       </section>
+      <p className="ec-weather-attribution">
+        Nguồn: OpenWeather · Tọa độ tham khảo: 16.0544, 108.2022. Dự báo thời
+        tiết không xác nhận tình trạng ngập tại từng tuyến đường.
+      </p>
     </div>
   );
 }

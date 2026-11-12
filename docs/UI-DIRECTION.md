@@ -6,9 +6,9 @@ Tập trung vào việc tìm sự cố và gửi cập nhật. Xanh biển gợi
 
 ## Đã chỉnh trong lượt này
 
-- Desktop: rail 76px, mở thành 256px khi hover hoặc có focus bàn phím. Mở phủ lên nội dung, không thay đổi kích thước bản đồ. Escape đưa focus về nội dung.
+- Desktop: rail 76px, mở thành 256px khi hover hoặc có focus bàn phím. Chiếm một cột riêng trong grid, không che nội dung. Escape đưa focus về nội dung.
 - Thiết bị cảm ứng trên 850px giữ nhãn điều hướng; dưới 850px dùng nút menu, chọn trang sẽ đóng menu.
-- Header bản đồ gọn hơn; danh sách desktop 350px để dành diện tích cho bản đồ.
+- Bản đồ toàn vùng làm việc với danh sách nổi 330px từ 1280px; desktop hẹp dùng hai cột. Điện thoại có nút Bản đồ / Danh sách.
 - Giữ tìm kiếm, diễn biến và xác minh luôn hiện. Thời gian/độ ngập ở nhóm “Bộ lọc thêm”, có chỉ báo khi đang áp dụng.
 - Danh sách rỗng giải thích tình trạng và có hành động mở rộng tìm kiếm/gửi báo cáo. Chỉ hiện phân trang khi có hơn 100 kết quả.
 - Tăng nhãn bộ lọc lên 13px, thống nhất khoảng cách và bo góc. Một số biểu tượng chức năng dùng màu nhận diện nhẹ.
@@ -29,9 +29,14 @@ Nếu thiết kế lại logo sâu hơn, đề xuất ghép nét sóng sông Hà
 
 ## Các bước UX tiếp theo
 
-1. Cho người dùng chọn “Bản đồ / Danh sách” trên điện thoại để tra cứu mà không phải cuộn qua bản đồ trước.
-2. Thêm tìm địa chỉ bằng dịch vụ geocoding khi xác nhận nhà cung cấp và hạn mức. Ô hiện tại tìm nội dung báo cáo, chưa phải tìm mọi địa chỉ.
-3. Màn hình quản lý có bố cục hàng đợi: chờ xác minh, xem bằng chứng, quyết định và ghi lý do.
-4. Có hướng dẫn ngắn ở lần gửi báo cáo đầu tiên: vị trí, thời gian quan sát, ảnh và diễn biến. Không thêm tour dài chặn công việc.
+1. Thêm tìm địa chỉ bằng dịch vụ geocoding khi xác nhận nhà cung cấp và hạn mức. Ô hiện tại tìm nội dung báo cáo, chưa phải tìm mọi địa chỉ.
+2. Màn hình quản lý có bố cục hàng đợi: chờ xác minh, xem bằng chứng, quyết định và ghi lý do.
+3. Có hướng dẫn ngắn ở lần gửi báo cáo đầu tiên: vị trí, thời gian quan sát, ảnh và diễn biến. Không thêm tour dài chặn công việc.
 
 Các mục tiếp theo là đề xuất, không phải tính năng đã hoàn thành.
+
+## Bản thiết kế lại trên nhánh riêng
+
+- Thời tiết: quan sát hiện tại nổi bật, chỉ số không khí riêng và dải dự báo 3 giờ; chọn ngày và mở bảng chi tiết.
+- Dữ liệu: bộ chọn ở cột riêng, biểu đồ/bảng là nội dung chính.
+- Không push trực tiếp main; các lượt sửa tiếp theo dùng feature branch theo yêu cầu người dùng.

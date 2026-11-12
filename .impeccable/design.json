@@ -33,8 +33,9 @@
     ],
     "navigation": {
       "desktopRail": "76px",
-      "expandedOverlay": "256px",
+      "expandedWidth": "256px",
       "trigger": "hover or focus-within",
+      "layout": "grid reserves sidebar width; no overlay",
       "mobile": "menu button below 851px",
       "touchDesktop": "expanded labels",
       "reducedMotion": "no transition"
@@ -52,7 +53,7 @@
   ],
   "narrative": {
     "northStar": "Bản đồ và sổ diễn biến sự cố",
-    "overview": "Bề mặt phẳng, điều hướng xanh ngọc và hành động xanh biển, dữ liệu thật và các trạng thái có giải thích.",
+    "overview": "Bản đồ với danh sách nổi; thời tiết có khối quan sát xanh biển và dải dự báo; dữ liệu có cột bộ chọn riêng.",
     "keyCharacteristics": [
       "Map-first",
       "Hai trạng thái độc lập",

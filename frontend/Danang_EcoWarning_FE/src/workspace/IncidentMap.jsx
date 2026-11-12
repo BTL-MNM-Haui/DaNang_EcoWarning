@@ -165,7 +165,8 @@ export default function IncidentMap() {
     [depth, setDepth] = useState(""),
     [page, setPage] = useState(0),
     [selected, setSelected] = useState(null),
-    [layer, setLayer] = useState("");
+    [layer, setLayer] = useState(""),
+    [mobileView, setMobileView] = useState("map");
   const resource = useResource(
     () =>
       reports
@@ -211,7 +212,21 @@ export default function IncidentMap() {
           Báo cáo sự cố
         </Link>
       </div>
-      <div className="ec-map-workspace">
+      <div className="ec-view-switch" role="group" aria-label="Cách xem sự cố">
+        <button
+          aria-pressed={mobileView === "map"}
+          onClick={() => setMobileView("map")}
+        >
+          Bản đồ
+        </button>
+        <button
+          aria-pressed={mobileView === "list"}
+          onClick={() => setMobileView("list")}
+        >
+          Danh sách{resource.value ? ` (${resource.value.total})` : ""}
+        </button>
+      </div>
+      <div className={`ec-map-workspace is-${mobileView}`}>
         <section className="ec-map-list" aria-label="Danh sách sự cố">
           <div className="ec-map-tools">
             <h2 className="ec-map-list-title">Báo cáo cộng đồng</h2>
