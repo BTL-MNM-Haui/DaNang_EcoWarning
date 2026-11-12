@@ -60,7 +60,7 @@ public class MetricServiceImpl implements MetricService {
 
         Specification<Observation> spec = observationSpecification.build(criteria);
 
-        Sort sort = Sort.by(Sort.Direction.ASC, "recordTime");
+        Sort sort = Sort.by(Sort.Direction.ASC, "recordTime", "id");
 
         List<Observation> observations = observationSearchRepository.findAll(spec, sort);
 
