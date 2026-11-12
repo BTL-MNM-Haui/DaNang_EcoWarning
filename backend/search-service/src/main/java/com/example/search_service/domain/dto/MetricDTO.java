@@ -13,11 +13,13 @@ public class MetricDTO {
     private String name;
     private String category;
     private String unit;
+    private String unitRaw;
 
     public MetricDTO(Metric metric) {
         this.id = metric.getId().toString();
         this.name = metric.getName();
         this.category = metric.getCategory();
+        this.unitRaw = metric.getUnit();
         this.unit = cleanUnit(metric.getUnit());
     }
 }

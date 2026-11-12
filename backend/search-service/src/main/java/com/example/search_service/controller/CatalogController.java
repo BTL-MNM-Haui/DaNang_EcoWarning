@@ -1,6 +1,7 @@
 package com.example.search_service.controller;
 
 import java.util.Map;
+import static com.example.search_service.helpter.SearchServiceHelper.cleanUnit;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,11 @@ public class CatalogController {
                     + " observations o ON a.id=o.asset_id GROUP BY a.id,a.name,a.asset_type ORDER"
                     + " BY a.name"),
         "metrics",
-            db.queryForList("SELECT id,name,category,unit FROM metrics ORDER BY category,name"),
+            db.queryForList("SELECT id,name,category,unit FROM metrics ORDER BY category,name").stream().map(row -> {
+              row.put("unitRaw", row.get("unit"));
+              row.put("unit", cleanUnit((String) row.get("unit")));
+              return row;
+            }).toList(),
         "years",
             db.queryForList(
                 "SELECT DISTINCT extract(year FROM record_time)::int AS year FROM observations"
