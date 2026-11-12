@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
 :root {
-  --ground: #f2f4f5;
+  --ground: #f2f8fb;
   --surface: #fff;
-  --ink: #172329;
-  --muted: #52616a;
-  --line: #dce2e5;
-  --soft: #e8edef;
-  --accent: #1d5fbf;
+  --ink: #123c4b;
+  --muted: #4f6670;
+  --line: #cbdfe5;
+  --soft: #e4f1f5;
+  --accent: #086b91;
+  --action: #086b91;
+  --action-hover: #07536f;
+  --sidebar: #e6f3f6;
+  --selected: #c5e5ec;
   --danger: #a32e32;
   --radius: 8px;
   font-family: "Geist", system-ui, sans-serif;
@@ -144,7 +148,7 @@ a {
     color 0.15s ease;
 }
 button.ec-button:hover {
-  background: #344650;
+  background: var(--action-hover);
 }
 fieldset {
   border: 0;
@@ -158,16 +162,16 @@ fieldset {
   gap: 8px;
   min-height: 42px;
   padding: 10px 16px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--action);
   border-radius: 6px;
-  background: var(--ink);
+  background: var(--action);
   color: #fff;
   text-decoration: none;
   font-weight: 500;
   white-space: nowrap;
 }
 .ec-button:hover {
-  background: #344650;
+  background: var(--action-hover);
   color: #fff;
 }
 .ec-secondary {
@@ -175,7 +179,8 @@ fieldset {
   color: var(--ink);
   border-color: #b6c2c9;
 }
-.ec-secondary:hover {
+.ec-secondary:hover,
+button.ec-secondary:hover {
   background: #e8edef;
   color: var(--ink);
 }
@@ -237,7 +242,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  background: var(--ground);
+  background: var(--sidebar);
   overflow-y: auto;
 }
 .ec-brand img {
@@ -249,6 +254,7 @@ fieldset {
   padding: 0 2px;
 }
 .ec-scope {
+  background: #f6fcfd;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -284,8 +290,8 @@ fieldset {
 }
 .ec-sidebar nav a:hover,
 .ec-sidebar nav a.active {
-  background: #e1e7ea;
-  color: var(--ink);
+  background: var(--selected);
+  color: #07506a;
 }
 .ec-sidebar nav svg {
   width: 17px;
@@ -505,8 +511,8 @@ fieldset {
   color: #9b3033;
 }
 .ec-status--resolved {
-  background: #edf0f1;
-  color: #52616a;
+  background: #e1f3e9;
+  color: #246044;
 }
 .ec-map-heading {
   padding: 30px 28px 22px;
@@ -648,13 +654,13 @@ fieldset {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #a32e32;
+  background: #b3433e;
 }
 .ec-map-legend i.is-pending {
-  background: #9c6e27;
+  background: #996410;
 }
 .ec-map-legend i.is-resolved {
-  background: #61747f;
+  background: #2f7b60;
 }
 .ec-map-detail {
   position: absolute;
@@ -690,7 +696,7 @@ fieldset {
   color: var(--muted);
 }
 .ec-map-pin {
-  background: #a32e32 !important;
+  background: #b3433e !important;
   color: #fff !important;
   border: 2px solid #fff;
   border-radius: 50%;
@@ -702,10 +708,10 @@ fieldset {
   box-shadow: 0 2px 5px #0003;
 }
 .ec-map-pin.is-pending {
-  background: #9c6e27 !important;
+  background: #996410 !important;
 }
 .ec-map-pin.is-resolved {
-  background: #61747f !important;
+  background: #2f7b60 !important;
 }
 .ec-reference-pin {
   display: block;
@@ -907,6 +913,17 @@ th {
   grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
+.ec-weather-grid > .ec-panel:first-child {
+  background: #edf7ff;
+  border-color: #b8d9ed;
+}
+.ec-weather-grid > .ec-panel:nth-child(2) {
+  background: #edf8f3;
+  border-color: #badfce;
+}
+.ec-weather-grid h2 {
+  color: var(--action-hover);
+}
 .ec-temperature {
   font-size: 60px;
   line-height: 1.2;
@@ -1009,7 +1026,7 @@ th {
   color: var(--ink) !important;
 }
 .ec-profile button {
-  background: var(--ink);
+  background: var(--action);
   color: #fff;
 }
 .ec-profile .profile-header {
@@ -1273,6 +1290,7 @@ th {
   padding-inline: 20px;
 }
 .ec-auth-page {
+  --ground: #e6f3f6;
   min-height: 100dvh;
   padding: 32px 20px;
   display: flex;
