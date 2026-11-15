@@ -44,7 +44,10 @@ function WeatherSymbol({ condition }) {
               ? FiMoon
               : FiSun
             : FiCloud;
-  return createElement(icon, { "aria-hidden": true });
+  return createElement(icon, {
+    "aria-hidden": true,
+    className: id === 800 ? "ec-weather-sun" : "ec-weather-cloud",
+  });
 }
 const airLabels = ["", "Tốt", "Khá", "Trung bình", "Kém", "Rất kém"];
 export default function Weather() {
@@ -131,7 +134,7 @@ export default function Weather() {
             )}
           </Feedback>
         </section>
-        <section className="ec-air-panel">
+        <section className="ec-air-panel" data-aqi={airData?.main.aqi}>
           <h2>Chất lượng không khí</h2>
           <Feedback resource={air}>
             {airData && (
