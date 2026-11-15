@@ -367,7 +367,10 @@ export default function DataExplorer() {
                             data={model.trend}
                             margin={{ top: 20, right: 20, left: 0, bottom: 12 }}
                           >
-                            <CartesianGrid vertical={false} stroke="#d4dfe5" />
+                            <CartesianGrid
+                              vertical={false}
+                              stroke="var(--line)"
+                            />
                             <XAxis
                               dataKey="label"
                               minTickGap={40}
@@ -409,7 +412,7 @@ export default function DataExplorer() {
                             <Line
                               name={history.value?.metricName}
                               dataKey="number"
-                              stroke="#08749c"
+                              stroke="var(--action)"
                               strokeWidth={3}
                               connectNulls={false}
                               dot={

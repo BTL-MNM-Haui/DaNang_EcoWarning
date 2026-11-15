@@ -4,7 +4,7 @@
 .ec-data-sections {
   display: flex;
   gap: 28px;
-  border-bottom: 1px solid #b9cad4;
+  border-bottom: 1px solid var(--line);
   margin-bottom: 28px;
   overflow-x: auto;
 }
@@ -16,17 +16,17 @@
   padding: 12px 0 16px;
   font-size: 16px;
   white-space: nowrap;
-  color: #415766;
+  color: var(--muted);
 }
 .ec-data-sections button[aria-pressed="true"] {
-  color: #07536f;
-  border-bottom-color: #08749c;
+  color: var(--action-hover);
+  border-bottom-color: var(--action);
   font-weight: 600;
 }
 .ec-dataset-picker {
   padding: 24px;
   background: #fff;
-  border: 1px solid #bdcfd9;
+  border: 1px solid var(--line);
   border-radius: 12px;
   margin-bottom: 24px;
 }
@@ -53,13 +53,13 @@
 }
 .ec-date-range summary {
   cursor: pointer;
-  color: #07536f;
+  color: var(--action-hover);
   font-size: 15px;
   min-height: 32px;
 }
 .ec-date-range summary span {
   margin-left: 12px;
-  color: #415766;
+  color: var(--muted);
   font-size: 14px;
 }
 .ec-date-range > div {
@@ -76,7 +76,7 @@
 }
 .ec-dataset-result {
   background: #fff;
-  border: 1px solid #bdcfd9;
+  border: 1px solid var(--line);
   border-radius: 12px;
   padding: 28px;
 }
@@ -88,19 +88,19 @@
 }
 .ec-dataset-heading h2 {
   font-size: 24px;
-  color: #123344;
+  color: var(--ink);
   margin-bottom: 8px;
   line-height: 1.4;
 }
 .ec-dataset-category {
-  color: #415766;
+  color: var(--muted);
   font-size: 15px;
   margin-bottom: 24px;
 }
 .ec-unit-label {
   padding: 8px 12px;
-  background: #e9f3f7;
-  color: #164a60;
+  background: var(--sky);
+  color: var(--action-hover);
   border-radius: 6px;
   font-size: 15px;
   white-space: nowrap;
@@ -111,12 +111,12 @@
   gap: 0;
   padding: 20px 0;
   margin: 0 0 24px;
-  border-top: 1px solid #d2dfe5;
-  border-bottom: 1px solid #d2dfe5;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 .ec-dataset-summary > div {
   padding: 0 20px;
-  border-right: 1px solid #d2dfe5;
+  border-right: 1px solid var(--line);
   min-width: 0;
 }
 .ec-dataset-summary > div:first-child {
@@ -126,7 +126,7 @@
   border: 0;
 }
 .ec-dataset-summary dt {
-  color: #415766;
+  color: var(--muted);
   font-size: 14px;
   margin-bottom: 8px;
 }
@@ -136,13 +136,13 @@
   flex-wrap: wrap;
   gap: 8px;
   margin: 0;
-  color: #123344;
+  color: var(--ink);
   font-size: 21px;
   font-weight: 600;
 }
 .ec-dataset-summary dd svg {
   width: 16px;
-  color: #415766;
+  color: var(--muted);
 }
 .ec-dataset-summary .ec-value-warning {
   color: #8a4215;
@@ -152,9 +152,9 @@
   align-items: start;
   gap: 14px;
   padding: 18px;
-  background: #fff4df;
-  color: #664315;
-  border: 1px solid #e1bf80;
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+  border: 1px solid #d9ad46;
   border-radius: 8px;
   margin-bottom: 26px;
 }
@@ -171,7 +171,7 @@
   font-size: 15px;
 }
 .ec-quality-summary button {
-  color: #664315;
+  color: var(--sun-ink);
   border-color: #bb9558;
   background: #fffdf8;
   flex-shrink: 0;
@@ -198,14 +198,14 @@
   margin-bottom: 12px;
 }
 .ec-dataset-viewbar > span {
-  color: #415766;
+  color: var(--muted);
   font-size: 14px;
 }
 .ec-data-view-switch {
   display: inline-flex;
   gap: 4px;
   padding: 4px;
-  background: #eaf0f4;
+  background: var(--soft);
   border-radius: 8px;
 }
 .ec-data-view-switch button {
@@ -214,12 +214,12 @@
   align-items: center;
   background: transparent;
   border: 0;
-  color: #334d5d;
+  color: var(--muted);
   padding: 9px 14px;
   font-size: 15px;
 }
 .ec-data-view-switch button[aria-pressed="true"] {
-  background: #07536f;
+  background: var(--action-hover);
   color: #fff;
 }
 .ec-history-chart {
@@ -242,14 +242,14 @@
 }
 .ec-observation-table th {
   font-size: 14px;
-  color: #334d5d;
+  color: var(--muted);
   font-weight: 600;
 }
 .ec-observation-table td {
   padding: 16px 14px;
 }
 .ec-observation-table td:last-child {
-  color: #415766;
+  color: var(--muted);
   font-size: 14px;
 }
 .ec-observation-table tr.is-conflict {
@@ -259,8 +259,8 @@
   display: inline-flex;
   padding: 5px 8px;
   border-radius: 4px;
-  background: #edf5f0;
-  color: #265d40;
+  background: var(--mint);
+  color: var(--teal);
   font-size: 14px;
   white-space: nowrap;
 }
@@ -272,23 +272,23 @@
 .ec-data-quality.is-repeated,
 .ec-data-quality.is-missing {
   background: #edf1f4;
-  color: #334d5d;
+  color: var(--muted);
 }
 .ec-data-provenance {
-  border-top: 1px solid #d2dfe5;
+  border-top: 1px solid var(--line);
   padding-top: 20px;
   margin-top: 20px;
 }
 .ec-data-provenance summary {
   font-size: 15px;
-  color: #07536f;
+  color: var(--action-hover);
   cursor: pointer;
   min-height: 32px;
 }
 .ec-data-provenance p {
   max-width: 80ch;
   font-size: 15px;
-  color: #415766;
+  color: var(--muted);
   margin: 12px 0 0;
 }
 @media (max-width: 1150px) {
@@ -383,5 +383,79 @@
   }
   .ec-date-range .ec-button {
     width: 100%;
+  }
+}
+
+/* The selected dataset leads the result; controls stay in one coherent tray. */
+.ec-data-page {
+  max-width: 1440px;
+}
+.ec-dataset-picker {
+  padding: 24px;
+  border-color: #acc9ee;
+}
+.ec-dataset-result {
+  padding: 24px;
+  border-color: var(--line);
+}
+.ec-dataset-heading {
+  padding: 20px 22px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background: var(--sky);
+}
+.ec-dataset-heading h2 {
+  color: #123c76;
+}
+.ec-dataset-category {
+  margin-bottom: 0;
+  color: #365e87;
+}
+.ec-unit-label {
+  background: var(--surface);
+  border: 1px solid #acc9ee;
+}
+.ec-dataset-summary {
+  border-top: 0;
+  padding-top: 0;
+}
+.ec-dataset-summary dd {
+  color: var(--action-hover);
+}
+.ec-data-sections button:hover {
+  background: transparent;
+  color: var(--action);
+}
+.ec-data-view-switch button[aria-pressed="true"] {
+  background: var(--action);
+}
+.ec-data-view-switch button[aria-pressed="false"]:hover {
+  background: #dbeaff;
+}
+.ec-data-quality.is-valid {
+  background: #dbf5e9;
+  color: #176343;
+}
+.ec-data-quality.is-conflict {
+  background: #ffe7d0;
+  color: #864000;
+}
+.ec-observation-table tr.is-conflict {
+  background: #fff7e8;
+}
+.ec-observation-table th {
+  color: var(--action-hover);
+}
+.ec-quality-clear {
+  color: var(--teal);
+}
+@media (max-width: 600px) {
+  .ec-dataset-heading {
+    padding: 18px;
+    gap: 14px;
+  }
+  .ec-dataset-result,
+  .ec-dataset-picker {
+    padding: 18px 16px;
   }
 }
