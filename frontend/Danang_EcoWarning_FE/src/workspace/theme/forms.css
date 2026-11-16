@@ -1,0 +1,73 @@
+.ec-task-guide {
+  background: var(--mint);
+  color: #175c4a;
+  border: 1px solid #a7d9c7;
+  padding: 18px 22px;
+}
+.ec-task-guide span {
+  color: var(--teal);
+}
+.ec-report-grid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+.ec-report-grid > .ec-panel {
+  padding: 26px;
+}
+.ec-report-grid h2,
+.ec-import-page .ec-panel > h2 {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.ec-upload {
+  background: var(--soft);
+  border-color: var(--action);
+  color: var(--action-hover);
+}
+.ec-upload small {
+  color: var(--muted);
+}
+.ec-import-mapping {
+  background: var(--soft);
+  padding: 20px;
+  border: 1px solid var(--line);
+}
+.ec-incidents-page > .ec-toolbar {
+  border-color: var(--line);
+  background: var(--surface);
+}
+.ec-report-list .ec-incident:hover {
+  background: #f5f9ff;
+}
+.ec-report-list .ec-incident h3 a {
+  color: var(--action-hover);
+}
+.ec-notification {
+  padding: 24px;
+  border-color: var(--line);
+}
+.ec-notification.is-unread {
+  background: var(--sky);
+}
+.ec-notification.is-unread p a {
+  color: #123c76;
+  font-weight: 500;
+}
+.ec-notification button,
+.ec-watch-row button {
+  color: var(--action-hover);
+  border-color: var(--control-line);
+}
+.ec-facts > div {
+  border-color: var(--line);
+  padding: 14px 0;
+}
+.ec-facts dt {
+  color: var(--muted);
+}
+.ec-facts dd {
+  color: var(--ink);
+}
+.ec-nearby {
+  color: var(--action-hover);
+}
