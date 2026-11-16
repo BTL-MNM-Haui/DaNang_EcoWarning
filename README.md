@@ -82,7 +82,7 @@ Script tích hợp chuẩn bị dữ liệu tạm, kiểm tra API và dọn fixt
 - Ghi nhận cũ chưa có owner được giữ lại; không tự gán cho một tài khoản.
 - Thông báo hiện trong ứng dụng; email/push thông báo sự cố chưa triển khai.
 - Gợi ý báo cáo trùng có giới hạn tập dữ liệu; thống kê tái diễn là nhóm theo ô tọa độ, không thay cho khảo sát thực địa.
-- Không triển khai AI, dự báo ngập hoặc chỉ đường an toàn trong bản nâng cấp này.
+- API model đánh giá nguy cơ ngập thử nghiệm có tại [AI/README.md](AI/README.md), nhận đặc trưng từ BE. Chưa nối vào giao diện hoặc kiểm chứng dự báo tại Đà Nẵng; chưa triển khai chỉ đường an toàn.
 - Các khóa/địa chỉ bên ngoài cần cấu hình riêng. Không có số liệu tải hay độ chính xác dự báo được bịa để minh họa.
 
 [Kế hoạch và đánh giá ban đầu](docs/PLAN.md) · [Trạng thái triển khai](IMPLEMENTATION.md) · [Hệ thống giao diện](DESIGN.md)
