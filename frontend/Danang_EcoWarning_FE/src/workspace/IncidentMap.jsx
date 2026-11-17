@@ -1,6 +1,7 @@
 import { useResource } from "./useResource";
 import { useEffect, useRef, useState } from "react";
-import goong from "@goongmaps/goong-js";
+// import goong from "@goongmaps/goong-js";
+import trackasia from "trackasia-gl";
 import { Link } from "react-router-dom";
 import {
   FiPlus,
@@ -37,16 +38,22 @@ export function MapCanvas({
       return;
     }
     setError("Đang tải bản đồ…");
-    goong.accessToken = key;
+    // goong.accessToken = key;
     try {
-      const instance = new goong.Map({
+      // const instance = new goong.Map({
+      //   container: container.current,
+      //   style: "https://tiles.goong.io/assets/goong_map_web.json",
+      //   center: [108.2022, 16.0544],
+      //   zoom: 11,
+      // });
+      const instance = new trackasia.Map({
         container: container.current,
-        style: "https://tiles.goong.io/assets/goong_map_web.json",
+        style: `https://maps.track-asia.com/styles/v2/streets.json?key=${key}`,
         center: [108.2022, 16.0544],
-        zoom: 11,
+        zoom: 12,
       });
       map.current = instance;
-      instance.addControl(new goong.NavigationControl(), "bottom-right");
+      instance.addControl(new trackasia.NavigationControl(), "bottom-right");
       instance.on("error", () =>
         setError(
           "Bản đồ chưa tải được. Hãy kiểm tra kết nối hoặc khóa bản đồ.",
@@ -106,7 +113,7 @@ export function MapCanvas({
         selectRef.current?.(item);
       });
       markers.current.push(
-        new goong.Marker(el).setLngLat([lon, lat]).addTo(map.current),
+        new trackasia.Marker({ element: el }).setLngLat([lon, lat]).addTo(map.current),
       );
     }
   }, [items]);
@@ -135,11 +142,11 @@ export function MapCanvas({
           const el = document.createElement("span");
           el.className = "ec-reference-pin";
           el.title = `${item.name} · Dữ liệu tham khảo`;
-          const popup = new goong.Popup().setText(
+          const popup = new trackasia.Popup().setText(
             `${item.name} · ${item.assetType} · Dữ liệu tham khảo, không phản ánh sự cố hiện tại`,
           );
           assetMarkers.push(
-            new goong.Marker(el)
+            new trackasia.Marker({ element: el })
               .setLngLat([Number(item.longitude), Number(item.latitude)])
               .setPopup(popup)
               .addTo(map.current),
@@ -186,10 +193,10 @@ export default function IncidentMap() {
             page,
             ...(hours
               ? {
-                  since: new Date(
-                    Date.now() - Number(hours) * 3600000,
-                  ).toISOString(),
-                }
+                since: new Date(
+                  Date.now() - Number(hours) * 3600000,
+                ).toISOString(),
+              }
               : {}),
             ...(depth ? { minDepth: depth } : {}),
           },

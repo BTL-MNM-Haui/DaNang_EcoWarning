@@ -2,7 +2,8 @@ import React, { useRef, useEffect } from "react";
 
 import { createRoot } from "react-dom/client";
 
-import goongSdk from "@goongmaps/goong-js";
+// import goongSdk from "@goongmaps/goong-js";
+import trackasia from "trackasia-gl";
 
 import { getAssetMap } from "../../services/api";
 
@@ -45,7 +46,7 @@ const GoongMap = ({ apiKey, assetType, onMarkerClick, selectedAssetId }) => {
     if (map.current || !mapContainer.current) return;
     map.current = new goongSdk.Map({
       container: mapContainer.current,
-      style: "https://tiles.goong.io/assets/goong_map_web.json",
+      style: `https://maps.track-asia.com/styles/v2/streets.json?key=${apiKey}`,
       center: DEFAULT_CENTER,
       zoom: DEFAULT_ZOOM,
     });
@@ -165,7 +166,7 @@ const GoongMap = ({ apiKey, assetType, onMarkerClick, selectedAssetId }) => {
         if (!isCancelled) {
           markersRef.current = newMarkersAndRoots;
         }
-      } catch (error) {}
+      } catch (error) { }
     };
 
     fetchAndDrawAssets();
