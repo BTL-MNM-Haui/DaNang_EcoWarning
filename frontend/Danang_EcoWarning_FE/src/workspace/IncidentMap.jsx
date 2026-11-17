@@ -20,10 +20,12 @@ export function MapCanvas({
   onPick,
   center,
   assetType = "",
+  route = null,
 }) {
   const container = useRef(null),
     map = useRef(null),
     markers = useRef([]),
+    routeMarkers = useRef([]),
     [error, setError] = useState("");
   const selectRef = useRef(onSelect),
     pickRef = useRef(onPick);
@@ -91,6 +93,7 @@ export function MapCanvas({
     if (!map.current) return;
     markers.current.forEach((m) => m.remove());
     markers.current = [];
+    routeMarkers.current.forEach((marker) => marker.remove());
     for (const item of items) {
       const lat = Number(item.latitude),
         lon = Number(item.longitude);
@@ -124,6 +127,105 @@ export function MapCanvas({
         zoom: 14,
       });
   }, [center]);
+
+  // Hiển thị tuyến đường và các ghim A/B
+  useEffect(() => {
+    if (!map.current) return;
+    const m = map.current;
+
+    // Xóa marker A, B cũ
+    routeMarkers.current.forEach((marker) => marker.remove());
+    routeMarkers.current = [];
+
+    // Nếu không có route (hoặc bấm Hủy), xóa lớp vẽ đường
+    if (!route || !route.coordinates || route.coordinates.length === 0) {
+      if (m.getSource("safe-route-source")) {
+        m.getSource("safe-route-source").setData({
+          type: "FeatureCollection",
+          features: [],
+        });
+      }
+      return;
+    }
+
+    const { coordinates, isSafe, origin, destination } = route;
+    const color = isSafe ? "#059669" : "#dc2626";
+
+    const geojsonData = {
+      type: "Feature",
+      properties: { color },
+      geometry: {
+        type: "LineString",
+        coordinates,
+      },
+    };
+
+    // Kiểm tra và cập nhật hoặc tạo mới Source/Layer trên TrackAsia
+    if (m.getSource("safe-route-source")) {
+      m.getSource("safe-route-source").setData(geojsonData);
+      m.setPaintProperty("safe-route-line", "line-color", color);
+    } else {
+      m.addSource("safe-route-source", {
+        type: "geojson",
+        data: geojsonData,
+      });
+
+      // Viền trắng ngoài giúp đường nổi bật trên nền bản đồ
+      m.addLayer({
+        id: "safe-route-casing",
+        type: "line",
+        source: "safe-route-source",
+        layout: { "line-join": "round", "line-cap": "round" },
+        paint: {
+          "line-color": "#ffffff",
+          "line-width": 8,
+          "line-opacity": 0.9,
+        },
+      });
+
+      // Lớp màu chính của lộ trình
+      m.addLayer({
+        id: "safe-route-line",
+        type: "line",
+        source: "safe-route-source",
+        layout: { "line-join": "round", "line-cap": "round" },
+        paint: {
+          "line-color": color,
+          "line-width": 5,
+        },
+      });
+    }
+
+    // Ghim Điểm xuất phát A
+    if (origin) {
+      const elA = document.createElement("div");
+      elA.className = "ec-route-pin is-start";
+      elA.textContent = "A";
+      const markerA = new trackasia.Marker({ element: elA })
+        .setLngLat(origin)
+        .addTo(m);
+      routeMarkers.current.push(markerA);
+    }
+
+    // Ghim Điểm đến B
+    if (destination) {
+      const elB = document.createElement("div");
+      elB.className = "ec-route-pin is-end";
+      elB.textContent = "B";
+      const markerB = new trackasia.Marker({ element: elB })
+        .setLngLat(destination)
+        .addTo(m);
+      routeMarkers.current.push(markerB);
+    }
+
+    // Tự động zoom và căn chỉnh bản đồ vừa khít toàn bộ tuyến đường
+    const bounds = coordinates.reduce(
+      (b, coord) => b.extend(coord),
+      new trackasia.LngLatBounds(coordinates[0], coordinates[0])
+    );
+    m.fitBounds(bounds, { padding: { top: 70, bottom: 70, left: 70, right: 70 } });
+  }, [route]);
+
   useEffect(() => {
     if (!assetType || !map.current) return;
     let active = true;
