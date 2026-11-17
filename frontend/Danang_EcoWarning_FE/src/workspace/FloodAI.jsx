@@ -59,7 +59,7 @@ export default function FloodAI() {
     }
   }
   return (
-    <div className="ec-page">
+    <div className="ec-page ec-flood-ai-page">
       <div className="ec-page-heading">
         <div>
           <h1>Thử nghiệm mô hình ngập</h1>
