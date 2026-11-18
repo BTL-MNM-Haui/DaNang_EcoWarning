@@ -191,7 +191,7 @@ export function MapCanvas({
       return;
     }
 
-    const { coordinates, isSafe, origin, destination } = route;
+    const { coordinates, isSafe } = route;
     const color = isSafe ? "#059669" : "#dc2626";
 
     const geojsonData = {
@@ -238,28 +238,6 @@ export function MapCanvas({
         },
       });
     }
-
-    // // Ghim Điểm xuất phát A
-    // if (origin) {
-    //   const elA = document.createElement("div");
-    //   elA.className = "ec-route-pin is-start";
-    //   elA.textContent = "A";
-    //   const markerA = new trackasia.Marker({ element: elA })
-    //     .setLngLat(origin)
-    //     .addTo(m);
-    //   routeMarkers.current.push(markerA);
-    // }
-
-    // // Ghim Điểm đến B
-    // if (destination) {
-    //   const elB = document.createElement("div");
-    //   elB.className = "ec-route-pin is-end";
-    //   elB.textContent = "B";
-    //   const markerB = new trackasia.Marker({ element: elB })
-    //     .setLngLat(destination)
-    //     .addTo(m);
-    //   routeMarkers.current.push(markerB);
-    // }
 
     // Tự động zoom và căn chỉnh bản đồ vừa khít toàn bộ tuyến đường
     const bounds = coordinates.reduce(
