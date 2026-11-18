@@ -82,7 +82,7 @@ Script tích hợp chuẩn bị dữ liệu tạm, kiểm tra API và dọn fixt
 - Ghi nhận cũ chưa có owner được giữ lại; không tự gán cho một tài khoản.
 - Thông báo hiện trong ứng dụng; email/push thông báo sự cố chưa triển khai.
 - Gợi ý báo cáo trùng có giới hạn tập dữ liệu; thống kê tái diễn là nhóm theo ô tọa độ, không thay cho khảo sát thực địa.
-- API model đánh giá nguy cơ ngập thử nghiệm có tại [AI/README.md](AI/README.md), nhận đặc trưng từ BE. Chưa nối vào giao diện hoặc kiểm chứng dự báo tại Đà Nẵng; chưa triển khai chỉ đường an toàn.
+- API model đánh giá nguy cơ ngập thử nghiệm có tại [AI/README.md](AI/README.md), nhận đặc trưng từ BE. Đã nối qua BE tới màn hình thử nghiệm /ai-flood; chưa kiểm chứng dự báo tại Đà Nẵng và chưa triển khai chỉ đường an toàn.
 - Các khóa/địa chỉ bên ngoài cần cấu hình riêng. Không có số liệu tải hay độ chính xác dự báo được bịa để minh họa.
 
 [Kế hoạch và đánh giá ban đầu](docs/PLAN.md) · [Trạng thái triển khai](IMPLEMENTATION.md) · [Hệ thống giao diện](DESIGN.md)
@@ -96,3 +96,6 @@ Phát hành theo GNU General Public License v3.0; xem [LICENSE](LICENSE). Logo v
 ### Thiết kế và kiểm chứng
 
 Xem [báo cáo sử dụng taste-skill / impeccable](docs/SKILL-REVIEW.md), ảnh giao diện và kết quả kiểm tra. Font Be Vietnam Pro được tự host và có [giấy phép OFL](frontend/Danang_EcoWarning_FE/public/fonts/OFL-Be-Vietnam-Pro.txt).
+## Tích hợp AI mới
+
+Đã tích hợp model nhóm cung cấp qua BE và FE; xem [đối chiếu kế hoạch 18/11/2026](docs/PLAN-AUDIT-2026-11-18.md). Model ngập và phân tích bất thường khí hậu là hai chức năng khác nhau; metadata giới hạn của model vẫn được giữ và hiển thị.
