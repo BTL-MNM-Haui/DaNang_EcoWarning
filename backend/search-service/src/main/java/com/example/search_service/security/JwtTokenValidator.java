@@ -50,7 +50,7 @@ public class JwtTokenValidator{
 
     public Boolean validateToken(String token){
         try {
-            return !isTokenExpired(token);
+            return !isTokenExpired(token) && "access".equals(extractClaim(token, c -> c.get("token_use", String.class)));
         } catch (Exception e) {
             return false;
         }

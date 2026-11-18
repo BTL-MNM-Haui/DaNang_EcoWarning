@@ -39,6 +39,7 @@ public class SecurityConfig{
                 .authorizeHttpRequests(configure ->
                         configure
                                 .requestMatchers(publicEndpoints).permitAll()
+                                .requestMatchers("/api/v1/ai/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_MODERATOR")
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> 

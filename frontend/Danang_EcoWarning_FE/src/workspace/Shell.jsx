@@ -35,6 +35,7 @@ export default function Shell() {
   const management = [
     ["/manage", "Xác minh sự cố", FiCheckSquare],
     ["/imports", "Nhập dữ liệu", FiDatabase],
+    ["/ai-flood", "Thử nghiệm AI ngập", FiBarChart2],
   ];
   const links = (items) =>
     items.map(([path, title, Icon]) => (

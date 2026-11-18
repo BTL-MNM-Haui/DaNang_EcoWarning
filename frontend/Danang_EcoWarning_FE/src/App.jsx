@@ -13,6 +13,7 @@ const IncidentMap = lazy(() => import("./workspace/IncidentMap"));
 const ReportForm = lazy(() => import("./workspace/ReportForm"));
 const DataExplorer = lazy(() => import("./workspace/DataExplorer"));
 const Weather = lazy(() => import("./workspace/Weather"));
+const FloodAI = lazy(() => import("./workspace/FloodAI"));
 const DataImports = lazy(() => import("./workspace/DataImports"));
 
 const IncidentDetail = lazy(() =>
@@ -126,6 +127,14 @@ export default function App() {
                 element={
                   <Protected manager>
                     <IncidentList manage />
+                  </Protected>
+                }
+              />
+              <Route
+                path="ai-flood"
+                element={
+                  <Protected manager>
+                    <FloodAI />
                   </Protected>
                 }
               />

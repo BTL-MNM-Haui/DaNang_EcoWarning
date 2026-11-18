@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ClimateAnalysis from "./ClimateAnalysis";
 import "./data-explorer.css";
 import {
   LineChart,
@@ -8,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   CartesianGrid,
+  ReferenceDot,
 } from "recharts";
 import {
   FiDownload,
@@ -40,6 +42,7 @@ export default function DataExplorer() {
     reports.get("/reports/recurrence").then(unpack),
   );
   const [section, setSection] = useState("history"),
+    [anomalies, setAnomalies] = useState([]),
     [asset, setAsset] = useState(""),
     [category, setCategory] = useState(""),
     [metric, setMetric] = useState(""),
@@ -98,6 +101,7 @@ export default function DataExplorer() {
     (quality?.repeatedRecords || 0) +
     (quality?.missingValues || 0);
   const resetTable = () => {
+    setAnomalies([]);
     setTablePage(0);
     setQualityFilter("");
   };
@@ -391,6 +395,17 @@ export default function DataExplorer() {
                                 fontSize: 15,
                               }}
                             />
+                            {anomalies.map((p) => (
+                              <ReferenceDot
+                                key={p.recordId}
+                                x={calendarLabel(p.timestamp, model.annual)}
+                                y={p.value}
+                                r={6}
+                                fill="#fff"
+                                stroke="#9b3033"
+                                strokeWidth={2}
+                              />
+                            ))}
                             <Line
                               name={history.value?.metricName}
                               dataKey="number"
@@ -501,6 +516,16 @@ export default function DataExplorer() {
                       </div>
                     )}
                   </>
+                )}
+                {chosen?.category?.toLowerCase() === "thời tiết" && (
+                  <ClimateAnalysis
+                    onResult={(data) => setAnomalies(data?.candidates || [])}
+                    key={`${selectedAsset}-${selectedMetric}-${from}-${to}`}
+                    assetId={selectedAsset}
+                    metricId={selectedMetric}
+                    from={from}
+                    to={to}
+                  />
                 )}
                 <details className="ec-data-provenance">
                   <summary>Nguồn và cách đọc số liệu</summary>
