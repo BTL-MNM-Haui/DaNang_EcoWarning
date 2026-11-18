@@ -10,9 +10,14 @@ import {
   FiSliders,
   FiChevronDown,
   FiSearch,
+  FiNavigation,
+  FiAlertTriangle,
+  FiCheckCircle,
+  FiX,
 } from "react-icons/fi";
 import { reports, dataApi, unpack } from "./api";
 import { Feedback, IncidentRow } from "./shared";
+import { fetchTrackAsiaRoutes, evaluateSafeRoutes } from "./routing";
 
 export function MapCanvas({
   items = [],
@@ -283,6 +288,19 @@ export default function IncidentMap() {
     [selected, setSelected] = useState(null),
     [layer, setLayer] = useState(""),
     [mobileView, setMobileView] = useState("map");
+
+  // --- Quản lý trạng thái chỉ đường né ngập ---
+  const [routePanelOpen, setRoutePanelOpen] = useState(false);
+  const [origin, setOrigin] = useState(null); // [lon, lat]
+  const [destination, setDestination] = useState(null); // [lon, lat]
+  const [originText, setOriginText] = useState("");
+  const [destinationText, setDestinationText] = useState("");
+  const [pickingTarget, setPickingTarget] = useState(null); // 'origin' | 'destination' | null
+  const [routeResult, setRouteResult] = useState(null);
+  const [routingLoading, setRoutingLoading] = useState(false);
+  const [routingError, setRoutingError] = useState("");
+  const mapApiKey = import.meta.env.VITE_GOONG_MAP_TILES_KEY;
+
   const resource = useResource(
     () =>
       reports
@@ -306,7 +324,9 @@ export default function IncidentMap() {
         .then(unpack),
     [state, status, q, hours, depth, page],
   );
+
   const rows = resource.value?.items || [];
+
   function resetFilters() {
     setState("");
     setStatus("");
@@ -316,6 +336,67 @@ export default function IncidentMap() {
     setPage(0);
     setSelected(null);
   }
+
+  // Lấy vị trí GPS hiện tại của người dùng
+  function useCurrentLocation() {
+    if (!navigator.geolocation) {
+      setRoutingError("Trình duyệt không hỗ trợ định vị GPS.");
+      return;
+    }
+    setRoutingError("");
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const coords = [pos.coords.longitude, pos.coords.latitude];
+        setOrigin(coords);
+        setOriginText("Vị trí của tôi");
+        setPickingTarget(null);
+      },
+      () => setRoutingError("Chưa lấy được vị trí GPS. Hãy kiểm tra quyền truy cập vị trí.")
+    );
+  }
+  // Khi click trên bản đồ
+  function handleMapClick(coords) {
+    if (pickingTarget === "origin") {
+      setOrigin([coords.longitude, coords.latitude]);
+      setOriginText(`${coords.latitude.toFixed(4)}, ${coords.longitude.toFixed(4)}`);
+      setPickingTarget(null);
+    } else if (pickingTarget === "destination") {
+      setDestination([coords.longitude, coords.latitude]);
+      setDestinationText(`${coords.latitude.toFixed(4)}, ${coords.longitude.toFixed(4)}`);
+      setPickingTarget(null);
+    }
+  }
+  // Gọi thuật toán tìm tuyến an toàn
+  async function handleFindSafeRoute() {
+    if (!origin || !destination) {
+      setRoutingError("Vui lòng chọn cả điểm xuất phát (A) và điểm đến (B).");
+      return;
+    }
+    setRoutingLoading(true);
+    setRoutingError("");
+    try {
+      const routes = await fetchTrackAsiaRoutes(origin, destination, mapApiKey);
+      const evaluated = evaluateSafeRoutes(routes, rows);
+      setRouteResult(evaluated);
+    } catch (err) {
+      setRoutingError(err.message || "Không thể tìm tuyến đường.");
+      setRouteResult(null);
+    } finally {
+      setRoutingLoading(false);
+    }
+  }
+  // Xóa / Đóng chỉ đường
+  function handleCloseRouting() {
+    setRoutePanelOpen(false);
+    setRouteResult(null);
+    setOrigin(null);
+    setDestination(null);
+    setOriginText("");
+    setDestinationText("");
+    setPickingTarget(null);
+    setRoutingError("");
+  }
+
   return (
     <>
       <div className="ec-map-heading">
@@ -493,9 +574,140 @@ export default function IncidentMap() {
           <MapCanvas
             items={rows}
             onSelect={setSelected}
+            onPick={handleMapClick}
             center={selected}
             assetType={layer}
+            route={
+              routeResult?.safestRoute
+                ? {
+                  coordinates: routeResult.safestRoute.coordinates,
+                  isSafe: routeResult.safestRoute.isSafe,
+                  origin,
+                  destination,
+                }
+                : null
+            }
           />
+
+          {/* Nút bấm mở panel Chỉ đường */}
+          {!routePanelOpen && (
+            <button
+              className="ec-route-open-button"
+              onClick={() => setRoutePanelOpen(true)}
+              type="button"
+            >
+              <FiNavigation aria-hidden="true" />
+              Chỉ đường né ngập
+            </button>
+          )}
+
+          {/* Panel điều khiển chỉ đường né sự cố */}
+          {routePanelOpen && (
+            <div className="ec-route-panel" role="region" aria-label="Chỉ đường">
+              <div className="ec-route-header">
+                <h3>
+                  <FiNavigation aria-hidden="true" /> Chỉ đường né sự cố
+                </h3>
+                <button
+                  className="ec-close"
+                  onClick={handleCloseRouting}
+                  aria-label="Đóng chỉ đường"
+                  type="button"
+                >
+                  <FiX />
+                </button>
+              </div>
+
+              <div className="ec-route-inputs">
+                {/* Điểm xuất phát A */}
+                <div className="ec-route-input-group">
+                  <span className="ec-route-badge is-start">A</span>
+                  <input
+                    type="text"
+                    readOnly
+                    placeholder="Điểm xuất phát…"
+                    value={originText}
+                  />
+                  <button
+                    type="button"
+                    className={`ec-route-action-btn ${pickingTarget === "origin" ? "is-picking" : ""}`}
+                    onClick={() => setPickingTarget(pickingTarget === "origin" ? null : "origin")}
+                    title="Bấm để chọn vị trí trên bản đồ"
+                  >
+                    {pickingTarget === "origin" ? "Chạm bản đồ" : "Chọn trên bản đồ"}
+                  </button>
+                </div>
+
+                <div className="ec-route-subaction">
+                  <button type="button" onClick={useCurrentLocation}>
+                    📍 Dùng vị trí hiện tại của tôi
+                  </button>
+                </div>
+
+                {/* Điểm đến B */}
+                <div className="ec-route-input-group">
+                  <span className="ec-route-badge is-end">B</span>
+                  <input
+                    type="text"
+                    readOnly
+                    placeholder="Điểm đến…"
+                    value={destinationText}
+                  />
+                  <button
+                    type="button"
+                    className={`ec-route-action-btn ${pickingTarget === "destination" ? "is-picking" : ""}`}
+                    onClick={() => setPickingTarget(pickingTarget === "destination" ? null : "destination")}
+                    title="Bấm để chọn vị trí trên bản đồ"
+                  >
+                    {pickingTarget === "destination" ? "Chạm bản đồ" : "Chọn trên bản đồ"}
+                  </button>
+                </div>
+              </div>
+
+              {routingError && <p className="ec-route-error">{routingError}</p>}
+
+              <button
+                type="button"
+                className="ec-button ec-route-submit"
+                disabled={routingLoading || !origin || !destination}
+                onClick={handleFindSafeRoute}
+              >
+                {routingLoading ? "Đang quét tuyến an toàn…" : "Tìm tuyến đường an toàn"}
+              </button>
+
+              {/* Kết quả tuyến đường */}
+              {routeResult && (
+                <div className="ec-route-result">
+                  <div className="ec-route-result-meta">
+                    <strong>{routeResult.safestRoute.distanceKm} km</strong>
+                    <span>Khoảng {routeResult.safestRoute.durationMin} phút</span>
+                  </div>
+
+                  {routeResult.safestRoute.isSafe ? (
+                    <div className="ec-route-alert is-safe">
+                      <FiCheckCircle aria-hidden="true" />
+                      <div>
+                        <strong>Tuyến đường an toàn</strong>
+                        <p>Đã né hoàn toàn các điểm sự cố/ngập úng đang diễn ra.</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="ec-route-alert is-warning">
+                      <FiAlertTriangle aria-hidden="true" />
+                      <div>
+                        <strong>Lưu ý: Có điểm ngập trên đường</strong>
+                        <p>
+                          Đi qua {routeResult.safestRoute.conflicts.length} điểm sự cố tại:{" "}
+                          {routeResult.safestRoute.conflicts.map((c) => c.address).join(", ")}.
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+
           <label className="ec-map-layer">
             Lớp dữ liệu tham khảo
             <select value={layer} onChange={(e) => setLayer(e.target.value)}>
@@ -557,6 +769,7 @@ export default function IncidentMap() {
     </>
   );
 }
+
 function ReferenceLayer({ type }) {
   const resource = useResource(
     () =>
