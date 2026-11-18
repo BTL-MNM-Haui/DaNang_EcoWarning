@@ -26,11 +26,14 @@ export function MapCanvas({
   center,
   assetType = "",
   route = null,
+  origin = null,
+  destination = null,
 }) {
   const container = useRef(null),
     map = useRef(null),
     markers = useRef([]),
-    routeMarkers = useRef([]),
+    markerARef = useRef(null),
+    markerBRef = useRef(null),
     [error, setError] = useState("");
   const selectRef = useRef(onSelect),
     pickRef = useRef(onPick);
@@ -98,7 +101,6 @@ export function MapCanvas({
     if (!map.current) return;
     markers.current.forEach((m) => m.remove());
     markers.current = [];
-    routeMarkers.current.forEach((marker) => marker.remove());
     for (const item of items) {
       const lat = Number(item.latitude),
         lon = Number(item.longitude);
@@ -133,14 +135,50 @@ export function MapCanvas({
       });
   }, [center]);
 
+  // Hiển thị ghim A ngay lập tức khi chọn điểm xuất phát
+  useEffect(() => {
+    if (!map.current) return;
+    if (origin) {
+      if (!markerARef.current) {
+        const elA = document.createElement("div");
+        elA.className = "ec-route-pin is-start";
+        elA.textContent = "A";
+        markerARef.current = new trackasia.Marker({ element: elA })
+          .setLngLat(origin)
+          .addTo(map.current);
+      } else {
+        markerARef.current.setLngLat(origin);
+      }
+    } else if (markerARef.current) {
+      markerARef.current.remove();
+      markerARef.current = null;
+    }
+  }, [origin]);
+
+  // Hiển thị ghim B ngay lập tức khi chọn điểm đến
+  useEffect(() => {
+    if (!map.current) return;
+    if (destination) {
+      if (!markerBRef.current) {
+        const elB = document.createElement("div");
+        elB.className = "ec-route-pin is-end";
+        elB.textContent = "B";
+        markerBRef.current = new trackasia.Marker({ element: elB })
+          .setLngLat(destination)
+          .addTo(map.current);
+      } else {
+        markerBRef.current.setLngLat(destination);
+      }
+    } else if (markerBRef.current) {
+      markerBRef.current.remove();
+      markerBRef.current = null;
+    }
+  }, [destination]);
+
   // Hiển thị tuyến đường và các ghim A/B
   useEffect(() => {
     if (!map.current) return;
     const m = map.current;
-
-    // Xóa marker A, B cũ
-    routeMarkers.current.forEach((marker) => marker.remove());
-    routeMarkers.current = [];
 
     // Nếu không có route (hoặc bấm Hủy), xóa lớp vẽ đường
     if (!route || !route.coordinates || route.coordinates.length === 0) {
@@ -201,27 +239,27 @@ export function MapCanvas({
       });
     }
 
-    // Ghim Điểm xuất phát A
-    if (origin) {
-      const elA = document.createElement("div");
-      elA.className = "ec-route-pin is-start";
-      elA.textContent = "A";
-      const markerA = new trackasia.Marker({ element: elA })
-        .setLngLat(origin)
-        .addTo(m);
-      routeMarkers.current.push(markerA);
-    }
+    // // Ghim Điểm xuất phát A
+    // if (origin) {
+    //   const elA = document.createElement("div");
+    //   elA.className = "ec-route-pin is-start";
+    //   elA.textContent = "A";
+    //   const markerA = new trackasia.Marker({ element: elA })
+    //     .setLngLat(origin)
+    //     .addTo(m);
+    //   routeMarkers.current.push(markerA);
+    // }
 
-    // Ghim Điểm đến B
-    if (destination) {
-      const elB = document.createElement("div");
-      elB.className = "ec-route-pin is-end";
-      elB.textContent = "B";
-      const markerB = new trackasia.Marker({ element: elB })
-        .setLngLat(destination)
-        .addTo(m);
-      routeMarkers.current.push(markerB);
-    }
+    // // Ghim Điểm đến B
+    // if (destination) {
+    //   const elB = document.createElement("div");
+    //   elB.className = "ec-route-pin is-end";
+    //   elB.textContent = "B";
+    //   const markerB = new trackasia.Marker({ element: elB })
+    //     .setLngLat(destination)
+    //     .addTo(m);
+    //   routeMarkers.current.push(markerB);
+    // }
 
     // Tự động zoom và căn chỉnh bản đồ vừa khít toàn bộ tuyến đường
     const bounds = coordinates.reduce(
@@ -576,13 +614,15 @@ export default function IncidentMap() {
             onPick={handleMapClick}
             center={selected}
             assetType={layer}
+            origin={origin}
+            destination={destination}
             route={
               routeResult?.safestRoute
                 ? {
                   coordinates: routeResult.safestRoute.coordinates,
                   isSafe: routeResult.safestRoute.isSafe,
-                  origin,
-                  destination,
+                  // origin,
+                  // destination,
                 }
                 : null
             }
@@ -690,8 +730,8 @@ export default function IncidentMap() {
                         {/* <p>Đã né hoàn toàn các điểm sự cố/ngập úng đang diễn ra.</p> */}
                         <p>
                           {routeResult.safestRoute.isDetour
-                            ? `Đã tự động chuyển hướng né điểm ngập tại: ${routeResult.safestRoute.detourAround}.`
-                            : "Đã né hoàn toàn các điểm sự cố/ngập úng đang diễn ra."}
+                            ? `Đã tự động chuyển hướng tại: ${routeResult.safestRoute.detourAround}.`
+                            : "Đã né hoàn toàn các điểm sự cố đang diễn ra."}
                         </p>
                       </div>
                     </div>
