@@ -2,19 +2,19 @@
 name: DaNang EcoWarning
 description: Tra cứu dữ liệu và theo dõi báo cáo sự cố cộng đồng
 colors:
-  primary: "#086b91"
-  ground: "#eef3f6"
+  primary: "#1766d2"
+  ground: "#f6f9ff"
   surface: "#ffffff"
-  ink: "#123c4b"
-  muted: "#415766"
-  border: "#cbd7df"
-  controlBorder: "#718694"
-  chart: "#08749c"
+  ink: "#17324d"
+  muted: "#465e77"
+  border: "#d2def0"
+  controlBorder: "#6f87a6"
+  chart: "#1766d2"
   danger: "#a32e32"
 typography:
   title:
     fontFamily: "Be Vietnam Pro, system-ui, sans-serif"
-    fontSize: "32px"
+    fontSize: "34px"
     fontWeight: 600
     lineHeight: 1.2
   body:
@@ -24,7 +24,7 @@ typography:
     lineHeight: 1.5
 rounded:
   control: "6px"
-  panel: "14px"
+  panel: "12px"
 spacing:
   compact: "12px"
   normal: "16px"
@@ -43,15 +43,15 @@ components:
 
 Không gian tra cứu công cộng lấy dữ liệu làm trọng tâm. Giữ nhận diện xanh biển/xanh ngọc; tăng khả năng đọc, độ tương phản và sự khác biệt giữa nội dung chính, thao tác, nguồn và trạng thái. Đây là hướng thay thế phần giao diện trung tính ban đầu, theo phản hồi của người dùng.
 
-Không tạo số liệu trang trí, không dùng báo cáo chưa xác minh như cảnh báo chính thức. Không triển khai AI.
+Không tạo số liệu trang trí, không dùng báo cáo chưa xác minh như cảnh báo chính thức. Màn hình thử nghiệm AI hiện có dùng cùng hệ thống trình bày; lần chỉnh này không đổi suy luận hoặc dữ liệu.
 
 ## Chữ và màu
 
-Be Vietnam Pro 400/500/600/700 được lưu trong public/fonts, có giấy phép OFL đi kèm. Không cần kết nối Google Fonts khi chạy ứng dụng. Nội dung 16px, nhãn 15px, chú thích thường 14px, tiêu đề trang 32px/600 và 28px trên mobile. Chú giải bản đồ nhỏ hơn để không che bản đồ. Chữ logo SVG dùng Arial để asset hoạt động độc lập.
+Be Vietnam Pro 400/500/600/700 được lưu trong public/fonts, có giấy phép OFL đi kèm. Không cần kết nối Google Fonts khi chạy ứng dụng. Nội dung 16px, nhãn 15px, chú thích thường 14px, tiêu đề trang 34px/600 và 28px trên mobile. Chú giải bản đồ nhỏ hơn để không che bản đồ. Chữ logo SVG dùng Arial để asset hoạt động độc lập.
 
-Nền #eef3f6, panel trắng, mực #123c4b, chữ phụ #415766. Hành động #086b91 và hover #07536f. Biên input #718694. Kiểm tra màu thực tế tại docs/design-evidence/contrast-check.json: chữ input 11,84:1; viền input 3,79:1; metadata 7,55:1.
+Nền #f6f9ff, panel trắng, mực #17324d, chữ phụ #465e77. Hành động #1766d2 và hover #104eae. Biên input #6f87a6. Kiểm tra màu thực tế mới tại docs/bright-ui-evidence/contrast-and-layout.json: chữ input 13,13:1; viền input 3,69:1; chữ phụ thời tiết 6,02:1.
 
-Trạng thái luôn kèm chữ. Thời tiết hiện tại dùng nền #07536f, chữ trắng và chữ phụ #d5edf5. Màu của chất lượng không khí theo chỉ số API; màu không thay cho mô tả.
+Trạng thái luôn kèm chữ. Thời tiết hiện tại dùng nền xanh trời #e8f3ff, chữ #123c76 và chữ phụ #365e87. Không khí dùng nền xanh ngọc; khi AQI kém, nền chuyển theo trạng thái vàng/đỏ tương ứng. Màu của chất lượng không khí theo chỉ số API; màu không thay cho mô tả.
 
 ## Điều hướng và motion
 
@@ -61,7 +61,7 @@ Grid chuyển trong 180ms với cubic-bezier(.22,1,.36,1). Reduced motion tắt 
 
 ## Bản đồ và báo cáo
 
-Từ 1280px: bản đồ trải vùng làm việc, bảng báo cáo nổi 330px, layer/legend/ghi chú tránh bảng. Desktop hẹp dùng hai cột. Điện thoại chọn Bản đồ hoặc Danh sách. Giữ attribution của Goong.
+Từ 1280px: bản đồ trải vùng làm việc, bảng báo cáo nổi 340px, cao theo nội dung và cuộn khi cần, layer/legend/ghi chú tránh bảng. Desktop hẹp dùng hai cột. Điện thoại chọn Bản đồ hoặc Danh sách. Giữ attribution của Goong.
 
 Biểu mẫu báo cáo chia nội dung và vị trí ở desktop; mobile xếp một cột. Có hướng dẫn tiến trình, nháp, ảnh và gợi ý báo cáo gần đây; chức năng và dữ liệu nguồn được giữ. Danh sách, thông báo và theo dõi khu vực có trạng thái rỗng phù hợp với công việc của trang.
 
@@ -80,3 +80,13 @@ Desktop tài khoản chia khối giới thiệu xanh biển và biểu mẫu; mo
 ## Kiểm tra và giới hạn
 
 Xem docs/SKILL-REVIEW.md và docs/design-evidence. Đã chạy kiểm tra trình duyệt và chụp ảnh; đây không phải nghiên cứu khả dụng độc lập hay đo FPS trên thiết bị thật. Không tự xác nhận giá trị CSV đúng về chuyên môn. Những bất nhất về nội dung cần đối chiếu nguồn, không được che bằng giao diện.
+
+## Bright coastal theme — 18/11/2026
+
+Theo lựa chọn người dùng: xanh dương + xanh ngọc + vàng nắng. Nền gần trắng #f6f9ff; hành động xanh #1766d2, hover #104eae; teal #087464 cho ngữ cảnh môi trường/tích cực; vàng #ffc857 cho nhận diện, cảnh báo có chữ dùng #805000 trên #fff5d8. Không rải màu như chỉ số mức nguy hiểm khi chưa có dữ liệu.
+
+Điểm vào CSS: src/workspace/theme/index.css, import sau workspace.css từ main.jsx. tokens.css giữ vai trò màu; components/navigation/map/weather/forms/account/analysis/responsive.css quản lý từng bề mặt. data-explorer.css dùng token chung thay vì màu teal/xám ghi cứng. Legacy workspace.css giữ cấu trúc tương thích; theme là lớp trình bày hiện hành.
+
+Tiêu đề trang desktop 34px; body 16px. Giữ rail 76px, mở 288px và cơ chế hover/focus-visible đã sửa. Thời tiết dùng lưới dự báo 4 cột ở tablet và 2 cột ở điện thoại để không cắt chữ; desktop rộng giữ dải dự báo. Màn hình tài khoản nền sáng, intro xanh trời; form và JSON có khoảng cách nhất quán.
+
+Bằng chứng kiểm tra mới và cách phân bổ 12 commit: docs/BRIGHT-UI-REVIEW.md. Ngày Git được phân bổ theo yêu cầu; không dùng chúng làm bằng chứng ngày thực hiện công việc.

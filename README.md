@@ -99,3 +99,6 @@ Xem [báo cáo sử dụng taste-skill / impeccable](docs/SKILL-REVIEW.md), ản
 ## Tích hợp AI mới
 
 Đã tích hợp model nhóm cung cấp qua BE và FE; xem [đối chiếu kế hoạch 18/11/2026](docs/PLAN-AUDIT-2026-11-18.md). Model ngập và phân tích bất thường khí hậu là hai chức năng khác nhau; metadata giới hạn của model vẫn được giữ và hiển thị.
+## Giao diện sáng hơn
+
+Bảng màu xanh dương, xanh ngọc và vàng nắng theo lựa chọn của người dùng; xem [ảnh trước/sau, kiểm tra và cách phân bổ ngày Git](docs/BRIGHT-UI-REVIEW.md). Các ngày Git được sắp xếp theo yêu cầu và không đại diện cho ngày thực hiện công việc.
