@@ -17,7 +17,7 @@ import {
 } from "react-icons/fi";
 import { reports, dataApi, unpack } from "./api";
 import { Feedback, IncidentRow } from "./shared";
-import { fetchTrackAsiaRoutes, evaluateSafeRoutes } from "./routing";
+import { findSafeRoutingPlan } from "./routing";
 
 export function MapCanvas({
   items = [],
@@ -375,9 +375,8 @@ export default function IncidentMap() {
     setRoutingLoading(true);
     setRoutingError("");
     try {
-      const routes = await fetchTrackAsiaRoutes(origin, destination, mapApiKey);
-      const evaluated = evaluateSafeRoutes(routes, rows);
-      setRouteResult(evaluated);
+      const plan = await findSafeRoutingPlan(origin, destination, rows, mapApiKey);
+      setRouteResult(plan);
     } catch (err) {
       setRoutingError(err.message || "Không thể tìm tuyến đường.");
       setRouteResult(null);
@@ -688,7 +687,12 @@ export default function IncidentMap() {
                       <FiCheckCircle aria-hidden="true" />
                       <div>
                         <strong>Tuyến đường an toàn</strong>
-                        <p>Đã né hoàn toàn các điểm sự cố/ngập úng đang diễn ra.</p>
+                        {/* <p>Đã né hoàn toàn các điểm sự cố/ngập úng đang diễn ra.</p> */}
+                        <p>
+                          {routeResult.safestRoute.isDetour
+                            ? `Đã tự động chuyển hướng né điểm ngập tại: ${routeResult.safestRoute.detourAround}.`
+                            : "Đã né hoàn toàn các điểm sự cố/ngập úng đang diễn ra."}
+                        </p>
                       </div>
                     </div>
                   ) : (
