@@ -1,0 +1,133 @@
+.ec-workspace {
+  background: var(--ground);
+}
+.ec-page {
+  max-width: 1440px;
+  padding: 32px var(--page-gutter) 40px;
+}
+.ec-page-heading {
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.ec-page-heading h1 {
+  color: var(--ink);
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+.ec-page-heading p {
+  color: var(--muted);
+  max-width: 72ch;
+}
+.ec-panel {
+  background: var(--surface);
+  border-color: var(--line);
+  border-radius: 12px;
+}
+.ec-panel h2 {
+  color: var(--ink);
+}
+.ec-button {
+  background: var(--action);
+  border-color: var(--action);
+  border-radius: 8px;
+}
+.ec-button:hover,
+button.ec-button:hover {
+  background: var(--action-hover);
+}
+.ec-secondary {
+  color: var(--action-hover);
+  border-color: var(--control-line);
+  background: var(--surface);
+}
+.ec-secondary:hover,
+button.ec-secondary:hover {
+  color: var(--action-hover);
+  background: var(--soft);
+}
+input,
+select,
+textarea {
+  color: var(--ink);
+  border-color: var(--control-line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+input::placeholder,
+textarea::placeholder {
+  color: #526b84;
+}
+button {
+  border-color: var(--control-line);
+}
+button:hover:not(:disabled) {
+  background: var(--soft);
+}
+.ec-button:hover:not(:disabled) {
+  background: var(--action-hover);
+}
+.ec-source,
+.ec-muted,
+small {
+  color: var(--muted);
+}
+.ec-success {
+  background: var(--mint);
+  color: #175c43;
+}
+.ec-notice {
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+}
+.ec-error {
+  background: #fff0f1;
+  color: #982934;
+  border: 1px solid #edbec4;
+}
+.ec-status--verified,
+.ec-status--resolved {
+  background: #dbf5e9;
+  color: #176343;
+}
+.ec-status--pending {
+  background: #fff0ca;
+  color: #785000;
+}
+.ec-status--active,
+.ec-status--rejected {
+  background: #ffe7e9;
+  color: #9c2732;
+}
+.ec-toolbar {
+  gap: 18px;
+}
+.ec-pagination {
+  gap: 16px;
+}
+.ec-pagination button:not(:disabled) {
+  color: var(--action-hover);
+  border-color: var(--control-line);
+}
+.ec-empty {
+  color: var(--muted);
+  padding: 32px 24px;
+}
+.ec-empty h2,
+.ec-empty h3 {
+  color: var(--ink);
+}
+.ec-table-scroll {
+  border-radius: 8px;
+}
+th {
+  color: var(--muted);
+}
+td,
+th {
+  border-color: var(--line);
+}
+.ec-button.ec-secondary:hover:not(:disabled) {
+  color: var(--action-hover);
+  background: var(--soft);
+}

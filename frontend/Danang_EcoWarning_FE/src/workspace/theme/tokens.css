@@ -1,0 +1,33 @@
+:root {
+  --ground: #f6f9ff;
+  --surface: #ffffff;
+  --ink: #17324d;
+  --muted: #465e77;
+  --line: #d2def0;
+  --soft: #edf4ff;
+  --accent: #1766d2;
+  --action: #1766d2;
+  --action-hover: #104eae;
+  --sidebar: #ffffff;
+  --selected: #1766d2;
+  --danger: #ae343d;
+  --sky: #e8f3ff;
+  --mint: #e9faf3;
+  --teal: #087464;
+  --sun: #ffc857;
+  --sun-ink: #805000;
+  --sun-soft: #fff5d8;
+  --control-line: #6f87a6;
+  --page-gutter: clamp(20px, 2.5vw, 40px);
+}
+body {
+  background: var(--ground);
+  color: var(--ink);
+}
+::selection {
+  background: #c9e2ff;
+  color: #12396e;
+}
+:focus-visible {
+  outline-color: var(--action);
+}

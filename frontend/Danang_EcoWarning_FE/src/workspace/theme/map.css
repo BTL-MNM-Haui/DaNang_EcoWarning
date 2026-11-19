@@ -1,0 +1,87 @@
+.ec-map-heading {
+  padding: 22px 24px;
+  background: var(--surface);
+  border-color: var(--line);
+}
+.ec-map-heading h1 {
+  color: var(--ink);
+  font-size: 28px;
+}
+.ec-map-list {
+  border-color: var(--line);
+  background: var(--surface);
+}
+.ec-map-list-title {
+  color: var(--ink);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.ec-map-empty {
+  background: var(--sky);
+  border-color: #b8d4f8;
+  padding: 22px 18px;
+}
+.ec-map-empty > svg {
+  color: var(--action);
+}
+.ec-map-empty p {
+  color: var(--muted);
+}
+.ec-empty-report,
+.ec-advanced-filters summary {
+  color: var(--action-hover);
+}
+.ec-map-layer {
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.ec-map-legend {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+.ec-map-disclaimer {
+  background: #ffffff;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+.ec-map-warning {
+  color: var(--action-hover);
+  background: var(--sky);
+  border-color: #b8d4f8;
+}
+.ec-incident.is-selected {
+  background: var(--sky);
+}
+.ec-incident {
+  border-color: var(--line);
+}
+.ec-incident h3 button {
+  color: var(--ink);
+}
+.ec-view-switch {
+  background: var(--surface);
+}
+.ec-view-switch button {
+  color: var(--muted);
+  background: var(--soft);
+}
+.ec-view-switch button[aria-pressed="true"] {
+  background: var(--action);
+  color: white;
+}
+@media (min-width: 1280px) {
+  .ec-map-list {
+    width: 340px;
+    bottom: auto;
+    max-height: calc(100% - 40px);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px #17324d18;
+  }
+  .ec-map-layer,
+  .ec-map-legend,
+  .ec-map-disclaimer,
+  .ec-map-stage .ec-map-warning {
+    left: 380px;
+  }
+}

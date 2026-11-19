@@ -1,0 +1,61 @@
+.ec-auth-page {
+  background: var(--ground);
+  padding: 90px 24px 40px;
+}
+.ec-auth-layout {
+  border-color: #acc9ee;
+  border-radius: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+}
+.ec-auth-intro {
+  background: var(--sky);
+  color: var(--ink);
+  padding: 44px;
+}
+.ec-auth-intro h2 {
+  color: #123c76;
+  font-size: 38px;
+}
+.ec-auth-intro p {
+  color: #365e87;
+}
+.ec-auth-intro ul {
+  color: #244f70;
+}
+.ec-auth-intro li::marker {
+  color: var(--teal);
+}
+.ec-auth-intro a {
+  color: var(--action-hover);
+  font-weight: 500;
+}
+.ec-auth-layout .ec-auth-sheet {
+  padding: 44px;
+}
+.ec-auth-sheet h1 {
+  color: var(--ink);
+  font-size: 30px;
+}
+.ec-auth-sheet .ec-button {
+  width: 100%;
+}
+.ec-auth-links {
+  border-color: var(--line);
+}
+.ec-auth-links a {
+  color: var(--action-hover);
+}
+.ec-auth-back {
+  color: var(--action-hover);
+}
+.ec-auth-note {
+  color: var(--muted);
+  max-width: 72ch;
+}
+.ec-profile .ec-panel,
+.ec-profile .profile-info {
+  border-color: var(--line);
+}
+.ec-auth-page {
+  --ground: inherit;
+}

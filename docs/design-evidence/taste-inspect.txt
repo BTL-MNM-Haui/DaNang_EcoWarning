@@ -1,0 +1,23 @@
+TASTESKILL · INSPECT   http://127.0.0.1:5173/data
+
+MEASURED (first viewport listed)
+  hero headline   "Dữ liệu & thống kê"  5 words · 1 line(s) · 32px (2.2vw) · Be Vietnam Pro 600 · tracking -0.04em · leading 1.2
+  @768px          1 line(s) · 28px
+  @390px          1 line(s) · 28px
+  typefaces       Be Vietnam Pro 100%
+  sizes in use    13 / 14 / 15 / 16 / 20 / 21 / 24 / 32 px   body 15px / 1.65
+  colour          page #eef3f6 · sections #eef3f6 #ffffff · button #ffffff
+  page            1.4 screens · 1349 words · 2 images · hero media 10% svg
+  headings        1 · longest 1 line(s) · median - words
+
+FINDINGS  none. Measurements are clean — now judge the pictures.
+LOOK AT THE RENDER — open these with your image viewer / Read tool before saying anything about quality:
+  desktop 1440px  .taste-skill/final-data-inspect/desktop-fold.jpg
+                  .taste-skill/final-data-inspect/desktop-page-01.jpg
+  tablet 768px    .taste-skill/final-data-inspect/tablet-fold.jpg
+                  .taste-skill/final-data-inspect/tablet-page-01.jpg
+  mobile 390px    .taste-skill/final-data-inspect/mobile-fold.jpg
+                  .taste-skill/final-data-inspect/mobile-page-01.jpg
+
+report: .taste-skill/final-data-inspect/report.json
+RESULT: 0 FAIL, 0 WARN — measurements pass. Passing the meter is the floor, not the grade: score the screenshots with references/critique.md.

@@ -1,0 +1,23 @@
+{
+  "measured": {
+    "input": {
+      "text": "rgb(18, 60, 75)",
+      "background": "rgb(255, 255, 255)",
+      "border": "rgb(113, 134, 148)"
+    },
+    "metadata": {
+      "text": "rgb(65, 87, 102)",
+      "background": "rgb(255,255,255)"
+    },
+    "heading": {
+      "text": "rgb(18, 51, 68)",
+      "background": "rgb(255,255,255)"
+    }
+  },
+  "contrast": {
+    "inputText": 11.839903639318093,
+    "inputBorder": 3.79074738682587,
+    "metadata": 7.5542195198653195,
+    "heading": 13.268287049375006
+  }
+}

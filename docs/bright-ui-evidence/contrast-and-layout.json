@@ -1,0 +1,256 @@
+{
+  "checks": [
+    "no overflow /weather 1440",
+    "weather heading 1440 contrast 6.87",
+    "weather source 1440 contrast 6.02",
+    "weather uses a light surface 1440",
+    "secondary button 1440 contrast 7.71",
+    "secondary hover 1440 contrast 6.97",
+    "no overflow /data 1440",
+    "input text 1440 contrast 13.13",
+    "input boundary 1440 contrast 3.69",
+    "dataset heading 1440 contrast 9.67",
+    "no overflow /login 1440",
+    "auth headline contrast 9.67",
+    "auth supporting text contrast 6.02",
+    "primary button contrast 5.43",
+    "no overflow / 1440",
+    "active navigation contrast 5.43",
+    "expanded sidebar never covers content",
+    "no overflow /weather 768",
+    "weather heading 768 contrast 6.87",
+    "weather source 768 contrast 6.02",
+    "weather uses a light surface 768",
+    "secondary button 768 contrast 7.71",
+    "no overflow /data 768",
+    "input text 768 contrast 13.13",
+    "input boundary 768 contrast 3.69",
+    "dataset heading 768 contrast 9.67",
+    "no overflow /login 768",
+    "no overflow / 768",
+    "no overflow /weather 390",
+    "weather heading 390 contrast 6.87",
+    "weather source 390 contrast 6.02",
+    "weather uses a light surface 390",
+    "secondary button 390 contrast 7.71",
+    "no overflow /data 390",
+    "input text 390 contrast 13.13",
+    "input boundary 390 contrast 3.69",
+    "dataset heading 390 contrast 9.67",
+    "no overflow /login 390",
+    "no overflow / 390"
+  ],
+  "contrast": [
+    {
+      "label": "weather heading 1440",
+      "foreground": "rgb(16, 78, 174)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 6.865770769593034,
+      "threshold": 4.5
+    },
+    {
+      "label": "weather source 1440",
+      "foreground": "rgb(54, 94, 135)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 6.015658023994549,
+      "threshold": 4.5
+    },
+    {
+      "label": "secondary button 1440",
+      "foreground": "rgb(16, 78, 174)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 7.712121853217156,
+      "threshold": 4.5
+    },
+    {
+      "label": "secondary hover 1440",
+      "foreground": "rgb(16, 78, 174)",
+      "background": "rgb(237, 244, 255)",
+      "ratio": 6.972190922447674,
+      "threshold": 4.5
+    },
+    {
+      "label": "input text 1440",
+      "foreground": "rgb(23, 50, 77)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 13.126337902439268,
+      "threshold": 4.5
+    },
+    {
+      "label": "input boundary 1440",
+      "foreground": "rgb(111, 135, 166)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 3.6893073322691805,
+      "threshold": 3
+    },
+    {
+      "label": "dataset heading 1440",
+      "foreground": "rgb(18, 60, 118)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 9.668378362938487,
+      "threshold": 4.5
+    },
+    {
+      "label": "auth headline",
+      "foreground": "rgb(18, 60, 118)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 9.668378362938487,
+      "threshold": 4.5
+    },
+    {
+      "label": "auth supporting text",
+      "foreground": "rgb(54, 94, 135)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 6.015658023994549,
+      "threshold": 4.5
+    },
+    {
+      "label": "primary button",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(23, 102, 210)",
+      "ratio": 5.429711502097148,
+      "threshold": 4.5
+    },
+    {
+      "label": "active navigation",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(23, 102, 210)",
+      "ratio": 5.429711502097148,
+      "threshold": 4.5
+    },
+    {
+      "label": "weather heading 768",
+      "foreground": "rgb(16, 78, 174)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 6.865770769593034,
+      "threshold": 4.5
+    },
+    {
+      "label": "weather source 768",
+      "foreground": "rgb(54, 94, 135)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 6.015658023994549,
+      "threshold": 4.5
+    },
+    {
+      "label": "secondary button 768",
+      "foreground": "rgb(16, 78, 174)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 7.712121853217156,
+      "threshold": 4.5
+    },
+    {
+      "label": "input text 768",
+      "foreground": "rgb(23, 50, 77)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 13.126337902439268,
+      "threshold": 4.5
+    },
+    {
+      "label": "input boundary 768",
+      "foreground": "rgb(111, 135, 166)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 3.6893073322691805,
+      "threshold": 3
+    },
+    {
+      "label": "dataset heading 768",
+      "foreground": "rgb(18, 60, 118)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 9.668378362938487,
+      "threshold": 4.5
+    },
+    {
+      "label": "weather heading 390",
+      "foreground": "rgb(16, 78, 174)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 6.865770769593034,
+      "threshold": 4.5
+    },
+    {
+      "label": "weather source 390",
+      "foreground": "rgb(54, 94, 135)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 6.015658023994549,
+      "threshold": 4.5
+    },
+    {
+      "label": "secondary button 390",
+      "foreground": "rgb(16, 78, 174)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 7.712121853217156,
+      "threshold": 4.5
+    },
+    {
+      "label": "input text 390",
+      "foreground": "rgb(23, 50, 77)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 13.126337902439268,
+      "threshold": 4.5
+    },
+    {
+      "label": "input boundary 390",
+      "foreground": "rgb(111, 135, 166)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 3.6893073322691805,
+      "threshold": 3
+    },
+    {
+      "label": "dataset heading 390",
+      "foreground": "rgb(18, 60, 118)",
+      "background": "rgb(232, 243, 255)",
+      "ratio": 9.668378362938487,
+      "threshold": 4.5
+    }
+  ],
+  "routes": [
+    {
+      "route": "/weather",
+      "width": 1440
+    },
+    {
+      "route": "/data",
+      "width": 1440
+    },
+    {
+      "route": "/login",
+      "width": 1440
+    },
+    {
+      "route": "/",
+      "width": 1440
+    },
+    {
+      "route": "/weather",
+      "width": 768
+    },
+    {
+      "route": "/data",
+      "width": 768
+    },
+    {
+      "route": "/login",
+      "width": 768
+    },
+    {
+      "route": "/",
+      "width": 768
+    },
+    {
+      "route": "/weather",
+      "width": 390
+    },
+    {
+      "route": "/data",
+      "width": 390
+    },
+    {
+      "route": "/login",
+      "width": 390
+    },
+    {
+      "route": "/",
+      "width": 390
+    }
+  ]
+}

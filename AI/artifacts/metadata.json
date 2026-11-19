@@ -1,0 +1,32 @@
+{
+  "artifact": "best_model.pkl",
+  "sha256": "1d444882ca739ecfcfc1b9295ce19719017203aa0b4d089d6afd7f02d733adc2",
+  "scikit_learn_version": "1.6.1",
+  "source_notebook": "../notebooks/notebook-mnm.ipynb",
+  "source_dataset": "Pluvial_Flood_Dataset.xlsx",
+  "source_dataset_sha256": "f5aae701dbd425de01c100c86516f09c65bfec74cffa2c13a1fba97e98c1a0b8",
+  "feature_order": [
+    "X",
+    "Y",
+    "Slope",
+    "Curvature",
+    "Aspect",
+    "TWI",
+    "FA",
+    "Drainage",
+    "Rainfall"
+  ],
+  "original_label_mapping": {
+    "No_Flood": 0,
+    "Low": 1,
+    "Moderate": 1,
+    "High": 1,
+    "Very_High": 1
+  },
+  "scope": "pluvial_flood_susceptibility",
+  "training_crs": null,
+  "feature_units": null,
+  "rainfall_accumulation_period": null,
+  "validated_for_da_nang": false,
+  "notes": "Schema recovered from the supplied notebook and dataset. Unknown training metadata must be confirmed by the model author."
+}
