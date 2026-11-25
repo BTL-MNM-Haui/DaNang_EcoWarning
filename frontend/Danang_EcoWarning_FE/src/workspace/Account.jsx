@@ -297,7 +297,11 @@ export function Profile() {
       } else {
         if (password.newPassword !== password.confirmPassword)
           throw new Error("Mật khẩu xác nhận chưa khớp.");
-        await session.put("/user/change-password", password);
+        await session.put("/user/change-password", {
+          oldPassword: password.currentPassword,
+          newPassword: password.newPassword,
+          confirmPassword: password.confirmPassword,
+        });
         setPassword({
           currentPassword: "",
           newPassword: "",

@@ -44,9 +44,9 @@ jobs:
           cache: maven
       - run: mvn -B -f backend/${{ matrix.module }}/pom.xml package -DskipTests
       - if: matrix.module == 'auth-service'
-        run: mvn -B -f backend/auth-service/pom.xml test -Dtest=MailConfigTests
+        run: mvn -B -f backend/auth-service/pom.xml test -Dtest=MailConfigTests,UserProfileTests
       - if: matrix.module == 'citizen-report-service'
         run: mvn -B -f backend/citizen-report-service/pom.xml test -Dtest=IncidentSecurityTests
 
       - if: matrix.module == 'search-service'
-        run: mvn -B -f backend/search-service/pom.xml test -Dtest=FloodAiControllerTests,ClimateAnomalyControllerTests,SearchServiceHelperTests,ObservationQualityTests
+        run: mvn -B -f backend/search-service/pom.xml test -Dtest=FloodAiControllerTests,ClimateAnomalyControllerTests,SearchServiceHelperTests,ObservationQualityTests,ObservationDateRangeTests
