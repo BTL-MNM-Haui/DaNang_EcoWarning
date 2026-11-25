@@ -177,3 +177,11 @@ node scripts/ui-auth-flow-check.mjs
 Hai script mới kiểm tra bằng thao tác form trên Chrome/Edge, đọc trạng thái DOM và gọi API thật từ FE. Script product tạo fixture local riêng, cấp quyền ADMIN cho fixture, gửi OTP qua Mailpit, upload ảnh ghi rõ AUTOMATED TEST lên Cloudinary cấu hình trong backend/.env và xóa ảnh do chính lần chạy đó tạo ra theo [API destroy chính thức](https://cloudinary.com/documentation/image_upload_api_reference#destroy). Nó cũng dọn báo cáo, tài khoản và CSV thử. Cần khóa Cloudinary, Goong và OpenWeather hợp lệ để kiểm tra các phần tương ứng; không có dữ liệu giả thay thế nếu dịch vụ ngoài không hoạt động. Không dùng script có ghi dữ liệu với môi trường production.
 
 Ảnh/checklist local ở `.taste-skill/product-flow-proof/`, `.taste-skill/data-weather-proof/`, `.taste-skill/ai-workspace-proof/`, `.taste-skill/auth-flow/`. Tổng hợp kết quả và phần còn thiếu trong IMPLEMENTATION.md, mục 25/11/2026. Các kiểm tra này không chứng minh độ chính xác dự báo tại Đà Nẵng.
+
+### Đăng nhập bằng mật khẩu cho tài khoản local được chọn
+
+Chế độ LocalMail kích hoạt profile `local-demo`. Mặc định mọi tài khoản vẫn cần OTP. Chủ máy có thể đặt `LOCAL_PASSWORD_LOGIN_ACCOUNTS` trong `backend/.env` thành danh sách email local phân tách dấu phẩy rồi chạy lại `./scripts/start.ps1 -LocalMail`. Chỉ các email khớp chính xác trong danh sách mới nhận access/refresh token ngay sau khi mật khẩu hợp lệ. Ngoài profile local-demo, danh sách không có hiệu lực. Xóa giá trị để yêu cầu OTP lại.
+
+API `/auth/otp-sign-in` trả `otpRequired: false` cùng token đăng nhập cho tài khoản được chọn; FE nhận phản hồi này và vào ứng dụng ngay. Tài khoản khác vẫn nhận `otpRequired: true` và OTP challenge. Luồng khôi phục mật khẩu vẫn yêu cầu OTP; quyền USER/ADMIN không bị thay đổi. Danh sách email và mật khẩu cụ thể chỉ lưu local, không bật sẵn trong source công khai.
+
+Kiểm tra local riêng cho hai tài khoản được chủ máy yêu cầu: `node scripts/ui-local-password-login-check.mjs`, cần `.delivery/anh-local-accounts.json` và `TASTE_SKILL_DIR` như các test browser khác. Script kiểm tra mật khẩu sai, đăng nhập trực tiếp, token thật/quyền thật và không phát sinh email OTP đăng nhập. `ui-auth-flow-check.mjs` tiếp tục kiểm tra OTP trên tài khoản ngoài danh sách.

@@ -37,8 +37,13 @@ export function AuthPage({ mode = "login" }) {
             password: form.password,
           })
           .then(unpack);
-        setOtpToken(data.tokenContent);
-        setStep(1);
+        if (data.otpRequired === false && data.refreshToken) {
+          loginSuccess(data);
+          navigate(location.state?.from || "/");
+        } else {
+          setOtpToken(data.tokenContent);
+          setStep(1);
+        }
       } else if (mode === "login") {
         const data = await session
           .post(`/auth/verify-sign-in/${form.otp}`, null, {

@@ -7,6 +7,8 @@ services:
     networks: [app-net]
   auth-service:
     environment:
+      SPRING_PROFILES_ACTIVE: docker,local-demo
+      AUTH_LOCAL_PASSWORD_LOGIN_ACCOUNTS: ${LOCAL_PASSWORD_LOGIN_ACCOUNTS:-}
       SPRING_MAIL_HOST: mailpit
       SPRING_MAIL_PORT: 1025
       SPRING_MAIL_USERNAME: noreply@ecowarning.local
