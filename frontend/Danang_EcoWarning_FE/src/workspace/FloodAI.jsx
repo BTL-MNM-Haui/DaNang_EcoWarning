@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import FloodEvaluation from "./FloodEvaluation";
 import {
   FiActivity,
   FiArrowRight,
@@ -23,6 +24,8 @@ const shortVersion = (value) =>
   value?.startsWith("sha256:") ? `${value.slice(0, 19)}…` : value;
 
 export default function FloodAI() {
+  const [params, setParams] = useSearchParams();
+  const view = params.get("view") === "evaluation" ? "evaluation" : "predict";
   const { user, isAuthenticated, loading: authLoading } = useAuth();
   const canRun = !authLoading && isAuthenticated && isManager(user);
   const model = useResource(
@@ -184,199 +187,229 @@ export default function FloodAI() {
             </p>
           </div>
           {!isAuthenticated && (
-            <Link className="ec-button" to="/login" state={{ from: "/ai" }}>
+            <Link
+              className="ec-button"
+              to="/login"
+              state={{
+                from: view === "evaluation" ? "/ai?view=evaluation" : "/ai",
+              }}
+            >
               Đăng nhập để chạy AI
             </Link>
           )}
         </div>
       )}
-      <div className="ec-ai-layout">
-        <form className="ec-panel ec-ai-input" onSubmit={submit}>
-          <div className="ec-ai-section-heading">
-            <div>
-              <h2>Dữ liệu đầu vào</h2>
-              <p>Nạp một mẫu dataset hoặc nhập bộ đặc trưng của bạn.</p>
-            </div>
-            <span className="ec-ai-count">{entered}/9 trường có dữ liệu</span>
-          </div>
-          <div className="ec-ai-samples" aria-label="Mẫu dữ liệu thử nghiệm">
-            <button
-              type="button"
-              disabled={busy}
-              onClick={() => load(examples.noFlood, "dataset")}
-              data-ai-sample="negative"
-            >
-              Nạp mẫu nhãn không ngập
-            </button>
-            <button
-              type="button"
-              disabled={busy}
-              onClick={() => load(examples.flood, "dataset")}
-              data-ai-sample="positive"
-            >
-              Nạp mẫu nhãn ngập
-            </button>
-            <button
-              type="submit"
-              disabled={!ready || busy}
-              className="ec-ai-quick-run"
-            >
-              {busy ? "Đang phân tích…" : "Phân tích đầu vào"}
-            </button>
-          </div>
-          <p className="ec-ai-source">
-            {source === "dataset"
-              ? "Đang dùng mẫu từ dataset nhóm AI cung cấp, không phải quan trắc tại Đà Nẵng."
-              : "Đầu vào do bạn cung cấp. Giữ nguyên cách biểu diễn và đơn vị của dữ liệu nguồn."}
-          </p>
-          <label className="ec-ai-point">
-            Mã điểm <span className="ec-muted">(tùy chọn)</span>
-            <input
-              value={pointId}
-              maxLength={128}
-              disabled={busy}
-              onChange={(e) => {
-                setPointId(e.target.value);
-                setSource("custom");
-                setResult(null);
-              }}
-              placeholder="Mã tham chiếu trong dữ liệu nguồn"
-            />
-          </label>
-          {featureGroups.map((group) => (
-            <fieldset
-              key={group.title}
-              className="ec-ai-fieldset"
-              disabled={busy}
-            >
-              <legend>{group.title}</legend>
-              <div className="ec-ai-fields">
-                {group.fields.map(([key, title]) => (
-                  <label key={key} htmlFor={`ai-${key}`}>
-                    <span>
-                      {title} <small>{key}</small>
-                    </span>
-                    <input
-                      id={`ai-${key}`}
-                      type="number"
-                      step="any"
-                      value={values[key]}
-                      onChange={(e) => change(key, e.target.value)}
-                      placeholder="Chưa có giá trị"
-                      aria-describedby="ai-input-help"
-                    />
-                  </label>
-                ))}
+      <div className="ec-ai-views" role="group" aria-label="Chức năng AI">
+        <button
+          type="button"
+          aria-pressed={view === "predict"}
+          onClick={() => setParams({})}
+        >
+          Chạy phân tích
+        </button>
+        <button
+          type="button"
+          aria-pressed={view === "evaluation"}
+          onClick={() => setParams({ view: "evaluation" })}
+        >
+          Đánh giá mô hình
+        </button>
+      </div>
+      {view === "evaluation" ? (
+        <FloodEvaluation
+          canRun={canRun}
+          modelVersion={model.value?.model_version}
+        />
+      ) : (
+        <div className="ec-ai-layout">
+          <form className="ec-panel ec-ai-input" onSubmit={submit}>
+            <div className="ec-ai-section-heading">
+              <div>
+                <h2>Dữ liệu đầu vào</h2>
+                <p>Nạp một mẫu dataset hoặc nhập bộ đặc trưng của bạn.</p>
               </div>
-            </fieldset>
-          ))}
-          <p id="ai-input-help" className="ec-ai-help">
-            Không tự thay X/Y bằng kinh/vĩ độ hoặc đổi đơn vị khi chưa xác nhận
-            dữ liệu huấn luyện. Ô trống được gửi dưới dạng null; 0 vẫn là một
-            giá trị.
-          </p>
-          {entered < 9 && (
-            <label className="ec-ai-imputation">
+              <span className="ec-ai-count">{entered}/9 trường có dữ liệu</span>
+            </div>
+            <div className="ec-ai-samples" aria-label="Mẫu dữ liệu thử nghiệm">
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() => load(examples.noFlood, "dataset")}
+                data-ai-sample="negative"
+              >
+                Nạp mẫu nhãn không ngập
+              </button>
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() => load(examples.flood, "dataset")}
+                data-ai-sample="positive"
+              >
+                Nạp mẫu nhãn ngập
+              </button>
+              <button
+                type="submit"
+                disabled={!ready || busy}
+                className="ec-ai-quick-run"
+              >
+                {busy ? "Đang phân tích…" : "Phân tích đầu vào"}
+              </button>
+            </div>
+            <p className="ec-ai-source">
+              {source === "dataset"
+                ? "Đang dùng mẫu từ dataset nhóm AI cung cấp, không phải quan trắc tại Đà Nẵng."
+                : "Đầu vào do bạn cung cấp. Giữ nguyên cách biểu diễn và đơn vị của dữ liệu nguồn."}
+            </p>
+            <label className="ec-ai-point">
+              Mã điểm <span className="ec-muted">(tùy chọn)</span>
               <input
-                type="checkbox"
-                checked={allowMissing}
+                value={pointId}
+                maxLength={128}
                 disabled={busy}
                 onChange={(e) => {
-                  setAllowMissing(e.target.checked);
-                  setError("");
+                  setPointId(e.target.value);
+                  setSource("custom");
+                  setResult(null);
                 }}
-              />
-              <span>
-                Cho phép mô hình điền khuyết trường trống và mã NoData. Kết quả
-                sẽ liệt kê các trường đã điền.
-              </span>
-            </label>
-          )}
-          <details className="ec-ai-json">
-            <summary>Nhập từ JSON hoặc xem dữ liệu gửi đi</summary>
-            <label>
-              Payload JSON
-              <textarea
-                rows={7}
-                spellCheck={false}
-                value={json}
-                disabled={busy}
-                onChange={(e) => setJson(e.target.value)}
-                placeholder="Dán point_id và đủ 9 trường features"
+                placeholder="Mã tham chiếu trong dữ liệu nguồn"
               />
             </label>
-            <div className="ec-toolbar">
-              <button
-                type="button"
+            {featureGroups.map((group) => (
+              <fieldset
+                key={group.title}
+                className="ec-ai-fieldset"
                 disabled={busy}
-                onClick={() => {
-                  try {
-                    load(readFloodJson(json));
-                  } catch (e) {
-                    setError(e.message);
-                  }
-                }}
               >
-                Áp dụng JSON
-              </button>
-              <button
-                type="button"
-                disabled={busy}
-                onClick={() => {
-                  try {
-                    setJson(
-                      JSON.stringify(
-                        makeFloodPayload(values, pointId),
-                        null,
-                        2,
-                      ),
-                    );
+                <legend>{group.title}</legend>
+                <div className="ec-ai-fields">
+                  {group.fields.map(([key, title]) => (
+                    <label key={key} htmlFor={`ai-${key}`}>
+                      <span>
+                        {title} <small>{key}</small>
+                      </span>
+                      <input
+                        id={`ai-${key}`}
+                        type="number"
+                        step="any"
+                        value={values[key]}
+                        onChange={(e) => change(key, e.target.value)}
+                        placeholder="Chưa có giá trị"
+                        aria-describedby="ai-input-help"
+                      />
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            ))}
+            <p id="ai-input-help" className="ec-ai-help">
+              Không tự thay X/Y bằng kinh/vĩ độ hoặc đổi đơn vị khi chưa xác
+              nhận dữ liệu huấn luyện. Ô trống được gửi dưới dạng null; 0 vẫn là
+              một giá trị.
+            </p>
+            {entered < 9 && (
+              <label className="ec-ai-imputation">
+                <input
+                  type="checkbox"
+                  checked={allowMissing}
+                  disabled={busy}
+                  onChange={(e) => {
+                    setAllowMissing(e.target.checked);
                     setError("");
-                  } catch (e) {
-                    setError(e.message);
-                  }
-                }}
+                  }}
+                />
+                <span>
+                  Cho phép mô hình điền khuyết trường trống và mã NoData. Kết
+                  quả sẽ liệt kê các trường đã điền.
+                </span>
+              </label>
+            )}
+            <details className="ec-ai-json">
+              <summary>Nhập từ JSON hoặc xem dữ liệu gửi đi</summary>
+              <label>
+                Payload JSON
+                <textarea
+                  rows={7}
+                  spellCheck={false}
+                  value={json}
+                  disabled={busy}
+                  onChange={(e) => setJson(e.target.value)}
+                  placeholder="Dán point_id và đủ 9 trường features"
+                />
+              </label>
+              <div className="ec-toolbar">
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={() => {
+                    try {
+                      load(readFloodJson(json));
+                    } catch (e) {
+                      setError(e.message);
+                    }
+                  }}
+                >
+                  Áp dụng JSON
+                </button>
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={() => {
+                    try {
+                      setJson(
+                        JSON.stringify(
+                          makeFloodPayload(values, pointId),
+                          null,
+                          2,
+                        ),
+                      );
+                      setError("");
+                    } catch (e) {
+                      setError(e.message);
+                    }
+                  }}
+                >
+                  Xem payload hiện tại
+                </button>
+              </div>
+            </details>
+            {error && (
+              <p className="ec-error" role="alert">
+                {error}
+              </p>
+            )}
+            <div className="ec-ai-submit">
+              <button
+                className="ec-button"
+                type="submit"
+                disabled={!ready || busy}
               >
-                Xem payload hiện tại
+                {busy ? "Đang phân tích…" : "Phân tích bằng mô hình"}
+              </button>
+              <button type="button" disabled={busy} onClick={reset}>
+                Xóa dữ liệu
               </button>
             </div>
-          </details>
-          {error && (
-            <p className="ec-error" role="alert">
-              {error}
-            </p>
-          )}
-          <div className="ec-ai-submit">
-            <button
-              className="ec-button"
-              type="submit"
-              disabled={!ready || busy}
-            >
-              {busy ? "Đang phân tích…" : "Phân tích bằng mô hình"}
-            </button>
-            <button type="button" disabled={busy} onClick={reset}>
-              Xóa dữ liệu
-            </button>
+          </form>
+          <div className="ec-ai-output-column">
+            <FloodResult result={result} busy={busy} />
+            <section className="ec-ai-contract">
+              <h2>Trước khi dùng dữ liệu thực</h2>
+              <p>
+                Cần xác nhận với nhóm AI ba phần còn thiếu trong hợp đồng dữ
+                liệu:
+              </p>
+              <ul>
+                <li>Hệ tọa độ của X và Y</li>
+                <li>Đơn vị của các đặc trưng</li>
+                <li>Khoảng thời gian tích lũy lượng mưa</li>
+              </ul>
+              <p>
+                Trang này không tự lấy thời tiết hiện tại để ghép thành đầu vào.
+              </p>
+            </section>
           </div>
-        </form>
-        <div className="ec-ai-output-column">
-          <FloodResult result={result} busy={busy} />
-          <section className="ec-ai-contract">
-            <h2>Trước khi dùng dữ liệu thực</h2>
-            <p>
-              Cần xác nhận với nhóm AI ba phần còn thiếu trong hợp đồng dữ liệu:
-            </p>
-            <ul>
-              <li>Hệ tọa độ của X và Y</li>
-              <li>Đơn vị của các đặc trưng</li>
-              <li>Khoảng thời gian tích lũy lượng mưa</li>
-            </ul>
-            <p>
-              Trang này không tự lấy thời tiết hiện tại để ghép thành đầu vào.
-            </p>
-          </section>
         </div>
-      </div>
+      )}
       <section id="climate-analysis" className="ec-ai-climate">
         <div>
           <h2>Phân tích bất thường khí hậu</h2>

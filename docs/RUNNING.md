@@ -157,3 +157,23 @@ node --test frontend/Danang_EcoWarning_FE/src/workspace/floodForm.test.mjs
 ```
 
 Script browser dùng mật khẩu + OTP qua SMTP local, không tự ký JWT. Trường hợp 503 được chèn tại lớp mạng trình duyệt để kiểm tra UI; các mẫu dự đoán thành công gọi BE và model thật. Script không đổi mật khẩu hoặc xóa hai tài khoản thử.
+
+## Báo cáo đánh giá model và kiểm thử FE đầy đủ
+
+Mở `http://localhost:4173/ai?view=evaluation` bằng tài khoản ADMIN. Tab có Gini của artifact đang phục vụ, bốn ảnh output notebook, nguồn/công thức quy đổi và tải JSON. Nút Phóng to mở ảnh ở kích thước dễ đọc, có cuộn ngang trên điện thoại. Các ảnh lấy bằng Axios có access token qua BE, không gắn token vào URL.
+
+Notebook chưa có bảng số gốc cho các thí nghiệm và chưa có fingerprint liên kết pipeline đánh giá với model triển khai. Không dùng điểm xếp hạng 90–95 làm accuracy. Docker build AI tự xuất snapshot bằng `AI/tools/export_notebook_evaluation.py`, không chạy notebook hay train model. Nếu sửa notebook nhưng chưa có output hợp lệ, bước export sẽ yêu cầu xem lại; dữ liệu nguồn không bị sửa.
+
+Chạy kiểm thử tại gốc repo sau `./scripts/start.ps1 -LocalMail` và `node scripts/prepare-local-test-accounts.mjs`:
+
+```powershell
+$env:TASTE_SKILL_DIR='E:\mnm haui\taste-skill\skills\taste-skill'
+node scripts/ui-product-flow-check.mjs
+node scripts/ui-data-weather-check.mjs
+node scripts/ui-ai-workspace-check.mjs
+node scripts/ui-auth-flow-check.mjs
+```
+
+Hai script mới kiểm tra bằng thao tác form trên Chrome/Edge, đọc trạng thái DOM và gọi API thật từ FE. Script product tạo fixture local riêng, cấp quyền ADMIN cho fixture, gửi OTP qua Mailpit, upload ảnh ghi rõ AUTOMATED TEST lên Cloudinary cấu hình trong backend/.env và xóa ảnh do chính lần chạy đó tạo ra theo [API destroy chính thức](https://cloudinary.com/documentation/image_upload_api_reference#destroy). Nó cũng dọn báo cáo, tài khoản và CSV thử. Cần khóa Cloudinary, Goong và OpenWeather hợp lệ để kiểm tra các phần tương ứng; không có dữ liệu giả thay thế nếu dịch vụ ngoài không hoạt động. Không dùng script có ghi dữ liệu với môi trường production.
+
+Ảnh/checklist local ở `.taste-skill/product-flow-proof/`, `.taste-skill/data-weather-proof/`, `.taste-skill/ai-workspace-proof/`, `.taste-skill/auth-flow/`. Tổng hợp kết quả và phần còn thiếu trong IMPLEMENTATION.md, mục 25/11/2026. Các kiểm tra này không chứng minh độ chính xác dự báo tại Đà Nẵng.
