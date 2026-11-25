@@ -1,4 +1,5 @@
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, HTTPException, Request, Response
+from AI.infra.flood_evaluation import evaluation, notebook_chart, METHOD_IDS
 
 from AI.api.models.flood import (
     BatchPredictionRequest,
@@ -36,6 +37,23 @@ def model_info(request: Request):
 @router.post('/predict', response_model=PredictionResponse)
 def predict(payload: PredictionRequest, request: Request):
     return get_service(request).predict([payload])[0]
+
+
+@router.get('/evaluation')
+def model_evaluation(request: Request):
+    return evaluation(get_service(request).model)
+
+
+@router.get('/evaluation/charts/{chart_id}')
+def evaluation_chart(chart_id: str, request: Request):
+    get_service(request)
+    if chart_id not in METHOD_IDS:
+        raise HTTPException(status_code=404, detail='Unknown evaluation chart.')
+    try:
+        return Response(notebook_chart(chart_id), media_type='image/png',
+                        headers={'Cache-Control': 'private, no-store'})
+    except (OSError, ValueError, KeyError, TypeError):
+        raise HTTPException(status_code=503, detail='Notebook chart missing or out of date.') from None
 
 
 @router.post('/predict/batch', response_model=BatchPredictionResponse)

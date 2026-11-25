@@ -18,6 +18,16 @@ public class FloodAiController {
   client=RestClient.builder().baseUrl(baseUrl).requestFactory(factory).build();
  }
  @GetMapping("/model") public ResponseEntity<?> model(){return forward("/api/v1/flood/model",null);}
+ @GetMapping("/evaluation") public ResponseEntity<?> evaluation(){return forward("/api/v1/flood/evaluation",null);}
+ @GetMapping("/evaluation/charts/{chartId}") public ResponseEntity<?> chart(@PathVariable String chartId){
+  if(!Set.of("gini","permutation","ablation","shap").contains(chartId)) return ResponseEntity.notFound().build();
+  try {
+   var response=client.get().uri("/api/v1/flood/evaluation/charts/"+chartId).retrieve().toEntity(byte[].class);
+   byte[] body=response.getBody();
+   if(body==null || body.length<8 || body[0]!=(byte)0x89 || body[1]!=0x50 || body[2]!=0x4e || body[3]!=0x47) return ResponseEntity.status(503).body(Map.of("detail","Biểu đồ đánh giá chưa hợp lệ."));
+   return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).cacheControl(CacheControl.noStore()).body(body);
+  } catch(RestClientException e){return ResponseEntity.status(503).body(Map.of("detail","Chưa tải được biểu đồ đánh giá từ AI."));}
+ }
  @PostMapping("/predict") public ResponseEntity<?> predict(@RequestBody Map<String,Object> payload){
   if(!Set.of("point_id","features").containsAll(payload.keySet()) || !(payload.get("features") instanceof Map<?,?> features) || !features.keySet().equals(FEATURES)) return ResponseEntity.unprocessableEntity().body(Map.of("detail","Cần đủ 9 đặc trưng theo hợp đồng mô hình."));
   for(Object v:features.values()) if(v!=null && (!(v instanceof Number n) || !Double.isFinite(n.doubleValue()))) return ResponseEntity.unprocessableEntity().body(Map.of("detail","Đặc trưng phải là số hữu hạn hoặc null."));

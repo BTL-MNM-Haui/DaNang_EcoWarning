@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "source_notebook": "AI/notebooks/notebook-mnm.ipynb",
+  "notebook_sha256": "17abd5cb615bd69574d9161483a23ceada478eef43b66a8c9a9ef7dcae47efde",
+  "notebook_hash_algorithm": "sha256_canonical_json",
+  "model_binding": "not_verified",
+  "scope": "notebook_validation_refit",
+  "converted_score": {
+    "range": [
+      90,
+      95
+    ],
+    "meaning": "rank_score_not_accuracy",
+    "formula": "90 + 5 * (rank - 0.5) / feature_count"
+  },
+  "methods": [
+    {
+      "id": "gini",
+      "title": "Gini Importance",
+      "raw_values_available": false,
+      "image_sha256": "3bd7a3772b50bcfb82d930846810ccefe83bec6f467ac1d08190ffe10b82a9d2",
+      "cell_id": "3bdc7dbb",
+      "execution_count": 47
+    },
+    {
+      "id": "permutation",
+      "title": "Permutation Importance",
+      "raw_values_available": false,
+      "image_sha256": "64200ef1296f743da6d00999304a6e083f84cce62c38c16eb9d223558b529b30",
+      "cell_id": "0be3dcf6",
+      "execution_count": 48
+    },
+    {
+      "id": "ablation",
+      "title": "Ablation Importance",
+      "raw_values_available": false,
+      "image_sha256": "73cfd8c37705dc8cf4f772f39a4668a9ae935a3524085e01ab6b9d950b99e442",
+      "cell_id": "40f25a58",
+      "execution_count": 49
+    },
+    {
+      "id": "shap",
+      "title": "Mean Absolute SHAP",
+      "raw_values_available": false,
+      "image_sha256": "ddf321dab50e350e33840529ff8ca493a8ed91ea22f1359ee299698c20bced5c",
+      "cell_id": "81087461",
+      "execution_count": 46
+    }
+  ]
+}

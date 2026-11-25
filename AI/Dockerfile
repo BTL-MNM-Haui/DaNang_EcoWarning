@@ -10,6 +10,7 @@ COPY requirements.txt /app/AI/requirements.txt
 RUN pip install --no-cache-dir -r /app/AI/requirements.txt \
     && useradd --create-home --uid 10001 ai
 COPY --chown=ai:ai . /app/AI
+RUN python AI/tools/export_notebook_evaluation.py
 USER ai
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
