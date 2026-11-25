@@ -1,0 +1,24 @@
+# Explicit local testing only: capture emails instead of delivering externally.
+services:
+  mailpit:
+    image: axllent/mailpit:v1.27.4
+    ports:
+      - "127.0.0.1:8025:8025"
+    networks: [app-net]
+  auth-service:
+    environment:
+      SPRING_MAIL_HOST: mailpit
+      SPRING_MAIL_PORT: 1025
+      SPRING_MAIL_USERNAME: noreply@ecowarning.local
+      SPRING_MAIL_PASSWORD: ""
+      # Dotted JavaMail map keys must be preserved; underscore env names lose them.
+      SPRING_APPLICATION_JSON: >-
+        {"spring.mail.properties.mail.smtp.auth":"false",
+         "spring.mail.properties.mail.smtp.starttls.enable":"false",
+         "spring.mail.properties.mail.smtp.starttls.required":"false",
+         "spring.mail.properties.mail.smtp.connectiontimeout":"5000",
+         "spring.mail.properties.mail.smtp.timeout":"5000",
+         "spring.mail.properties.mail.smtp.writetimeout":"5000"}
+    depends_on:
+      mailpit:
+        condition: service_started

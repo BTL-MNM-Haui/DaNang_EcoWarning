@@ -98,7 +98,9 @@ Phát hành theo GNU General Public License v3.0; xem [LICENSE](LICENSE). Logo v
 Xem [báo cáo sử dụng taste-skill / impeccable](docs/SKILL-REVIEW.md), ảnh giao diện và kết quả kiểm tra. Font Be Vietnam Pro được tự host và có [giấy phép OFL](frontend/Danang_EcoWarning_FE/public/fonts/OFL-Be-Vietnam-Pro.txt).
 ## Tích hợp AI mới
 
-Đã tích hợp model nhóm cung cấp qua BE và FE; xem [đối chiếu kế hoạch 18/11/2026](docs/PLAN-AUDIT-2026-11-18.md). Model ngập và phân tích bất thường khí hậu là hai chức năng khác nhau; metadata giới hạn của model vẫn được giữ và hiển thị.
+Mở **Phân tích AI** trong menu chính hoặc ngay tại đầu trang bản đồ (`/ai`). Khách và thành viên có thể xem màn hình, nạp mẫu và chuẩn bị 9 đặc trưng; tài khoản quản lý mới được chạy mô hình qua BE. UI có form nhập số, mẫu dataset, nhãn/xác suất/điền khuyết và tải kết quả JSON. Đường dẫn cũ `/ai-flood` chuyển sang `/ai`.
+
+Đã tích hợp model nhóm cung cấp qua BE và FE; xem [đối chiếu kế hoạch 18/11/2026](docs/PLAN-AUDIT-2026-11-18.md). Model ngập và phân tích bất thường khí hậu là hai chức năng khác nhau; metadata giới hạn của model vẫn được giữ và hiển thị. Xem [hướng dẫn chạy và tài khoản thử local](docs/RUNNING.md).
 ## Giao diện sáng hơn
 
 Bảng màu xanh dương, xanh ngọc và vàng nắng theo lựa chọn của người dùng; xem [ảnh trước/sau, kiểm tra và cách phân bổ ngày Git](docs/BRIGHT-UI-REVIEW.md). Các ngày Git được sắp xếp theo yêu cầu và không đại diện cho ngày thực hiện công việc.

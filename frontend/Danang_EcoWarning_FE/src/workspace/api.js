@@ -19,9 +19,15 @@ export const collector = axios.create({
 export const unpack = (response) =>
   response.data?.status === "SUCCESS" ? response.data.data : response.data;
 export function message(error) {
+  if (error.response?.data === "Invalid CORS request")
+    return "Máy chủ đang chặn địa chỉ ứng dụng này (CORS). Hãy kiểm tra cấu hình địa chỉ frontend tại backend.";
   const value = error.response?.data?.message || error.response?.data?.data;
   if (typeof value === "string") return value;
   if (value && typeof value === "object") return Object.values(value).join(" ");
+  if (error.response?.status === 403)
+    return "Máy chủ từ chối yêu cầu. Hãy kiểm tra quyền truy cập hoặc cấu hình ứng dụng.";
+  if (error.response?.status >= 500)
+    return "Máy chủ đang gặp lỗi. Vui lòng thử lại sau.";
   return error.code === "ECONNABORTED"
     ? "Yêu cầu quá thời gian chờ. Nội dung vẫn được giữ, hãy thử lại."
     : "Chưa kết nối được máy chủ. Hãy kiểm tra kết nối rồi thử lại.";

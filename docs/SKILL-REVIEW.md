@@ -60,3 +60,15 @@ ui-layout-check cần backend/.env và Docker local để tạo/xóa fixture. da
 ## Giới hạn
 
 Đây là kiểm tra tự động và xem ảnh trong cùng phiên local, không phải đánh giá độc lập. Chưa đo FPS trên thiết bị của người dùng, chưa kiểm thử tải, chưa xác nhận độ đúng chuyên môn của toàn bộ CSV, chưa kiểm chứng gửi OTP/Cloudinary thật. Không thay đổi AI. Các giá trị bất nhất được trình bày để đối chiếu; không xóa, gộp hay sửa ngầm.
+
+## Màn hình Phân tích AI — 25/11/2026
+
+Theo yêu cầu mới, thay màn hình JSON dành riêng cho quản lý bằng workspace `/ai`: lối vào trong menu chính và đầu bản đồ, form số chia vị trí/địa hình/thủy văn, mẫu dataset thật, phản hồi mô hình và tải kết quả. Trang xem được với khách; quyền chạy model vẫn được BE bảo vệ. Không thay thuật toán, model hay suy đoán đơn vị/hệ tọa độ.
+
+Áp dụng taste-skill qua `SKILL.md`, `references/app-screens.md` và draw `--app --kind analytics --style accent-ladder --keep palette,type`. Chọn nhịp hai cột đầu vào/kết quả cho công việc kiểm tra mô hình; giữ Be Vietnam Pro và palette đã chốt. Inventory: 9 đặc trưng, mã điểm, 2 mẫu dataset, model version/algorithm từ API, nhãn Flood/No_Flood, điểm lớp Flood, đặc trưng điền khuyết, nguồn mẫu/custom và trạng thái quyền/kết nối. Không có KPI/độ chính xác giả.
+
+Áp dụng impeccable từ `E:/mnm haui/impeccable/.agents/skills/impeccable/SKILL.md`: chạy context cho FloodAI.jsx, đọc new-work/craft-floor, giữ hệ thống thị giác hiện hành. Đã chạy detector trên JSX/CSS: không có finding. Context ghi nhận sidecar thiết kế cũ và phiên bản skill mới hơn; không tự cập nhật skill/sidecar trong thay đổi UI này.
+
+Kiểm tra local: 30 kiểm tra browser ở 1440/768/390, đăng nhập ADMIN/USER bằng mật khẩu và OTP SMTP Mailpit; hai mẫu đi qua FE → Java → Python trả hai nhãn thật. Xác nhận JSON tải xuống khớp đầu vào/kết quả, sửa đầu vào xóa kết quả cũ, consent điền khuyết, UI 503 không có kết quả giả, label input, bề rộng, mobile đưa kết quả vào tầm nhìn và backend từ chối token USER. 503 là lỗi chèn ở trình duyệt; suy luận thành công không bị mock. 3 unit test hợp đồng form, lint/build và 6 kiểm tra AI integration cũng qua.
+
+Ảnh và báo cáo chạy browser nằm trong `.taste-skill/ai-workspace-proof/` (local, Git ignored); đã xem ảnh desktop/tablet/mobile và sửa hash phiên bản tràn mobile. Taste inspector cho trang khách: 0 FAIL, 1 WARN ragged-row; cột form 9 trường dài hơn cột tóm tắt được giữ theo công việc thay vì kéo giãn panel rỗng. Taste source lint: 0 FAIL, 1 WARN monospace; chỉ textarea JSON dùng monospace nên giữ. Kiểm tra này không chứng minh độ chính xác dự báo cho Đà Nẵng hay khả năng gửi email ra Internet.
