@@ -42,6 +42,8 @@ jobs:
           java-version: 21
           cache: maven
       - run: mvn -B -f backend/${{ matrix.module }}/pom.xml package -DskipTests
+      - if: matrix.module == 'auth-service'
+        run: mvn -B -f backend/auth-service/pom.xml test -Dtest=MailConfigTests
       - if: matrix.module == 'citizen-report-service'
         run: mvn -B -f backend/citizen-report-service/pom.xml test -Dtest=IncidentSecurityTests
 

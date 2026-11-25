@@ -24,6 +24,26 @@ sh scripts/start.sh
 
 Mở `http://localhost:4173`. Xem bản đồ/dữ liệu không cần đăng nhập; gửi báo cáo cần tài khoản và OTP email.
 
+### Thử đăng nhập và khôi phục tài khoản khi chưa có SMTP thật
+
+Windows: chạy `./scripts/start.ps1 -LocalMail` tại gốc repo. Linux/macOS: `LOCAL_MAIL=1 sh scripts/start.sh`.
+Chế độ này thêm Mailpit, chỉ mở hộp thư tại `http://localhost:8025` trên máy local. Email được giữ trong hộp thư thử, không gửi đến Gmail hay người nhận bên ngoài. Cấu hình SMTP thật trong `.env` được giữ nguyên; bỏ tùy chọn LocalMail khi muốn quay lại SMTP thật.
+
+Sau khi Auth Service sẵn sàng, chạy `node scripts/prepare-local-test-accounts.mjs` tại gốc repo. Lệnh tạo hai tài khoản thử riêng USER/ADMIN và ghi email/mật khẩu vào `.delivery/local-test-accounts.json` (đã bỏ qua trong Git), không đổi mật khẩu tài khoản cũ. Lần chạy sau giữ lại file đã có.
+
+1. Mở `http://localhost:4173/login`, nhập email/mật khẩu từ file local.
+2. Mở `http://localhost:8025`, chọn email gửi đúng tài khoản và lấy OTP mới nhất. Nhập OTP trong 2 phút.
+3. Với USER, thử gửi báo cáo và xem Báo cáo của tôi. Với ADMIN, mở Quản lý để xác minh/xử lý báo cáo. Có thể dùng hai cửa sổ hoặc cửa sổ ẩn danh để giữ hai phiên riêng.
+4. Với Quên mật khẩu, nhập email tài khoản thử, lấy OTP mới từ Mailpit, đặt mật khẩu mới rồi đăng nhập lại bằng mật khẩu mới và OTP đăng nhập mới.
+
+Không có OTP cố định hay cơ chế bỏ qua xác thực. Nếu đổi mật khẩu thủ công, cập nhật ghi chú mật khẩu local của anh; file JSON không tự đồng bộ với database.
+
+Regression test trên Chrome/Edge cài sẵn: đặt `TASTE_SKILL_DIR` trỏ tới thư mục taste-skill có `scripts/lib/cdp.mjs`, rồi chạy `node scripts/ui-auth-flow-check.mjs`. Test thực hiện form đăng ký, đăng nhập/OTP sai và đúng, khôi phục, từ chối mật khẩu cũ và đăng nhập bằng mật khẩu mới; dùng SMTP Mailpit thực, không tự ký JWT. Tài khoản test được xóa sau khi chạy; ảnh bằng chứng nằm trong `.taste-skill/auth-flow/`.
+
+CORS local của Auth cho phép các origin localhost/127.0.0.1 cổng 4173 và 5173. Khi đổi cổng/domain, cấu hình `CORS_ALLOWED_ORIGINS` tương ứng; không mở wildcard cho tất cả domain. Các request HTTP không có header Origin không đủ để kiểm chứng CORS của trình duyệt.
+
+Tham khảo cấu hình hộp thư: [tài liệu Docker chính thức của Mailpit](https://mailpit.axllent.org/docs/install/docker/).
+
 ## Phát triển frontend
 
 Khởi động backend trước, sau đó:
