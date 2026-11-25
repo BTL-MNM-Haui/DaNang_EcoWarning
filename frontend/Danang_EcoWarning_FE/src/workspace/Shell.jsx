@@ -14,6 +14,7 @@ import {
   FiX,
   FiLogOut,
   FiPlus,
+  FiActivity,
 } from "react-icons/fi";
 import { useAuth } from "../hooks/useAuth";
 import { isManager, session } from "./api";
@@ -26,6 +27,7 @@ export default function Shell() {
     ["/", "Bản đồ sự cố", FiMap],
     ["/weather", "Thời tiết", FiCloud],
     ["/data", "Dữ liệu & thống kê", FiBarChart2],
+    ["/ai", "Phân tích AI", FiActivity],
   ];
   const personal = [
     ["/my-reports", "Báo cáo của tôi", FiFileText],
@@ -35,7 +37,6 @@ export default function Shell() {
   const management = [
     ["/manage", "Xác minh sự cố", FiCheckSquare],
     ["/imports", "Nhập dữ liệu", FiDatabase],
-    ["/ai-flood", "Thử nghiệm AI ngập", FiBarChart2],
   ];
   const links = (items) =>
     items.map(([path, title, Icon]) => (

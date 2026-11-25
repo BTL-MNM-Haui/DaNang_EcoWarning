@@ -1,0 +1,442 @@
+.ec-map-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+.ec-map-actions > a:first-child {
+  color: var(--action-hover);
+  font-size: 15px;
+  font-weight: 600;
+}
+.ec-ai-workspace {
+  max-width: 1600px;
+  margin-inline: auto;
+}
+.ec-ai-workspace h1 {
+  font-size: 32px;
+}
+.ec-ai-workspace h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+.ec-ai-workspace p {
+  max-width: 74ch;
+}
+.ec-ai-climate-link,
+.ec-ai-climate a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--action-hover);
+  font-weight: 600;
+}
+.ec-ai-scope {
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+  padding: 18px 22px;
+  border-radius: 10px;
+}
+.ec-ai-scope p {
+  margin: 6px 0 0;
+  max-width: 110ch;
+  font-size: 15px;
+}
+.ec-ai-connection {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 18px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.ec-ai-service-state {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+  color: var(--muted);
+}
+.ec-ai-service-state.is-ready {
+  color: var(--teal);
+}
+.ec-ai-connection button {
+  margin-left: auto;
+}
+.ec-ai-connection > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ec-ai-result h2 {
+  scroll-margin-top: 80px;
+}
+.ec-ai-samples .ec-ai-quick-run {
+  background: var(--surface);
+  font-weight: 600;
+}
+.ec-ai-access {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  background: var(--sky);
+  border-radius: 12px;
+}
+.ec-ai-access p {
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: #365e87;
+}
+.ec-ai-access .ec-button {
+  flex-shrink: 0;
+}
+/* Canvas = 7fr input + 24px gutter + 5fr result; both columns close on its edges. */
+.ec-ai-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 24px;
+  align-items: start;
+}
+.ec-ai-workspace .ec-panel {
+  padding: 26px;
+  min-width: 0;
+}
+.ec-ai-section-heading {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: start;
+}
+.ec-ai-section-heading p {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 6px 0 18px;
+}
+.ec-ai-count {
+  font-size: 14px;
+  color: var(--action-hover);
+  text-align: right;
+  white-space: nowrap;
+}
+.ec-ai-samples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ec-ai-samples button {
+  background: var(--soft);
+  color: var(--action-hover);
+  border-color: #abc5e8;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+.ec-ai-workspace .ec-ai-source {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 14px 0 20px;
+}
+.ec-ai-workspace .ec-ai-point {
+  margin-bottom: 22px;
+  display: block;
+}
+.ec-ai-point input {
+  margin-top: 8px;
+}
+.ec-ai-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 22px;
+  min-width: 0;
+}
+.ec-ai-fieldset legend {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 0;
+}
+.ec-ai-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+.ec-ai-fields label {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  font-size: 15px;
+}
+.ec-ai-fields label > span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+.ec-ai-fields small {
+  color: var(--muted);
+  font-size: 13px;
+}
+.ec-ai-fields input {
+  font-variant-numeric: tabular-nums;
+  min-width: 0;
+}
+.ec-ai-help {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.ec-ai-imputation {
+  display: flex !important;
+  align-items: start;
+  gap: 10px;
+  background: var(--soft);
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.ec-ai-imputation input {
+  width: 18px;
+  height: 18px;
+  margin: 3px 0 0;
+  flex-shrink: 0;
+  accent-color: var(--action);
+}
+.ec-ai-json {
+  margin: 20px 0;
+  padding-block: 14px;
+  border-block: 1px solid var(--line);
+}
+.ec-ai-json summary {
+  color: var(--action-hover);
+  cursor: pointer;
+  font-size: 15px;
+}
+.ec-ai-json label {
+  display: block;
+  margin-top: 14px;
+}
+.ec-ai-json textarea {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-family: ui-monospace, monospace;
+}
+.ec-ai-submit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ec-ai-submit button {
+  min-height: 46px;
+}
+.ec-ai-output-column {
+  min-width: 0;
+  display: grid;
+  gap: 24px;
+}
+.ec-ai-empty {
+  padding: 28px 0 4px;
+  color: var(--muted);
+}
+.ec-ai-empty > svg {
+  width: 38px;
+  height: 38px;
+  color: var(--action);
+}
+.ec-ai-empty h3 {
+  color: var(--ink);
+  margin: 16px 0 10px;
+  font-size: 20px;
+}
+.ec-ai-empty p {
+  margin: 0 0 20px;
+}
+.ec-ai-empty ol {
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 2;
+}
+.ec-ai-classification {
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--sky);
+  color: #123c76;
+}
+.ec-ai-classification.is-flood {
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+}
+.ec-ai-classification span {
+  font-size: 14px;
+}
+.ec-ai-classification h3 {
+  font-size: 28px;
+  line-height: 1.3;
+  margin: 8px 0;
+}
+.ec-ai-classification code {
+  font-size: 14px;
+  color: inherit;
+  background: transparent;
+  padding: 0;
+}
+.ec-ai-score {
+  margin: 24px 0;
+}
+.ec-ai-score > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ec-ai-score strong {
+  font-size: 28px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--action-hover);
+  white-space: nowrap;
+}
+.ec-ai-score span {
+  font-size: 15px;
+}
+.ec-ai-score meter {
+  width: 100%;
+  height: 16px;
+  margin: 10px 0;
+}
+.ec-ai-score meter::-webkit-meter-bar {
+  background: var(--soft);
+  border: 0;
+}
+.ec-ai-score meter::-webkit-meter-optimum-value {
+  background: var(--action);
+}
+.ec-ai-score meter::-moz-meter-bar {
+  background: var(--action);
+}
+.ec-ai-score p,
+.ec-ai-result-note {
+  font-size: 14px;
+  color: var(--muted);
+}
+.ec-ai-result-facts {
+  margin: 0;
+  font-size: 14px;
+}
+.ec-ai-result-facts div {
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+}
+.ec-ai-result-facts dt {
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.ec-ai-result-facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-weight: 500;
+}
+.ec-ai-result-note {
+  margin: 18px 0 0;
+}
+.ec-ai-contract {
+  background: var(--mint);
+  color: #175c4a;
+  padding: 24px;
+  border-radius: 12px;
+}
+.ec-ai-contract h2 {
+  font-size: 19px;
+}
+.ec-ai-contract p,
+.ec-ai-contract li {
+  font-size: 15px;
+}
+.ec-ai-contract ul {
+  padding-left: 22px;
+  line-height: 1.9;
+}
+.ec-ai-contract p:last-child {
+  margin-bottom: 0;
+}
+.ec-ai-climate {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 28px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 12px;
+  scroll-margin-top: 20px;
+}
+.ec-ai-climate p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.ec-ai-climate a {
+  flex-shrink: 0;
+}
+@media (max-width: 1150px) {
+  .ec-ai-layout {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 18px;
+  }
+  .ec-ai-section-heading {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .ec-ai-count {
+    margin-bottom: 16px;
+  }
+  .ec-ai-workspace .ec-panel {
+    padding: 20px;
+  }
+  .ec-ai-score > div {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+@media (max-width: 850px) {
+  .ec-ai-workspace h1 {
+    font-size: 28px;
+  }
+  .ec-ai-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ec-ai-access,
+  .ec-ai-climate {
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  .ec-ai-scope {
+    padding: 18px;
+  }
+  .ec-ai-connection button {
+    margin-left: 0;
+  }
+  .ec-ai-workspace .ec-page-heading {
+    gap: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .ec-ai-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ec-ai-samples button {
+    width: 100%;
+    text-align: left;
+  }
+  .ec-ai-submit > button {
+    width: 100%;
+  }
+  .ec-ai-scope p {
+    font-size: 14px;
+  }
+}

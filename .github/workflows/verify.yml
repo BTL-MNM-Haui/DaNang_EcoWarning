@@ -28,6 +28,7 @@ jobs:
           cache-dependency-path: frontend/Danang_EcoWarning_FE/package-lock.json
       - run: npm ci
       - run: npx eslint src/workspace src/App.jsx
+      - run: node --test src/workspace/floodForm.test.mjs
       - run: npm run build
   backend:
     runs-on: ubuntu-latest

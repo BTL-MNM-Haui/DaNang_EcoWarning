@@ -124,7 +124,7 @@ docker compose -f backend/docker-compose.yml --profile ai up -d --build ai-servi
 BE cùng mạng gọi `http://ai-service:8000/api/v1/flood/predict`; trên host dùng
 `http://127.0.0.1:8000`. Swagger tại `http://127.0.0.1:8000/docs`.
 Xem [hợp đồng dữ liệu, chạy Python local và kiểm thử](../AI/README.md).
-API yêu cầu đủ 9 đặc trưng từ BE; chưa tự thu thập dữ liệu GIS hoặc nối vào FE.
+API yêu cầu đủ 9 khóa đặc trưng từ BE; đã nối vào FE tại `/ai`, chưa tự thu thập dữ liệu GIS.
 
 ## Giám sát và giới hạn
 
@@ -137,4 +137,23 @@ API yêu cầu đủ 9 đặc trưng từ BE; chưa tự thu thập dữ liệu 
 - Chưa có số đo tải hoặc độ chính xác dự báo tại Đà Nẵng để công bố. API AI hiện phục vụ thử nghiệm tính dễ ngập theo model được cung cấp, chưa có dự báo theo thời gian hoặc chỉ đường “an toàn”.
 ## Tích hợp AI và phân tích khí hậu (18/11/2026)
 
-Script start hiện bật profile ai. FE /ai-flood dành cho quản lý, gọi /backend/data/api/v1/ai/flood/* qua Search Service, rồi đến AI nội bộ. Mô hình hiện chưa kiểm chứng cho Đà Nẵng; chuẩn bị đủ đặc trưng theo metadata trước khi dùng dữ liệu thực địa. Phân tích bất thường khí hậu nằm ở /data, kiểm tra đơn vị/độ bao phủ và dùng API /metric/anomalies. Xem docs/PLAN-AUDIT-2026-11-18.md để biết phần đã hoàn thành, kiểm thử và các điều kiện dữ liệu còn thiếu.
+Script start hiện bật profile ai. FE `/ai` hiển thị công khai phần chuẩn bị dữ liệu; chạy model cần quyền quản lý. `/ai-flood` chuyển hướng về `/ai`. UI gọi `/backend/data/api/v1/ai/flood/*` qua Search Service, rồi đến AI nội bộ. Mô hình hiện chưa kiểm chứng cho Đà Nẵng; chuẩn bị đủ đặc trưng theo metadata trước khi dùng dữ liệu thực địa. Phân tích bất thường khí hậu nằm ở `/data`, kiểm tra đơn vị/độ bao phủ và dùng API `/metric/anomalies`. Xem docs/PLAN-AUDIT-2026-11-18.md để biết phần đã hoàn thành, kiểm thử và các điều kiện dữ liệu còn thiếu.
+
+### Kiểm tra màn hình AI (25/11/2026)
+
+1. Mở `http://localhost:4173/ai`; menu chính và đầu trang bản đồ đều có lối vào. Khách xem được form và mẫu, chưa có kết quả tự tạo.
+2. Chọn Đăng nhập để chạy AI, dùng tài khoản ADMIN từ `.delivery/local-test-accounts.json` và OTP trong Mailpit. Đăng nhập xong quay lại `/ai`.
+3. Chọn Nạp mẫu nhãn không ngập hoặc Nạp mẫu nhãn ngập, sau đó Phân tích đầu vào. Kết quả được trả từ Python qua Search Service, hiển thị nhãn, điểm lớp Flood, đặc trưng điền khuyết và phiên bản.
+4. Thử sửa một trường: kết quả cũ được xóa. Trường trống/NoData cần xác nhận điền khuyết; tất cả trường thiếu bị từ chối. Zero được giữ nguyên.
+5. Có thể nhập JSON trong phần mở rộng và tải JSON đầu vào/kết quả. Đây là mẫu dataset của nhóm AI, không phải dữ liệu quan trắc tại Đà Nẵng.
+
+Kiểm tra tự động tại gốc repo sau khi bật LocalMail và chuẩn bị hai tài khoản thử:
+
+```powershell
+$env:TASTE_SKILL_DIR='E:\mnm haui\taste-skill\skills\taste-skill'
+node scripts/ui-ai-workspace-check.mjs
+node scripts/ai-integration-check.mjs
+node --test frontend/Danang_EcoWarning_FE/src/workspace/floodForm.test.mjs
+```
+
+Script browser dùng mật khẩu + OTP qua SMTP local, không tự ký JWT. Trường hợp 503 được chèn tại lớp mạng trình duyệt để kiểm tra UI; các mẫu dự đoán thành công gọi BE và model thật. Script không đổi mật khẩu hoặc xóa hai tài khoản thử.
