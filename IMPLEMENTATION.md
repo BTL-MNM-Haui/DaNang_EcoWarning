@@ -57,3 +57,21 @@ Bản phát hành tạo commit khởi đầu mới từ cây source đã làm s�
 - Header và bộ lọc gọn hơn, bộ lọc nâng cao thu mở, trạng thái rỗng có hành động, ẩn phân trang khi không cần.
 - 35 kiểm tra trình duyệt về hover, focus, menu, overflow và các trang bản đồ/thời tiết/dữ liệu/đăng nhập ở 1440/1024/768/390px đã qua. Kiểm tra giao diện không thay cho nghiên cứu khả dụng với người dùng thật.
 - Đề xuất style, logo và bước UX tiếp theo trong docs/UI-DIRECTION.md.
+## Thiết kế lại bố cục trên feature branch
+
+- Sửa nguyên nhân che nội dung: sidebar mở trong cột grid riêng thay cho overlay; đã kiểm tra trên trang thời tiết, dữ liệu và bản đồ.
+- Thời tiết: tổng quan xanh biển, chỉ số không khí riêng, dải dự báo theo giờ và bảng chi tiết có thể mở. Dữ liệu vẫn lấy từ OpenWeather.
+- Dữ liệu: cột bộ chọn riêng và vùng biểu đồ/bảng. Bản đồ desktop rộng có bảng báo cáo nổi; điện thoại chuyển Bản đồ / Danh sách.
+- 41 kiểm tra điều hướng/bố cục và 29 kiểm tra bổ sung trên bản production đã qua, gồm các chiều rộng 320/390/768/1024/1440px và đổi ngày dự báo. Lint và build production qua.
+- Đã xem ảnh desktop/mobile. Detector layout không có phát hiện. Taste inspector 0 FAIL, 2 WARN: diện tích màu đậm được giữ theo yêu cầu tăng bản sắc; khoảng trống trong dải dự báo giữ để đồng nhất mốc giờ.
+- Các lượt sửa dùng feature branch; không push trực tiếp main theo yêu cầu mới của người dùng.
+## Rà soát tổng thể theo phản hồi về khả năng đọc
+
+- Đã thay thang chữ chung bằng Be Vietnam Pro tự host: nội dung 16px, điều khiển 16px, tiêu đề 32px; tăng tương phản chữ phụ và biên input.
+- Trang dữ liệu được thiết kế lại: bộ chọn ngang có nhóm chỉ số, tên và đơn vị rõ; phạm vi theo tập đang chọn; chuyển biểu đồ/bảng; đối chiếu xung đột; tải CSV của tập đang lọc. Tách thống kê ngập cộng đồng khỏi dữ liệu lịch sử.
+- API thống nhất nhãn đơn vị ở catalog, danh sách chỉ số và lịch sử, kèm unitRaw. Không quy đổi hay viết lại dữ liệu lưu trữ. Giữ và đánh dấu điểm xung đột, dùng khoảng ngắt trong trend; không đổi thiếu dữ liệu thành zero.
+- Tài khoản desktop chia hai cột; các biểu mẫu, danh sách cộng đồng, quản lý, nhập CSV và trạng thái rỗng dùng cùng hệ thống chữ và bề mặt.
+- Sửa sidebar không thu sau click: chỉ keyboard focus-visible giữ menu. Grid chuyển 180ms và bản đồ gộp resize; loading là ô nội dung gọn.
+- Kết quả: 4 Java test, 3 FE data test, 28 HTTP checks hiện có, 143 contract assertions, 27 navigation assertions, 138 layout assertions qua. Các bộ kiểm tra có phạm vi khác nhau, không cộng gộp thành một chứng nhận chất lượng sản phẩm.
+- Bằng chứng hai skill và ảnh tại docs/SKILL-REVIEW.md. Taste inspector: 0 FAIL/0 WARN trên trang dữ liệu; impeccable có một cảnh báo giữ đường dưới tab, đã giải thích trong báo cáo.
+- Đã dùng nhánh feat/friendly-layout-redesign; không cập nhật main. Chưa kiểm chứng dịch vụ gửi OTP/Cloudinary thực tế hay độ đúng chuyên môn của CSV. AI không thay đổi.

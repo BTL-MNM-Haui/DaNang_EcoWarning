@@ -81,7 +81,7 @@ export default function DataImports() {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return (
-    <div className="ec-page">
+    <div className="ec-page ec-import-page">
       <div className="ec-page-heading">
         <div>
           <h1>Nhập dữ liệu</h1>
@@ -91,6 +91,10 @@ export default function DataImports() {
           </p>
         </div>
       </div>
+      <p className="ec-task-guide">
+        Chọn nguồn và CSV <span aria-hidden="true">→</span> Kiểm tra bản xem
+        trước <span aria-hidden="true">→</span> Lưu và theo dõi lịch sử
+      </p>
       <section className="ec-panel">
         <h2>Nhập quan sát từ CSV</h2>
         <p>
@@ -127,7 +131,15 @@ export default function DataImports() {
           <div className="ec-import-mapping">
             {Object.keys(mapping).map((key) => (
               <label key={key}>
-                Cột {key}
+                {
+                  {
+                    assetId: "Cột mã đối tượng",
+                    metricId: "Cột mã chỉ số",
+                    recordTime: "Cột thời điểm",
+                    value: "Cột giá trị",
+                    unit: "Cột đơn vị",
+                  }[key]
+                }
                 <input
                   required
                   value={mapping[key]}

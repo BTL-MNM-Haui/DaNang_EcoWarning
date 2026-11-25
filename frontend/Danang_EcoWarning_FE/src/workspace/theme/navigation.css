@@ -1,0 +1,56 @@
+.ec-sidebar,
+.ec-sidebar:is(:hover, :has(:focus-visible)) {
+  background: var(--surface);
+  border-right-color: var(--line);
+}
+.ec-sidebar nav a {
+  color: var(--muted);
+}
+.ec-sidebar nav a:hover {
+  background: var(--soft);
+  color: var(--action-hover);
+}
+.ec-sidebar nav a.active {
+  background: var(--action);
+  color: #fff;
+}
+.ec-sidebar nav a.active svg {
+  color: #fff;
+}
+.ec-sidebar nav a:not(.active):nth-child(2) svg {
+  color: var(--sun-ink);
+}
+.ec-sidebar nav a:not(.active):nth-child(3) svg {
+  color: var(--teal);
+}
+.ec-brand-wordmark strong {
+  color: var(--action);
+}
+.ec-brand-wordmark small {
+  color: var(--muted);
+}
+.ec-nav-group {
+  color: var(--muted);
+  font-weight: 500;
+}
+.ec-sidebar footer .ec-secondary {
+  background: var(--surface);
+  color: var(--action-hover);
+}
+.ec-sidebar footer .ec-secondary:hover {
+  background: var(--soft);
+}
+.ec-mobile {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.ec-mobile button {
+  color: var(--action-hover);
+}
+.ec-scope {
+  background: var(--sky);
+  border-color: var(--line);
+}
+.ec-scope-dot {
+  background: var(--teal);
+}

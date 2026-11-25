@@ -1,0 +1,2029 @@
+{
+ "url": "http://127.0.0.1:5173/weather",
+ "at": "2026-11-18T16:01:48.263Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.83,
+    0.77
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1168,
+     "screens": 1.3,
+     "words": 240,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 30,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 34,
+     "vw": 2.4,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 32,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "lines": 1,
+     "size": 34,
+     "font": "Be Vietnam Pro"
+    },
+    "headings": [
+     {
+      "text": "Thời tiết & không khí",
+      "words": 5,
+      "chars": 21,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Be Vietnam Pro",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 32,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "28°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 78,
+      "vw": 5.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.09,
+      "top": 216,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Tốt",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.29,
+      "top": 224,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 3,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      24,
+      25,
+      26,
+      30,
+      34,
+      36,
+      78
+     ],
+     "sizeCount": 14,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 14,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.4
+     },
+     "measureChars": 122,
+     "max": {
+      "size": 78,
+      "vw": 5.4,
+      "font": "Be Vietnam Pro",
+      "text": "28"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.22,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Thời tiết hiện tại",
+      "above": "28°C",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 18,
+      "top": 167
+     },
+     {
+      "text": "Chất lượng không khí",
+      "above": "Tốt",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 18,
+      "top": 167
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f6f9ff",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 1,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f6f9ff",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 1,
+        "l": 0.98
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 564,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#465e77",
+       "share": 0.42
+      },
+      {
+       "color": "#17324d",
+       "share": 0.37
+      },
+      {
+       "color": "#104eae",
+       "share": 0.07
+      },
+      {
+       "color": "#326553",
+       "share": 0.05
+      },
+      {
+       "color": "#365e87",
+       "share": 0.04
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#17324d"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": 0,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Đến nội dung",
+      "Xem bản đồ sự cố"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 11,
+     "hairlineSamples": [
+      "aside#main-navigation.ec-sidebar 76px",
+      "dl.ec-weather-measures 732px",
+      "dl.ec-air-measures 412px",
+      "article.ec-forecast-hour 154px",
+      "article.ec-forecast-hour 154px"
+     ],
+     "outlinedBoxes": 3,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 3,
+     "boxRadius": 14,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 0,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1168,
+    "margins": {
+     "left": 141,
+     "right": 79
+    },
+    "sections": [
+     {
+      "sel": "div.ec-weather-overview",
+      "tag": "div",
+      "top": 138,
+      "height": 398,
+      "words": 42,
+      "media": 0,
+      "middle": 179,
+      "heading": {
+       "text": "28",
+       "size": 78,
+       "tag": "div"
+      },
+      "left": 145,
+      "right": 203,
+      "textLeft": 145,
+      "textRight": 203,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.ec-panel.ec-forecast-panel",
+      "tag": "section",
+      "top": 564,
+      "height": 484,
+      "words": 123,
+      "media": 0,
+      "middle": 73,
+      "heading": {
+       "text": "28",
+       "size": 25,
+       "tag": "strong"
+      },
+      "left": 141,
+      "right": 65,
+      "textLeft": 141,
+      "textRight": 92,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Thời tiết & không khí",
+      "size": 34,
+      "top": 32,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 112,
+      "n": 2
+     },
+     {
+      "x": 141,
+      "n": 2
+     },
+     {
+      "x": 963,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.09,
+    "voidBox": {
+     "x": 300,
+     "y": 120,
+     "w": 480,
+     "h": 240
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#f6f9ff",
+    "sidebar": {
+     "w": 76,
+     "tag": "aside",
+     "links": 9,
+     "share": 0.05
+    },
+    "topbar": null,
+    "canvas": {
+     "left": 65,
+     "right": 77
+    },
+    "hero": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 34,
+     "vw": 2.4,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 32,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 1,
+    "layout": {
+     "panels": 3,
+     "firstScreen": 3,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 5,
+     "radii": [
+      [
+       14,
+       2
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       12,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": {
+     "count": 8,
+     "median": 48
+    },
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      24,
+      25,
+      26,
+      30,
+      34,
+      36,
+      78
+     ]
+    },
+    "title": {
+     "text": "Thời tiết & không khí",
+     "size": 34,
+     "top": 32
+    },
+    "colourShare": 0.01
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.84,
+    0.89
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1827,
+     "screens": 1.8,
+     "words": 202,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 30,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 28,
+     "vw": 3.6,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 84,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "lines": 1,
+     "size": 28,
+     "font": "Be Vietnam Pro"
+    },
+    "headings": [
+     {
+      "text": "Thời tiết & không khí",
+      "words": 5,
+      "chars": 21,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Be Vietnam Pro",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.54,
+      "top": 84,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "28°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.15,
+      "top": 251,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "Tốt",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 649,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "4.55 µg/m³",
+      "words": 2,
+      "chars": 10,
+      "lines": 2,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Be Vietnam Pro",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 811,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "6.59 µg/m³",
+      "words": 2,
+      "chars": 10,
+      "lines": 2,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Be Vietnam Pro",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 811,
+      "tag": "dd",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 2,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      22,
+      25,
+      26,
+      28,
+      30,
+      36,
+      64
+     ],
+     "sizeCount": 13,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 14,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.4
+     },
+     "measureChars": 105,
+     "max": {
+      "size": 64,
+      "vw": 8.3,
+      "font": "Be Vietnam Pro",
+      "text": "28"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.24,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Thời tiết hiện tại",
+      "above": "28°C",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 18,
+      "top": 202
+     },
+     {
+      "text": "Chất lượng không khí",
+      "above": "Tốt",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 18,
+      "top": 592
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f6f9ff",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 1,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f6f9ff",
+       "top": 60,
+       "hsl": {
+        "h": 220,
+        "s": 1,
+        "l": 0.98
+       }
+      },
+      {
+       "color": "#e8f3ff",
+       "top": 179,
+       "hsl": {
+        "h": 211,
+        "s": 1,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#e9faf3",
+       "top": 569,
+       "hsl": {
+        "h": 155,
+        "s": 0.63,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 973,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17324d",
+       "share": 0.41
+      },
+      {
+       "color": "#465e77",
+       "share": 0.38
+      },
+      {
+       "color": "#104eae",
+       "share": 0.08
+      },
+      {
+       "color": "#326553",
+       "share": 0.05
+      },
+      {
+       "color": "#365e87",
+       "share": 0.05
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#17324d"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": 0,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Đến nội dung",
+      "Xem bản đồ sự cố"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 10,
+     "hairlineSamples": [
+      "header.ec-mobile 768px",
+      "dl.ec-weather-measures 686px",
+      "dl.ec-air-measures 686px",
+      "article.ec-forecast-hour 172px",
+      "article.ec-forecast-hour 172px"
+     ],
+     "outlinedBoxes": 3,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 3,
+     "boxRadius": 14,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": true,
+       "rounded": false,
+       "top": 1356
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1827,
+    "margins": {
+     "left": 41,
+     "right": 55
+    },
+    "sections": [
+     {
+      "sel": "div.ec-weather-overview",
+      "tag": "div",
+      "top": 179,
+      "height": 767,
+      "words": 42,
+      "media": 0,
+      "middle": 72,
+      "heading": {
+       "text": "28",
+       "size": 64,
+       "tag": "div"
+      },
+      "left": 41,
+      "right": 41,
+      "textLeft": 41,
+      "textRight": 177,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.ec-panel.ec-forecast-panel",
+      "tag": "section",
+      "top": 973,
+      "height": 741,
+      "words": 123,
+      "media": 0,
+      "middle": 72,
+      "heading": {
+       "text": "28",
+       "size": 25,
+       "tag": "strong"
+      },
+      "left": 41,
+      "right": 41,
+      "textLeft": 41,
+      "textRight": 76,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Thời tiết & không khí",
+      "size": 28,
+      "top": 84,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 41,
+      "n": 3
+     },
+     {
+      "x": 18,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#f6f9ff",
+    "sidebar": null,
+    "topbar": {
+     "h": 60
+    },
+    "canvas": {
+     "left": 32,
+     "right": 41
+    },
+    "hero": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 28,
+     "vw": 3.6,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 84,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 1,
+    "layout": {
+     "panels": 3,
+     "firstScreen": 3,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 9,
+     "radii": [
+      [
+       0,
+       6
+      ],
+      [
+       14,
+       2
+      ],
+      [
+       12,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": {
+     "count": 8,
+     "median": 48
+    },
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      25,
+      26,
+      28,
+      30,
+      36,
+      64
+     ]
+    },
+    "title": {
+     "text": "Thời tiết & không khí",
+     "size": 28,
+     "top": 84
+    },
+    "colourShare": 0.009
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.73,
+    0.86,
+    0.88,
+    0.86
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 2543,
+     "screens": 3,
+     "words": 202,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 30,
+     "sections": 3,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 28,
+     "vw": 7.2,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 84,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "lines": 1,
+     "size": 28,
+     "font": "Be Vietnam Pro"
+    },
+    "headings": [
+     {
+      "text": "Thời tiết & không khí",
+      "words": 5,
+      "chars": 21,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Be Vietnam Pro",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 84,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "28°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 340,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "31.8 °C",
+      "words": 2,
+      "chars": 7,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Be Vietnam Pro",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.25,
+      "top": 528,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "78%",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Be Vietnam Pro",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.25,
+      "top": 528,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "3.09 m/s",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Be Vietnam Pro",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.25,
+      "top": 528,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "Tốt",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 734,
+      "tag": "div",
+      "kind": "heading"
+     },
+     {
+      "text": "4.55 µg/m³",
+      "words": 2,
+      "chars": 10,
+      "lines": 2,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Be Vietnam Pro",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 896,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "6.59 µg/m³",
+      "words": 2,
+      "chars": 10,
+      "lines": 2,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Be Vietnam Pro",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.37,
+      "top": 896,
+      "tag": "dd",
+      "kind": "statement"
+     },
+     {
+      "text": "28°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 1348,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "27°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.3,
+      "top": 1348,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "29°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 1617,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "30°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.3,
+      "top": 1617,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "30°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 1886,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "28°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.3,
+      "top": 1886,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "27°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.3,
+      "top": 2155,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "27°C",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Be Vietnam Pro",
+      "weight": 500,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.3,
+      "top": 2155,
+      "tag": "strong",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 16,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 5,
+     "centered": 8,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Be Vietnam Pro",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      22,
+      25,
+      26,
+      28,
+      30,
+      36,
+      64
+     ],
+     "sizeCount": 14,
+     "notLoaded": [],
+     "body": {
+      "font": "Be Vietnam Pro",
+      "size": 14,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 6.4
+     },
+     "measureChars": 51,
+     "max": {
+      "size": 64,
+      "vw": 16.4,
+      "font": "Be Vietnam Pro",
+      "text": "28"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.24,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "Thời tiết hiện tại",
+      "above": "28°C",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 18,
+      "top": 291
+     },
+     {
+      "text": "Chất lượng không khí",
+      "above": "Tốt",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 18,
+      "top": 676
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f6f9ff",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 1,
+      "l": 0.98
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f6f9ff",
+       "top": 60,
+       "hsl": {
+        "h": 220,
+        "s": 1,
+        "l": 0.98
+       }
+      },
+      {
+       "color": "#e8f3ff",
+       "top": 268,
+       "hsl": {
+        "h": 211,
+        "s": 1,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#e9faf3",
+       "top": 653,
+       "hsl": {
+        "h": 155,
+        "s": 0.63,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 1058,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#17324d",
+       "share": 0.41
+      },
+      {
+       "color": "#465e77",
+       "share": 0.38
+      },
+      {
+       "color": "#104eae",
+       "share": 0.08
+      },
+      {
+       "color": "#326553",
+       "share": 0.05
+      },
+      {
+       "color": "#365e87",
+       "share": 0.05
+      }
+     ],
+     "button": {
+      "bg": "#ffffff",
+      "hsl": {
+       "h": 0,
+       "s": 0,
+       "l": 1
+      },
+      "fg": "#17324d"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": 0,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Đến nội dung",
+      "Xem bản đồ sự cố"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 8,
+     "hairlineSamples": [
+      "header.ec-mobile 390px",
+      "dl.ec-weather-measures 308px",
+      "dl.ec-air-measures 308px",
+      "article.ec-forecast-hour 154px",
+      "article.ec-forecast-hour 154px"
+     ],
+     "outlinedBoxes": 3,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 3,
+     "boxRadius": 14,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 6,
+       "iconTopped": true,
+       "rounded": false,
+       "top": 1512
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 60,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "be vietnam pro"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 2543,
+    "margins": {
+     "left": 18,
+     "right": 41
+    },
+    "sections": [
+     {
+      "sel": "div.ec-page-heading",
+      "tag": "div",
+      "top": 84,
+      "height": 160,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Thời tiết & không khí",
+       "size": 28,
+       "tag": "h1"
+      },
+      "left": 18,
+      "right": 30,
+      "textLeft": 18,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.ec-weather-overview",
+      "tag": "div",
+      "top": 268,
+      "height": 762,
+      "words": 42,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "28",
+       "size": 64,
+       "tag": "div"
+      },
+      "left": 41,
+      "right": 41,
+      "textLeft": 41,
+      "textRight": 52,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.ec-panel.ec-forecast-panel",
+      "tag": "section",
+      "top": 1058,
+      "height": 1350,
+      "words": 123,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "28",
+       "size": 25,
+       "tag": "strong"
+      },
+      "left": 41,
+      "right": 68,
+      "textLeft": 41,
+      "textRight": 68,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Thời tiết & không khí",
+      "size": 28,
+      "top": 84,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 41,
+      "n": 3
+     },
+     {
+      "x": 18,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#f6f9ff",
+    "sidebar": null,
+    "topbar": {
+     "h": 60
+    },
+    "canvas": {
+     "left": 32,
+     "right": -277
+    },
+    "hero": {
+     "text": "Thời tiết & không khí",
+     "words": 5,
+     "chars": 21,
+     "lines": 1,
+     "size": 28,
+     "vw": 7.2,
+     "font": "Be Vietnam Pro",
+     "weight": 600,
+     "tracking": -0.03,
+     "leading": 1.2,
+     "top": 84,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 1,
+    "layout": {
+     "panels": 3,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 11,
+     "radii": [
+      [
+       0,
+       8
+      ],
+      [
+       14,
+       2
+      ],
+      [
+       12,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": {
+     "count": 8,
+     "median": 70
+    },
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.01,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      25,
+      26,
+      28,
+      30,
+      36,
+      64
+     ]
+    },
+    "title": {
+     "text": "Thời tiết & không khí",
+     "size": 28,
+     "top": 84
+    },
+    "colourShare": 0.017
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\bright-weather-final\\desktop-fold.jpg",
+   "pages": [
+    "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\bright-weather-final\\desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\bright-weather-final\\tablet-fold.jpg",
+   "pages": [
+    "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\bright-weather-final\\tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\bright-weather-final\\mobile-fold.jpg",
+   "pages": [
+    "E:\\Danang_EcoWarning\\DaNang_EcoWarning\\.taste-skill\\bright-weather-final\\mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

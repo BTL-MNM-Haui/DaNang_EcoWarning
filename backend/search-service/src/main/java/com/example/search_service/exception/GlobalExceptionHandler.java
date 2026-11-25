@@ -26,6 +26,10 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+    @ExceptionHandler(org.springframework.web.server.ResponseStatusException.class)
+    public ResponseEntity<?> statusError(org.springframework.web.server.ResponseStatusException e) {
+        return ResponseEntity.status(e.getStatusCode()).body(java.util.Map.of("detail", e.getReason() == null ? "Yêu cầu không hợp lệ" : e.getReason()));
+    }
 
     private final MessageSource messageSource;
 

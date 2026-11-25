@@ -1,0 +1,69 @@
+{
+  "checks": 143,
+  "cashew": {
+    "timeSeries": [
+      {
+        "id": 1364,
+        "timestamp": "2021-01-01T00:00:00",
+        "value": "18",
+        "quality": "VALID"
+      },
+      {
+        "id": 1365,
+        "timestamp": "2022-01-01T00:00:00",
+        "value": "18",
+        "quality": "CONFLICT"
+      },
+      {
+        "id": 1468,
+        "timestamp": "2022-01-01T00:00:00",
+        "value": "17.5",
+        "quality": "CONFLICT"
+      },
+      {
+        "id": 1469,
+        "timestamp": "2023-01-01T00:00:00",
+        "value": "17",
+        "quality": "VALID"
+      }
+    ],
+    "assetName": "Thành phố Đà Nẵng",
+    "metricName": "Điều - Diện tích trồng",
+    "unit": "ha",
+    "unitRaw": "Ha",
+    "assetId": 1823,
+    "metricId": 94,
+    "category": "Nông nghiệp",
+    "quality": {
+      "totalRecords": 4,
+      "uniqueTimestamps": 3,
+      "conflictTimestamps": 1,
+      "conflictRecords": 2,
+      "repeatedRecords": 0,
+      "missingValues": 0,
+      "usablePoints": 2,
+      "trendSeries": [
+        {
+          "id": 1364,
+          "timestamp": "2021-01-01T00:00:00",
+          "value": "18",
+          "quality": "VALID"
+        },
+        {
+          "id": null,
+          "timestamp": "2022-01-01T00:00:00",
+          "value": null,
+          "quality": "CONFLICT"
+        },
+        {
+          "id": 1469,
+          "timestamp": "2023-01-01T00:00:00",
+          "value": "17",
+          "quality": "VALID"
+        }
+      ]
+    },
+    "source": "Dữ liệu lịch sử nhập từ CSV"
+  },
+  "filteredRecords": 1
+}

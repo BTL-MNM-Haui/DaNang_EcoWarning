@@ -115,3 +115,6 @@ API yêu cầu đủ 9 đặc trưng từ BE; chưa tự thu thập dữ liệu 
 - Gợi ý trùng dùng các báo cáo cùng loại trong tập gần đây, không phải tìm kiếm địa lý toàn bộ database.
 - Thống kê tái diễn nhóm theo ô tọa độ 0,01°, không kết luận cùng một địa chỉ hoặc quan hệ nhân quả với mưa.
 - Chưa có số đo tải hoặc độ chính xác dự báo tại Đà Nẵng để công bố. API AI hiện phục vụ thử nghiệm tính dễ ngập theo model được cung cấp, chưa có dự báo theo thời gian hoặc chỉ đường “an toàn”.
+## Tích hợp AI và phân tích khí hậu (18/11/2026)
+
+Script start hiện bật profile ai. FE /ai-flood dành cho quản lý, gọi /backend/data/api/v1/ai/flood/* qua Search Service, rồi đến AI nội bộ. Mô hình hiện chưa kiểm chứng cho Đà Nẵng; chuẩn bị đủ đặc trưng theo metadata trước khi dùng dữ liệu thực địa. Phân tích bất thường khí hậu nằm ở /data, kiểm tra đơn vị/độ bao phủ và dùng API /metric/anomalies. Xem docs/PLAN-AUDIT-2026-11-18.md để biết phần đã hoàn thành, kiểm thử và các điều kiện dữ liệu còn thiếu.

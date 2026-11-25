@@ -1,34 +1,30 @@
 ---
 name: DaNang EcoWarning
-description: Giao diện tra cứu và cập nhật sự cố cộng đồng
+description: Tra cứu dữ liệu và theo dõi báo cáo sự cố cộng đồng
 colors:
-  primary: "#086b91"
-  ground: "#f2f8fb"
+  primary: "#1766d2"
+  ground: "#f6f9ff"
   surface: "#ffffff"
-  muted: "#4f6670"
-  border: "#cbdfe5"
-  chart: "#086b91"
+  ink: "#17324d"
+  muted: "#465e77"
+  border: "#d2def0"
+  controlBorder: "#6f87a6"
+  chart: "#1766d2"
   danger: "#a32e32"
 typography:
   title:
-    fontFamily: "Geist, system-ui, sans-serif"
-    fontSize: "26px"
+    fontFamily: "Be Vietnam Pro, system-ui, sans-serif"
+    fontSize: "34px"
     fontWeight: 600
     lineHeight: 1.2
-    letterSpacing: "-0.025em"
-  section:
-    fontFamily: "Geist, system-ui, sans-serif"
-    fontSize: "17px"
-    fontWeight: 600
-    lineHeight: 1.4
   body:
-    fontFamily: "Geist, system-ui, sans-serif"
-    fontSize: "14px"
+    fontFamily: "Be Vietnam Pro, system-ui, sans-serif"
+    fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.5
 rounded:
   control: "6px"
-  panel: "10px"
+  panel: "12px"
 spacing:
   compact: "12px"
   normal: "16px"
@@ -39,65 +35,58 @@ components:
     textColor: "{colors.surface}"
     rounded: "{rounded.control}"
     padding: "10px 16px"
-  panel:
-    backgroundColor: "{colors.surface}"
-    rounded: "{rounded.panel}"
-    padding: "24px"
 ---
 
 # Design System: DaNang EcoWarning
 
-## Overview
+## Hướng thiết kế
 
-Giao diện làm việc theo hướng bản đồ và danh sách sự cố. Thiết kế lại từ hệ thống hiện có theo yêu cầu người dùng; các lựa chọn triển khai được giao cho người thực hiện. Giữ cấu trúc từ hướng taste-skill achromatic-ledger, bổ sung bảng màu xanh biển và xanh ngọc theo yêu cầu người dùng. Giao diện ưu tiên khả năng tra cứu, chất lượng dữ liệu và thao tác báo cáo.
+Không gian tra cứu công cộng lấy dữ liệu làm trọng tâm. Giữ nhận diện xanh biển/xanh ngọc; tăng khả năng đọc, độ tương phản và sự khác biệt giữa nội dung chính, thao tác, nguồn và trạng thái. Đây là hướng thay thế phần giao diện trung tính ban đầu, theo phản hồi của người dùng.
 
-Màn hình sử dụng số liệu từ API. Không thêm số đếm trang trí, xu hướng hoặc lời khẳng định về tình trạng hiện tại khi không có dữ liệu.
+Không tạo số liệu trang trí, không dùng báo cáo chưa xác minh như cảnh báo chính thức. Màn hình thử nghiệm AI hiện có dùng cùng hệ thống trình bày; lần chỉnh này không đổi suy luận hoặc dữ liệu.
 
-## Colors
+## Chữ và màu
 
-Hành động chính dùng xanh biển #086b91, hover #07536f. Điều hướng dùng nền xanh ngọc nhạt #e6f3f6, mục đang chọn #c5e5ec với chữ #07506a. Nội dung dùng mực #123c4b trên nền #f2f8fb. Các bảng/biểu mẫu dùng bề mặt trắng và đường phân cách nhẹ. Hai nguồn thời tiết dùng nền xanh trời #edf7ff và xanh lá nhạt #edf8f3; màu chỉ nhận diện khu vực, không biểu thị mức độ an toàn của số liệu.
+Be Vietnam Pro 400/500/600/700 được lưu trong public/fonts, có giấy phép OFL đi kèm. Không cần kết nối Google Fonts khi chạy ứng dụng. Nội dung 16px, nhãn 15px, chú thích thường 14px, tiêu đề trang 34px/600 và 28px trên mobile. Chú giải bản đồ nhỏ hơn để không che bản đồ. Chữ logo SVG dùng Arial để asset hoạt động độc lập.
 
-Màu xanh của biểu đồ dùng cho dữ liệu lịch sử. Trạng thái đang diễn ra có dấu đỏ, chờ xác minh có dấu nâu vàng, đã kết thúc dùng xanh lá; mỗi trạng thái luôn kèm chữ, không dùng màu làm tín hiệu duy nhất. Màu trong nền bản đồ thuộc lớp dữ liệu của nhà cung cấp, không phải màu trang trí ứng dụng.
+Nền #f6f9ff, panel trắng, mực #17324d, chữ phụ #465e77. Hành động #1766d2 và hover #104eae. Biên input #6f87a6. Kiểm tra màu thực tế mới tại docs/bright-ui-evidence/contrast-and-layout.json: chữ input 13,13:1; viền input 3,69:1; chữ phụ thời tiết 6,02:1.
 
-## Typography
+Trạng thái luôn kèm chữ. Thời tiết hiện tại dùng nền xanh trời #e8f3ff, chữ #123c76 và chữ phụ #365e87. Không khí dùng nền xanh ngọc; khi AQI kém, nền chuyển theo trạng thái vàng/đỏ tương ứng. Màu của chất lượng không khí theo chỉ số API; màu không thay cho mô tả.
 
-Geist được tải từ Google Fonts, có fallback system-ui. Số liệu dùng tabular numerals. Tiêu đề trang 26px/600, tiêu đề phần 17px/600, nội dung 14px. Các nhãn phụ từ 11–13px. Nút và nhãn viết theo câu, không kéo giãn chữ hoa.
+## Điều hướng và motion
 
-Logo là SVG hình ghim địa điểm với đường sóng; chữ trong logo dùng Arial để asset hoạt động độc lập trong README và trình duyệt.
+Desktop: rail 76px, mở thành 288px khi hover hoặc khi có focus-visible từ bàn phím. Grid dành đúng chiều rộng, không mở phủ lên nội dung. Focus sau click chuột không giữ menu mở. Escape đưa focus về main. Thiết bị cảm ứng rộng giữ nhãn; dưới 851px dùng menu đóng/mở.
 
-## Layout
+Grid chuyển trong 180ms với cubic-bezier(.22,1,.36,1). Reduced motion tắt chuyển động không gian. ResizeObserver của bản đồ gộp resize WebGL trong 100ms sau thay đổi bố cục; timer được hủy khi unmount. Thông báo tải bản đồ có kích thước theo nội dung, tối đa 360px, không phải một dải toàn chiều ngang.
 
-Desktop dùng rail 76px, mở phủ thành sidebar 256px khi hover hoặc focus bàn phím, không đẩy nội dung. Thiết bị cảm ứng rộng giữ sidebar đầy đủ; dưới 850px dùng menu. Trang bản đồ chia danh sách 350px và bản đồ dùng phần chiều rộng còn lại. Canvas WebGL nằm trong khung tuyệt đối để resize không làm tăng chiều cao hàng grid.
+## Bản đồ và báo cáo
 
-Các trang nội dung dùng padding 34px 32px và tối đa 1500px. Form báo cáo dùng hai cột trên desktop, một cột trên điện thoại. Dưới 850px, sidebar chuyển thành thanh đầu 60px và menu mở; bản đồ nằm trên danh sách. Dưới 520px, nội dung dùng lề 16px. Bảng dữ liệu có vùng cuộn riêng khi cần.
+Từ 1280px: bản đồ trải vùng làm việc, bảng báo cáo nổi 340px, cao theo nội dung và cuộn khi cần, layer/legend/ghi chú tránh bảng. Desktop hẹp dùng hai cột. Điện thoại chọn Bản đồ hoặc Danh sách. Giữ attribution của Goong.
 
-## Elevation & Depth
+Biểu mẫu báo cáo chia nội dung và vị trí ở desktop; mobile xếp một cột. Có hướng dẫn tiến trình, nháp, ảnh và gợi ý báo cáo gần đây; chức năng và dữ liệu nguồn được giữ. Danh sách, thông báo và theo dõi khu vực có trạng thái rỗng phù hợp với công việc của trang.
 
-Bề mặt ứng dụng phẳng, phân tách bằng đường viền. Marker trên bản đồ có bóng nhỏ để đọc được trên nền bản đồ; không áp bóng này cho panel. Không dùng gradient hoặc glass làm trang trí.
+## Dữ liệu và thống kê
 
-## Shapes
+Tách dữ liệu lịch sử và ghi nhận ngập cộng đồng thành hai chế độ để không nhập nhằng nguồn. Bộ chọn rộng gồm khu vực, nhóm, chỉ số; thời gian trong details. Tên chỉ số đầy đủ, đơn vị và phạm vi riêng của tập đang chọn hiện ở phần kết quả.
 
-Panel và lớp chọn bản đồ bo góc 10px, control 6px. Marker sự cố tròn, có số định danh. Logo và favicon dùng cùng ngôn ngữ ghim và sóng.
+Summary là mô tả tập dữ liệu: số bản ghi, thời gian, số điểm dùng được, số thời điểm xung đột. Biểu đồ và bảng là hai chế độ rõ ràng. Chỉ hiện cảnh báo đối chiếu khi có xung đột/lặp/thiếu. Bảng phân trang 25 dòng, có nhãn chất lượng và mã bản ghi. CSV giữ bản ghi của tập đang lọc.
 
-## Components
+Backend chuẩn hóa cách viết đơn vị, giữ unitRaw. Không đổi giá trị hoặc đoán phép quy đổi. Thời điểm khác giá trị giữ nguyên, đánh dấu CONFLICT; chuỗi xu hướng dùng null để tạo khoảng ngắt. Bản ghi cùng thời điểm cùng giá trị vẫn giữ ở bảng, chỉ tính một điểm trên biểu đồ. Zero không bị xem là thiếu.
 
-- Nút chính nền xanh biển, nhãn trắng, chiều cao tối thiểu 42px; trạng thái disabled giảm độ đậm và không nhận thao tác.
-- Input/select/textarea có nhãn nhìn thấy và focus outline xanh 3px; lỗi chỉ rõ cách thử lại hoặc sửa nội dung.
-- Một báo cáo có hai nhãn độc lập: xác minh và diễn biến.
-- Danh sách giữ trạng thái tải, lỗi, rỗng và phân trang. Số 0 được hiển thị là 0.
-- Chi tiết sự cố hiển thị thời điểm quan sát, cập nhật, nguồn và lịch sử. Cập nhật cộng đồng không tự làm mới trạng thái xác minh.
-- Form báo cáo có lưu nháp nội dung; ảnh không lưu bền trên thiết bị và giao diện nói rõ cần chọn lại khi đóng trang.
-- Bản đồ giữ nhận diện/attribution của Goong; các overlay ứng dụng tránh che thông tin này.
+## Tài khoản và các trang công việc
 
-## Do's and Don'ts
+Desktop tài khoản chia khối giới thiệu xanh biển và biểu mẫu; mobile chỉ giữ biểu mẫu. Các trang hồ sơ, nhập CSV, quản lý và cộng đồng dùng cùng thang chữ, điều khiển và bề mặt. Chờ khôi phục session trước khi quyết định chuyển hướng trang cần đăng nhập.
 
-- Do dùng nhãn rõ ràng bên cạnh màu trạng thái.
-- Do giữ đơn vị và nguồn; báo vấn đề chất lượng trước khi diễn giải.
-- Do hiển thị lỗi từng nguồn thời tiết độc lập.
-- Don't vẽ một xu hướng từ các quan sát trùng thời điểm chưa được đối chiếu.
-- Don't coi báo cáo chưa xác minh là cảnh báo chính thức.
-- Don't đưa thông tin kỹ thuật về mô hình hoặc dữ liệu mẫu vào luồng công cộng.
+## Kiểm tra và giới hạn
 
-## Navigation and map refinement
+Xem docs/SKILL-REVIEW.md và docs/design-evidence. Đã chạy kiểm tra trình duyệt và chụp ảnh; đây không phải nghiên cứu khả dụng độc lập hay đo FPS trên thiết bị thật. Không tự xác nhận giá trị CSV đúng về chuyên môn. Những bất nhất về nội dung cần đối chiếu nguồn, không được che bằng giao diện.
 
-Rail có nhãn truy cập và tooltip; focus bàn phím mở menu, Escape đưa focus về main. Hover dùng chuyển động 200ms, reduced-motion tắt transition. Bộ lọc chính luôn hiện; bộ lọc thời gian/độ ngập trong details. Chỉ hiện phân trang bản đồ khi có trên 100 kết quả. Xem docs/UI-DIRECTION.md để phân biệt phần đã làm và đề xuất tiếp theo.
+## Bright coastal theme — 18/11/2026
+
+Theo lựa chọn người dùng: xanh dương + xanh ngọc + vàng nắng. Nền gần trắng #f6f9ff; hành động xanh #1766d2, hover #104eae; teal #087464 cho ngữ cảnh môi trường/tích cực; vàng #ffc857 cho nhận diện, cảnh báo có chữ dùng #805000 trên #fff5d8. Không rải màu như chỉ số mức nguy hiểm khi chưa có dữ liệu.
+
+Điểm vào CSS: src/workspace/theme/index.css, import sau workspace.css từ main.jsx. tokens.css giữ vai trò màu; components/navigation/map/weather/forms/account/analysis/responsive.css quản lý từng bề mặt. data-explorer.css dùng token chung thay vì màu teal/xám ghi cứng. Legacy workspace.css giữ cấu trúc tương thích; theme là lớp trình bày hiện hành.
+
+Tiêu đề trang desktop 34px; body 16px. Giữ rail 76px, mở 288px và cơ chế hover/focus-visible đã sửa. Thời tiết dùng lưới dự báo 4 cột ở tablet và 2 cột ở điện thoại để không cắt chữ; desktop rộng giữ dải dự báo. Màn hình tài khoản nền sáng, intro xanh trời; form và JSON có khoảng cách nhất quán.
+
+Bằng chứng kiểm tra mới và cách phân bổ 12 commit: docs/BRIGHT-UI-REVIEW.md. Ngày Git được phân bổ theo yêu cầu; không dùng chúng làm bằng chứng ngày thực hiện công việc.

@@ -1,0 +1,51 @@
+.ec-flood-ai-page {
+  max-width: 1440px;
+}
+.ec-flood-ai-page > .ec-notice {
+  padding: 20px 22px;
+  border: 1px solid #d9ad46;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+.ec-flood-ai-page > .ec-panel {
+  background: var(--sky);
+  border-color: #acc9ee;
+}
+.ec-flood-ai-page .ec-detail-grid {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: start;
+}
+.ec-flood-ai-page .ec-panel p {
+  overflow-wrap: anywhere;
+}
+.ec-flood-ai-page textarea {
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  background: #f7faff;
+  padding: 18px;
+}
+.ec-flood-ai-page form .ec-toolbar {
+  gap: 12px;
+}
+.ec-flood-ai-page form .ec-toolbar button {
+  color: var(--action-hover);
+  background: var(--surface);
+  border-color: var(--control-line);
+}
+.ec-flood-ai-page form .ec-toolbar button:hover:not(:disabled) {
+  background: var(--soft);
+}
+.ec-flood-ai-page .ec-facts dd {
+  color: var(--action-hover);
+}
+.ec-data-provenance > label {
+  padding: 14px 16px;
+  border: 1px solid #a7d9c7;
+  background: var(--mint);
+  border-radius: 8px;
+  color: #175c4a;
+}
+.ec-data-provenance input[type="checkbox"] {
+  accent-color: var(--teal);
+}

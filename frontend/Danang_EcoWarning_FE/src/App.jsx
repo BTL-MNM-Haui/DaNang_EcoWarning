@@ -13,6 +13,7 @@ const IncidentMap = lazy(() => import("./workspace/IncidentMap"));
 const ReportForm = lazy(() => import("./workspace/ReportForm"));
 const DataExplorer = lazy(() => import("./workspace/DataExplorer"));
 const Weather = lazy(() => import("./workspace/Weather"));
+const FloodAI = lazy(() => import("./workspace/FloodAI"));
 const DataImports = lazy(() => import("./workspace/DataImports"));
 
 const IncidentDetail = lazy(() =>
@@ -36,8 +37,14 @@ const Notifications = lazy(() =>
   })),
 );
 function Protected({ children, manager = false }) {
-  const { isAuthenticated, user } = useAuth(),
+  const { isAuthenticated, user, loading } = useAuth(),
     location = useLocation();
+  if (loading)
+    return (
+      <p className="ec-loading" role="status">
+        Đang khôi phục phiên đăng nhập…
+      </p>
+    );
   if (!isAuthenticated)
     return (
       <Navigate
@@ -120,6 +127,14 @@ export default function App() {
                 element={
                   <Protected manager>
                     <IncidentList manage />
+                  </Protected>
+                }
+              />
+              <Route
+                path="ai-flood"
+                element={
+                  <Protected manager>
+                    <FloodAI />
                   </Protected>
                 }
               />

@@ -1,0 +1,475 @@
+{
+  "base": "http://localhost:4173",
+  "checks": [
+    "rail collapsed initially 1440",
+    "transition has intermediate positions 1440",
+    "no overlap during motion 1440",
+    "hover expanded 1440",
+    "clicked item has focus 1440",
+    "click then leave collapses 1440",
+    "rapid hover reversal settles 1440",
+    "keyboard focus reveals labels 1440",
+    "Escape closes keyboard navigation 1440",
+    "rail collapsed initially 1024",
+    "transition has intermediate positions 1024",
+    "no overlap during motion 1024",
+    "hover expanded 1024",
+    "clicked item has focus 1024",
+    "click then leave collapses 1024",
+    "rapid hover reversal settles 1024",
+    "keyboard focus reveals labels 1024",
+    "Escape closes keyboard navigation 1024",
+    "reduced motion disables spatial transition",
+    "loading message is compact and inside map 1440",
+    "loading text visible 1440",
+    "no horizontal overflow 1440",
+    "loading message is compact and inside map 390",
+    "loading text visible 390",
+    "no horizontal overflow 390",
+    "touch navigation opens",
+    "touch navigation closes"
+  ],
+  "motion": [
+    {
+      "viewport": 1440,
+      "frames": [
+        {
+          "ms": 5,
+          "width": 143.3,
+          "covered": false
+        },
+        {
+          "ms": 12,
+          "width": 171.8,
+          "covered": false
+        },
+        {
+          "ms": 19,
+          "width": 195.5,
+          "covered": false
+        },
+        {
+          "ms": 26,
+          "width": 215.5,
+          "covered": false
+        },
+        {
+          "ms": 33,
+          "width": 231.4,
+          "covered": false
+        },
+        {
+          "ms": 40,
+          "width": 244.2,
+          "covered": false
+        },
+        {
+          "ms": 47,
+          "width": 254.5,
+          "covered": false
+        },
+        {
+          "ms": 54,
+          "width": 262.3,
+          "covered": false
+        },
+        {
+          "ms": 61,
+          "width": 268.5,
+          "covered": false
+        },
+        {
+          "ms": 68,
+          "width": 273.2,
+          "covered": false
+        },
+        {
+          "ms": 75,
+          "width": 277,
+          "covered": false
+        },
+        {
+          "ms": 82,
+          "width": 279.9,
+          "covered": false
+        },
+        {
+          "ms": 89,
+          "width": 282.1,
+          "covered": false
+        },
+        {
+          "ms": 96,
+          "width": 283.8,
+          "covered": false
+        },
+        {
+          "ms": 102,
+          "width": 285,
+          "covered": false
+        },
+        {
+          "ms": 109,
+          "width": 286,
+          "covered": false
+        },
+        {
+          "ms": 116,
+          "width": 286.7,
+          "covered": false
+        },
+        {
+          "ms": 123,
+          "width": 287.2,
+          "covered": false
+        },
+        {
+          "ms": 130,
+          "width": 287.5,
+          "covered": false
+        },
+        {
+          "ms": 137,
+          "width": 287.7,
+          "covered": false
+        },
+        {
+          "ms": 144,
+          "width": 287.9,
+          "covered": false
+        },
+        {
+          "ms": 151,
+          "width": 287.9,
+          "covered": false
+        },
+        {
+          "ms": 158,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 172,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 186,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 193,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 200,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 207,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 214,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 221,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 227,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 234,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 241,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 248,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 255,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 262,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 269,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 276,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 283,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 290,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 297,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 304,
+          "width": 288,
+          "covered": false
+        }
+      ]
+    },
+    {
+      "viewport": 1024,
+      "frames": [
+        {
+          "ms": 4,
+          "width": 76,
+          "covered": false
+        },
+        {
+          "ms": 10,
+          "width": 107.4,
+          "covered": false
+        },
+        {
+          "ms": 17,
+          "width": 139.8,
+          "covered": false
+        },
+        {
+          "ms": 24,
+          "width": 169.1,
+          "covered": false
+        },
+        {
+          "ms": 31,
+          "width": 193,
+          "covered": false
+        },
+        {
+          "ms": 38,
+          "width": 213.2,
+          "covered": false
+        },
+        {
+          "ms": 45,
+          "width": 229.8,
+          "covered": false
+        },
+        {
+          "ms": 52,
+          "width": 242.9,
+          "covered": false
+        },
+        {
+          "ms": 58,
+          "width": 253.2,
+          "covered": false
+        },
+        {
+          "ms": 66,
+          "width": 261.5,
+          "covered": false
+        },
+        {
+          "ms": 72,
+          "width": 267.8,
+          "covered": false
+        },
+        {
+          "ms": 79,
+          "width": 272.8,
+          "covered": false
+        },
+        {
+          "ms": 86,
+          "width": 276.6,
+          "covered": false
+        },
+        {
+          "ms": 93,
+          "width": 279.5,
+          "covered": false
+        },
+        {
+          "ms": 100,
+          "width": 281.8,
+          "covered": false
+        },
+        {
+          "ms": 107,
+          "width": 283.6,
+          "covered": false
+        },
+        {
+          "ms": 114,
+          "width": 284.9,
+          "covered": false
+        },
+        {
+          "ms": 121,
+          "width": 285.9,
+          "covered": false
+        },
+        {
+          "ms": 128,
+          "width": 286.6,
+          "covered": false
+        },
+        {
+          "ms": 135,
+          "width": 287.1,
+          "covered": false
+        },
+        {
+          "ms": 142,
+          "width": 287.5,
+          "covered": false
+        },
+        {
+          "ms": 149,
+          "width": 287.7,
+          "covered": false
+        },
+        {
+          "ms": 156,
+          "width": 287.9,
+          "covered": false
+        },
+        {
+          "ms": 163,
+          "width": 287.9,
+          "covered": false
+        },
+        {
+          "ms": 170,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 177,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 183,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 190,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 197,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 204,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 211,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 218,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 225,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 232,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 239,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 246,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 253,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 260,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 267,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 274,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 281,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 288,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 295,
+          "width": 288,
+          "covered": false
+        },
+        {
+          "ms": 301,
+          "width": 288,
+          "covered": false
+        }
+      ]
+    }
+  ],
+  "note": "Goong style requests are paused for the loading-state screenshot, then resumed. No API data is fabricated."
+}
