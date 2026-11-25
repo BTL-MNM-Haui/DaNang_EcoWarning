@@ -37,8 +37,13 @@ export function AuthPage({ mode = "login" }) {
             password: form.password,
           })
           .then(unpack);
-        setOtpToken(data.tokenContent);
-        setStep(1);
+        if (data.otpRequired === false && data.refreshToken) {
+          loginSuccess(data);
+          navigate(location.state?.from || "/");
+        } else {
+          setOtpToken(data.tokenContent);
+          setStep(1);
+        }
       } else if (mode === "login") {
         const data = await session
           .post(`/auth/verify-sign-in/${form.otp}`, null, {
@@ -297,7 +302,11 @@ export function Profile() {
       } else {
         if (password.newPassword !== password.confirmPassword)
           throw new Error("Mật khẩu xác nhận chưa khớp.");
-        await session.put("/user/change-password", password);
+        await session.put("/user/change-password", {
+          oldPassword: password.currentPassword,
+          newPassword: password.newPassword,
+          confirmPassword: password.confirmPassword,
+        });
         setPassword({
           currentPassword: "",
           newPassword: "",

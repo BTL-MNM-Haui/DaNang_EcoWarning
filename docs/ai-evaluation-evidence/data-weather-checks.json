@@ -1,0 +1,29 @@
+{
+  "checks": [
+    "historical chart and real unit render",
+    "CSV export contains actual historical observations",
+    "history table renders data rows",
+    "climate analysis requires explicit unit confirmation",
+    "climate FE runs real seasonal analysis and exports matching result",
+    "date filter resets stale climate result",
+    "conflicting source rows remain visible in FE",
+    "data page stays within viewport: 1440",
+    "data page stays within viewport: 768",
+    "data page stays within viewport: 390",
+    "community statistics mode opens separately from historical data",
+    "live OpenWeather current, air quality and forecast render",
+    "forecast day selector changes visible hours",
+    "weather page stays within viewport: 1440",
+    "weather page stays within viewport: 768",
+    "weather page stays within viewport: 390",
+    "no runtime exceptions in data or weather UI"
+  ],
+  "external": {
+    "weather": {
+      "current": true,
+      "air": true,
+      "forecast": true,
+      "errors": []
+    }
+  }
+}

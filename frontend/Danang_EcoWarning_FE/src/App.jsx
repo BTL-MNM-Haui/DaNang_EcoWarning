@@ -131,13 +131,10 @@ export default function App() {
                 }
               />
               <Route
-                path="ai-flood"
-                element={
-                  <Protected manager>
-                    <FloodAI />
-                  </Protected>
-                }
+                path="ai"
+                element={<FloodAI />}
               />
+              <Route path="ai-flood" element={<Navigate to="/ai" replace />} />
               <Route
                 path="imports"
                 element={

@@ -28,6 +28,7 @@ jobs:
           cache-dependency-path: frontend/Danang_EcoWarning_FE/package-lock.json
       - run: npm ci
       - run: npx eslint src/workspace src/App.jsx
+      - run: node --test src/workspace/floodForm.test.mjs
       - run: npm run build
   backend:
     runs-on: ubuntu-latest
@@ -42,8 +43,10 @@ jobs:
           java-version: 21
           cache: maven
       - run: mvn -B -f backend/${{ matrix.module }}/pom.xml package -DskipTests
+      - if: matrix.module == 'auth-service'
+        run: mvn -B -f backend/auth-service/pom.xml test -Dtest=MailConfigTests,UserProfileTests,LocalPasswordLoginTests
       - if: matrix.module == 'citizen-report-service'
         run: mvn -B -f backend/citizen-report-service/pom.xml test -Dtest=IncidentSecurityTests
 
       - if: matrix.module == 'search-service'
-        run: mvn -B -f backend/search-service/pom.xml test -Dtest=FloodAiControllerTests,ClimateAnomalyControllerTests,SearchServiceHelperTests,ObservationQualityTests
+        run: mvn -B -f backend/search-service/pom.xml test -Dtest=FloodAiControllerTests,ClimateAnomalyControllerTests,SearchServiceHelperTests,ObservationQualityTests,ObservationDateRangeTests

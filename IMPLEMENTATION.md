@@ -75,3 +75,33 @@ Bản phát hành tạo commit khởi đầu mới từ cây source đã làm s�
 - Kết quả: 4 Java test, 3 FE data test, 28 HTTP checks hiện có, 143 contract assertions, 27 navigation assertions, 138 layout assertions qua. Các bộ kiểm tra có phạm vi khác nhau, không cộng gộp thành một chứng nhận chất lượng sản phẩm.
 - Bằng chứng hai skill và ảnh tại docs/SKILL-REVIEW.md. Taste inspector: 0 FAIL/0 WARN trên trang dữ liệu; impeccable có một cảnh báo giữ đường dưới tab, đã giải thích trong báo cáo.
 - Đã dùng nhánh feat/friendly-layout-redesign; không cập nhật main. Chưa kiểm chứng dịch vụ gửi OTP/Cloudinary thực tế hay độ đúng chuyên môn của CSV. AI không thay đổi.
+
+## Tích hợp báo cáo AI và kiểm thử FE — 25/11/2026
+
+Nhánh `feat/ai-evaluation-integration` xuất phát từ main `0698f22` và nhập `feat/ai-analysis-workspace`; giữ UI AI cùng bản auth local đã làm, không ghi đè code của Sơn. Không thay model `.pkl`, cách suy luận hoặc huấn luyện lại mô hình.
+
+- AI cung cấp `/api/v1/flood/evaluation` và bốn PNG qua `/evaluation/charts/{id}`. Gini toàn cục đọc trực tiếp từ classifier đang phục vụ, gắn đúng SHA-256 model. Các ảnh notebook được xuất từ output đã lưu bằng script stdlib, không thực thi notebook. Manifest ghi nguồn, SHA-256 nội dung JSON chuẩn hóa và SHA-256 từng PNG; Docker build xuất lại bundle.
+- BE proxy JSON/PNG dưới `/api/v1/ai/flood/evaluation`, giữ kiểm tra access token và quyền quản lý. Chỉ bốn mã chart được phép; file sai/mất không trở thành kết quả dự đoán.
+- FE bổ sung tab Đánh giá mô hình, tải báo cáo JSON/ảnh gốc, đổi phương pháp, phóng to ảnh bằng dialog có cuộn ngang trên mobile, lỗi/tải lại và kiểm tra phiên bản báo cáo. Gini model đang chạy tách khỏi snapshot notebook. Điểm quy đổi 90–95 được ghi rõ là xếp hạng, không phải accuracy. Không suy ngược số gốc từ ảnh hoặc gắn SHAP tổng hợp thành giải thích một điểm.
+
+Ba lỗi thực tế được tìm thấy qua kiểm thử FE và đã sửa:
+
+1. Hồ sơ tài khoản trả entity chứa hash mật khẩu: GET profile chuyển sang UserResponse chỉ gồm trường hồ sơ. Có test Java và kiểm tra shape response qua phiên đăng nhập thật.
+2. Form đổi mật khẩu gửi currentPassword nhưng BE yêu cầu oldPassword: sửa mapping; test đổi và đăng nhập lại bằng mật khẩu mới + OTP thành công.
+3. Bộ lọc đến 31/12/2023 lẫn thêm 01/01/2024 do LocalTime.MAX bị PostgreSQL làm tròn: đổi sang cận `< đầu ngày kế tiếp`. UI trả đúng 12 tháng, dữ liệu gốc không đổi.
+
+### Kết quả kiểm tra
+
+- 43 assertion FE luồng sản phẩm: khách, menu mobile, OTP, theo dõi khu vực, định vị emulated trong trình duyệt, nháp, tạo báo cáo, ảnh/nén/upload Cloudinary thật, góp ý, quyền, xác minh/kết thúc, thông báo/đánh dấu đọc, hủy theo dõi, CSV sai/đúng/zero/lịch sử, đánh giá AI và bốn ảnh, dialog mobile, lỗi 503/retry, hồ sơ, đổi mật khẩu và đăng xuất.
+- 17 assertion FE dữ liệu/thời tiết: biểu đồ/bảng, xuất CSV, phân tích khí hậu + JSON, xác nhận đơn vị, lọc ngày, giữ xung đột nguồn, thống kê cộng đồng, OpenWeather hiện tại/không khí/dự báo/đổi ngày, responsive.
+- 30 assertion FE UI AI và 10 assertion FE xác thực/khôi phục: chạy lại trên cùng bản runtime. Tổng bốn bộ là 100 assertion qua trình duyệt, không phải 100 tính năng hay chứng nhận độ chính xác mô hình.
+- AI 34 pytest; Search 10 Java tests; Auth 3 Java tests; FE 6 unit tests và lint/build qua. 28 kiểm tra HTTP nghiệp vụ và 6 kiểm tra FE proxy → BE → AI cũng qua.
+- Test FE đăng nhập bằng mật khẩu + OTP SMTP Mailpit, không tự ký JWT để bỏ qua login. Các mẫu suy luận, CSV, báo cáo, thời tiết và upload thành công dùng dịch vụ thật. Lỗi 503 được chèn ở mạng trình duyệt để kiểm tra UI; định vị là tọa độ mô phỏng, không phải GPS thật.
+- Tài khoản, báo cáo, quan sát CSV và ảnh Cloudinary của từng lần chạy được dọn sau test. SMTP ra Internet/Gmail, thiết bị GPS thật, kiểm thử tải và đánh giá độc lập chưa được kiểm chứng trong lượt này.
+
+### Phần chưa đủ dữ liệu / ngoài phạm vi thay đổi AI này
+
+- Notebook chưa xuất bảng số gốc và fingerprint của pipeline dùng cho bốn thí nghiệm. UI hiển thị ảnh nguồn và trạng thái chưa xác minh liên kết, không bịa bảng số.
+- Chưa có SHAP cho từng điểm dự đoán; Mean Absolute SHAP trong notebook là tổng hợp validation.
+- Hệ tọa độ X/Y, đơn vị đặc trưng, kỳ tích lũy mưa và kiểm chứng Đà Nẵng còn thiếu. Chưa tự ghép dữ liệu Goong/OpenWeather thành đầu vào hay công bố tuyến đường an toàn.
+- Thông báo sự cố hiện trong app; email/push cảnh báo tự động là phần mở rộng riêng, chưa được triển khai trong lượt này.

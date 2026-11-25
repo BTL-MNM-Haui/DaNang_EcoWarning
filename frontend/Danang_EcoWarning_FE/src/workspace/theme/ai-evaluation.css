@@ -1,0 +1,221 @@
+.ec-ai-views {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.ec-ai-views button {
+  padding: 12px 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  font-weight: 600;
+}
+.ec-ai-views button[aria-pressed="true"] {
+  color: var(--action-hover);
+  border-bottom-color: var(--action);
+}
+.ec-ai-evaluation {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+.ec-ai-evaluation-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: start;
+}
+.ec-ai-evaluation-heading p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.ec-ai-evaluation-heading button {
+  flex-shrink: 0;
+}
+.ec-ai-evaluation h3 {
+  font-size: 21px;
+  margin: 0 0 12px;
+}
+.ec-ai-evaluation .ec-ai-section-heading p {
+  margin-bottom: 0;
+}
+.ec-ai-evaluation-explainer {
+  color: var(--muted);
+  margin-top: 18px;
+  font-size: 15px;
+}
+.ec-ai-importance-table {
+  max-width: 900px;
+}
+.ec-ai-importance-table > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) minmax(0, 4fr);
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.ec-ai-importance-table [role="cell"]:last-child {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ec-ai-importance-header {
+  color: var(--muted);
+  font-size: 14px;
+}
+.ec-ai-importance-header span:last-child {
+  text-align: right;
+}
+.ec-ai-importance-table strong {
+  min-width: 76px;
+  text-align: right;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.ec-ai-importance-track {
+  flex: 1;
+  height: 10px;
+  background: var(--soft);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ec-ai-importance-track > span {
+  display: block;
+  height: 100%;
+  background: var(--action);
+}
+.ec-ai-evaluation-warning {
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+  padding: 16px 18px;
+  border-radius: 8px;
+}
+.ec-ai-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 16px;
+}
+.ec-ai-methods button {
+  background: var(--surface);
+  color: var(--action-hover);
+}
+.ec-ai-methods button[aria-pressed="true"] {
+  border-color: var(--action);
+  background: var(--soft);
+  font-weight: 600;
+}
+.ec-ai-method-description {
+  color: var(--muted);
+  font-size: 15px;
+}
+.ec-ai-notebook-chart {
+  margin: 0;
+  padding: 12px;
+  background: var(--surface);
+  min-height: 180px;
+}
+.ec-ai-notebook-chart img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+}
+.ec-ai-notebook-chart figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  color: var(--muted);
+  font-size: 14px;
+  padding-top: 12px;
+}
+.ec-ai-notebook-chart figcaption a {
+  color: var(--action-hover);
+}
+.ec-ai-report-provenance {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.ec-ai-report-provenance summary {
+  cursor: pointer;
+  color: var(--action-hover);
+}
+.ec-ai-report-provenance dl {
+  font-size: 14px;
+}
+.ec-ai-report-provenance dt {
+  color: var(--muted);
+  margin-top: 12px;
+}
+.ec-ai-report-provenance dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+.ec-ai-chart-dialog {
+  width: min(960px, calc(100vw - 24px));
+  max-width: calc(100vw - 24px);
+  max-height: 90dvh;
+  border: 0;
+  border-radius: 12px;
+  padding: 24px;
+  color: var(--ink);
+}
+.ec-ai-chart-dialog::backdrop {
+  background: rgb(23 50 77 / 40%);
+}
+.ec-ai-chart-dialog > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ec-ai-chart-dialog p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 18px;
+}
+.ec-ai-chart-scroll {
+  overflow: auto;
+  max-height: 65dvh;
+}
+.ec-ai-chart-scroll img {
+  width: 800px;
+  max-width: none;
+}
+@media (max-width: 850px) {
+  .ec-ai-evaluation-heading {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ec-ai-evaluation .ec-ai-section-heading {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ec-ai-views {
+    gap: 20px;
+  }
+  .ec-ai-views button {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .ec-ai-importance-table > div {
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .ec-ai-notebook-chart {
+    padding: 0;
+  }
+  .ec-ai-methods {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ec-ai-methods button {
+    font-size: 14px;
+    padding-inline: 8px;
+  }
+}

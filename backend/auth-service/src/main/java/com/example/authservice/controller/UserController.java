@@ -51,6 +51,8 @@ public class UserController {
     @GetMapping(AuthUrlConstant.User.PROFILE)
     @Operation(summary = "Get profile", description = "Get current user profile")
     public ResponseEntity<RestData<?>> getProfile(@AuthenticationPrincipal User user) {
-        return VsResponseUtil.success(user);
+        return VsResponseUtil.success(UserResponse.builder()
+                .id(user.getId()).email(user.getEmail()).firstName(user.getFirstName())
+                .lastName(user.getLastName()).phone(user.getPhone()).role(user.getRole()).build());
     }
 }

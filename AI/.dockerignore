@@ -5,4 +5,5 @@ __pycache__
 **/__pycache__
 .pytest_cache
 tests
-notebooks
+notebooks/*
+!notebooks/notebook-mnm.ipynb

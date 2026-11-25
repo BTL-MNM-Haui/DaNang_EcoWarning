@@ -14,6 +14,7 @@ import java.sql.Timestamp;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TokenResponse {
+    Boolean otpRequired;
     String tokenContent;
     String refreshToken;
     String userId;

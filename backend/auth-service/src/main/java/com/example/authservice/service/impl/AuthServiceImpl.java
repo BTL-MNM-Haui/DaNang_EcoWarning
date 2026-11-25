@@ -1,6 +1,7 @@
 package com.example.authservice.service.impl;
 
 import com.example.authservice.domain.dto.request.SignInRequest;
+import com.example.authservice.config.LocalPasswordLoginPolicy;
 import com.example.authservice.domain.dto.response.TokenResponse;
 import com.example.authservice.domain.entity.User;
 import com.example.authservice.exception.AppException;
@@ -37,6 +38,7 @@ public class AuthServiceImpl implements AuthService {
     private final MailService mailService;
     private final RedisRepository redisRepository;
     private final PasswordEncoder passwordEncoder;
+    private final LocalPasswordLoginPolicy localPasswordLogin;
 
     @Value("${jwt.expiration.access:900000}")
     private Long accessTokenExpiration;
@@ -62,6 +64,10 @@ public class AuthServiceImpl implements AuthService {
             throw new AppException(ErrorDetail.ERR_USER_UN_AUTHENTICATE);
         }
 
+        if (localPasswordLogin.allows(user.getEmail())) {
+            return signedIn(user);
+        }
+
         try {
             sendOtp(user.getEmail());
         } catch (Exception e) {
@@ -72,6 +78,7 @@ public class AuthServiceImpl implements AuthService {
         var tokenContent = jwtService.generateToken(java.util.Map.of("token_use","otp"), user, otpExpiration);
 
         return TokenResponse.builder()
+                .otpRequired(true)
                 .tokenContent(tokenContent)
                 .expToken(new Timestamp(System.currentTimeMillis() + otpExpiration))
                 .build();
@@ -81,10 +88,15 @@ public class AuthServiceImpl implements AuthService {
     public TokenResponse verifyOtpSignIn(String otp, User user) {
         verifyOtp(user.getEmail(), otp);
 
+        return signedIn(user);
+    }
+
+    private TokenResponse signedIn(User user) {
         var tokenContent = jwtService.generateToken(java.util.Map.of("token_use","access","role",user.getRole()), user, accessTokenExpiration);
         var refreshToken = jwtService.generateToken(java.util.Map.of("token_use","refresh"), user, refreshTokenExpiration);
 
         return TokenResponse.builder()
+                .otpRequired(false)
                 .tokenContent(tokenContent)
                 .refreshToken(refreshToken)
                 .userId(user.getId())

@@ -9,7 +9,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +51,8 @@ public class ObservationSpecification {
                 predicates.add(cb.greaterThanOrEqualTo(root.get("recordTime"), criteria.getFromDate().atStartOfDay()));
             }
             if (criteria.getToDate() != null) {
-                predicates.add(cb.lessThanOrEqualTo(root.get("recordTime"), criteria.getToDate().atTime(LocalTime.MAX)));
+                // PostgreSQL rounds LocalTime.MAX to next midnight at microsecond precision.
+                predicates.add(cb.lessThan(root.get("recordTime"), criteria.getToDate().plusDays(1).atStartOfDay()));
             }
 
             if (StringUtils.hasText(criteria.getAssetType())) {

@@ -90,3 +90,7 @@ Theo lựa chọn người dùng: xanh dương + xanh ngọc + vàng nắng. N�
 Tiêu đề trang desktop 34px; body 16px. Giữ rail 76px, mở 288px và cơ chế hover/focus-visible đã sửa. Thời tiết dùng lưới dự báo 4 cột ở tablet và 2 cột ở điện thoại để không cắt chữ; desktop rộng giữ dải dự báo. Màn hình tài khoản nền sáng, intro xanh trời; form và JSON có khoảng cách nhất quán.
 
 Bằng chứng kiểm tra mới và cách phân bổ 12 commit: docs/BRIGHT-UI-REVIEW.md. Ngày Git được phân bổ theo yêu cầu; không dùng chúng làm bằng chứng ngày thực hiện công việc.
+
+## Đánh giá AI
+
+Tab `/ai?view=evaluation` dùng cùng thế giới thị giác hiện hành: nút mode có đường dưới, bảng Gini có một màu xanh và số căn phải. Màu không khuếch đại các trọng số nhỏ; độ dài thanh theo đúng share 0–1. PNG từ notebook có tải ảnh gốc và dialog đọc nhãn trên mobile; không tái vẽ thành biểu đồ số nếu chưa có raw values. Khu vực model đang chạy và notebook validation được tách rõ nguồn, phiên bản và ý nghĩa điểm.

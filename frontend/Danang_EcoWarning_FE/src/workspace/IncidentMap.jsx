@@ -214,10 +214,13 @@ export default function IncidentMap() {
           <h1>Bản đồ sự cố</h1>
           <p>Theo dõi tình hình qua báo cáo cộng đồng tại Đà Nẵng.</p>
         </div>
-        <Link className="ec-button" to="/report">
-          <FiPlus />
-          Báo cáo sự cố
-        </Link>
+        <div className="ec-map-actions">
+          <Link to="/ai">Phân tích AI</Link>
+          <Link className="ec-button" to="/report">
+            <FiPlus />
+            Báo cáo sự cố
+          </Link>
+        </div>
       </div>
       <div className="ec-view-switch" role="group" aria-label="Cách xem sự cố">
         <button
